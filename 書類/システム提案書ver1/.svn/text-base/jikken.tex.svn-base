@@ -1,0 +1,57 @@
+%---- ここから本文 ----%
+\subsection{実験方法}
+ Lego Mindstorms RCXを用いて，曲が流れるかを確認した．本実験では，Lego USB TowerからLego Mindstorms RCXにデータをダウンロードし，曲が終了するまでの時間を60秒以内とした．また，様々な曲に対応できることを確認するため本実験では2つの曲で実験を行った．曲は以下の楽曲情報に記述した2曲を別のファイルにそれぞれ内部仕様に記載されている方法で音を一音ずつ書き込んでいくことで完成させた．ただし，60秒以内に納めるため編曲\footnote{編曲前の楽曲\cite{guren}\cite{sky}}を行った．曲を流すために必要なファイルは，trunkディレクトリ内にすべて保存されているものとし，外部仕様にて記載した通りの手順で実行した．\\
+　その際，makeコマンドを用いてbeep.motファイルが生成されているかを確認するため，実験の前後にlsコマンドを使用し，ディレクトリ内のファイルを確認した．\\
+　実験にはiMac (2.5GHz Intel Core i5, 8GB RAM, Mac OS X Lion 10.7.5)とLego Mindstorms RCX(Renesus社製H8/300コアに周辺モジュールを加えたH8/3292 MCU)を, アセンブル環境は, GNU assembler (GNU Binutils) 2.22を使用した. リンケージエディタは, GNU ld (GNU Binutils) 2.22を使用した.
+
+\subsection{楽曲情報}
+\begin{itemize}
+ \item　紅蓮の弓矢\\
+　 歌手　  : Linked Horizon\\
+作詞/作曲 \hspace{-0.5mm}: Revo\\
+ 
+
+ \item 天空のグリニッジ\\
+　 作曲　 : 上海アリス幻樂団(ZUN)\\
+
+\end{itemize}
+
+
+\subsection{実験結果}
+ 実験の結果，ターミナル上で以下のように表示された．\\
+\begin{quote}
+  \texttt{\$ ls}\\
+  \texttt{Makefile　　　crt0.S　　　　lcd.S　　　　reset.S} \\
+  \texttt{beep.S\hspace{11.4mm}　dloader/\hspace{7.4mm}　motor\_test.S}\\
+  \texttt{\$ make}\\
+  \texttt{h8300-elf-as -o beep.o beep.S}\\
+  \texttt{h8300-elf-as -o crt0.o crt0.S}\\
+  \texttt{h8300-elf-ld beep.o crt0.o -o beep.elf -Ttext 0x8000 -e\_start}\\
+  \texttt{h8300-elf-objcopy -O srec beep.elf beep.mot}\\
+  \texttt{\$ ls}\\
+  \texttt{Makefile\hspace{7.8mm}　beep.o\hspace{13.4mm} dloader/\hspace{13.5mm}motor\_test.S} \\
+  \texttt{beep.S\hspace{13.8mm} crt0.S\hspace{13.5mm} kadai4.mot*\hspace{6.3mm} reset.S}\\
+  \texttt{beep.elf*\hspace{8.2mm} crt0.o\hspace{13.7mm} lcd.S}\\
+\end{quote}
+
+また，RCXにデータをダウンロードする時間も含めて60秒以内の間に曲を流すことができた．2曲のダウンロードを開始してから演奏を終了するまでの時間は以下の表\ref{times}に示す．この時間は，ウェブページ上のストップウォッチ\cite{time}を物理的に利用して計測を行った．ただし，通信状況によりダウンロードの時間は誤差が生じる．\\
+
+
+\begin{table}[h]
+\begin{center} 
+  \caption{実行時間(秒)}
+  \begin{tabular}{c|c}
+    紅蓮の弓矢　&　天空のグリニッジ\\\hline 
+    56.10  & 53.15\\ 
+  \end{tabular}
+  \label{times}
+\end{center}
+\end{table}
+
+
+※1曲目の「紅蓮の弓矢」では，曲のクオリティを高めるため音と音の間に無音を挟む処理を省いた．
+
+
+
+
+%----　　終わり    ----%

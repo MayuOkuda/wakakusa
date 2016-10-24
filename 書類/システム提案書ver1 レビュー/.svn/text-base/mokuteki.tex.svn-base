@@ -1,0 +1,4 @@
+%---- ここから本文 ----%
+本実験課題では, Lego Mindstorms RCX\footnote{2009年末に販売終了}を用いて, 短い曲を流す. Lego Mindstorms RCXとは, レゴ社が開発したレゴブロックを基本に, モータやセンサー等の組み合わせの教育用商品セットのことである. ただし, 本実験で使用するのは, Lego Mindstoorms RCXとLego Mindstorms RCXとの物理的に接続を行う為のLego USB Towerのみ使用する. また, Lego Mindstorms RCXの開発ツールは使用しないため, プログラムの書き方によってはLego Mindstorms RCX内の回路を焼き切る可能性も出てくる為, 細心の注意を払う必要が出てくる. \\
+　本実験の目的は, Lego Mindstorms RCXより曲を流すこととmakeコマンドを引数なしで実行することでダウンロード用S-recordファイルが生成されるようなMakefileを作成する事である. 
+%----　　終わり    ----%

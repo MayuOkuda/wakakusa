@@ -1,0 +1,17 @@
+【データベースのテーブル】
+
+データベースには以下のテーブルがある。
+なお、アンダーラインは項目の主キーである。
+
+ (1)UserInfo
+　　UserID,UserName,Password,PasswordSalt,Email,CreateDate,LastLoginDate
+    ￣￣￣
+ (2)BookInfo
+    Code,Name,DepartmentID,Classification,Stock,Price
+    ￣￣
+ (3)ReservationInfo
+    ReservationID,UserID,Code,ReservationDate,ReceiptDate,Check
+    ￣￣￣￣￣￣￣
+ (4)SupplementHistory
+    Code,Name,Stock,Price,SupplementDate
+    ￣￣
