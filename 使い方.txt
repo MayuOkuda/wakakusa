@@ -13,4 +13,11 @@ git push
 もしよく分からない文章が出てきたらそれはviで描かれている（はず）なので
 :q で終了してあげてください
 
+*ディレクトリもしくはファイルの消し方
+
+git rm ファイル名
+（もしくはgit rm -r ファイル名）
+git commit -m "コメント入力"
+git push
+
 https://github.com/MayuOkuda/wakakusa
