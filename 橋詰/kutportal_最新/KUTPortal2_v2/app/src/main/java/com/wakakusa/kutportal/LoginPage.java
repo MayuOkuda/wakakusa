@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import android.content.Intent;
+
 public class LoginPage extends AppCompatActivity {
 
     //ユーザ名とパスワードを入力するための変数
@@ -20,6 +22,7 @@ public class LoginPage extends AppCompatActivity {
     static TextView jsontext;
     static String name;
     static String pass;
+    Intent intent = new Intent();
 
     private AsyncTask<String, Void, Object> mAsyncTask ;
     @Override
@@ -30,7 +33,7 @@ public class LoginPage extends AppCompatActivity {
         userName = (EditText)findViewById(R.id.userNameEdit);
         password = (EditText)findViewById(R.id.PasswordEdit);
         jsontext = (TextView)findViewById(R.id.jsontest);
-       // button = (Button)findViewById(R.id.loginButton);
+        // button = (Button)findViewById(R.id.loginButton);
 
     }
 
@@ -43,30 +46,36 @@ public class LoginPage extends AppCompatActivity {
 
     public void onClick(View view) {
         //URL,ユーザ名パスワードの設定
-        String url = "https://wakakusa.info.kochi-tech.ac.jp/js.php";
+        String url = "https://wakakusa.info.kochi-tech.ac.jp/test/main.php";
         name = userName.getText().toString();
         pass = password.getText().toString();
+        final DatabaseWriter dbw = new DatabaseWriter(this, "loginData");
+
 
         // 直前の非同期処理が終わってないこともあるのでキャンセルしておく
         if (mAsyncTask != null) mAsyncTask.cancel(true);
-            // UIスレッドで通信してはならないので、AsyncTaskによりワーカースレッドで通信する
-            mAsyncTask = new PrivateCertificateHttpsGet(this) {
-                @Override
-                protected void onPostExecute(Object result) {
-                    // UIスレッドで通信結果を処理する
-                    if (result instanceof Exception) {
-                        Exception e = (Exception) result;
-                        System.out.println("exception = " + e);
-                        Toast.makeText(LoginPage.this, "ユーザ名かパスワードが違います",Toast.LENGTH_LONG).show();
-                        // mMsgBox.append("\n例外発生\n" + e.toString());
-                    } else {
-                        byte[] data = (byte[]) result;
-                        Bitmap bmp = BitmapFactory.decodeByteArray(data, 0, data.length);
-                        Toast.makeText(LoginPage.this, "多分　　おkです。",Toast.LENGTH_LONG).show();
-
-
-                    }
+        // UIスレッドで通信してはならないので、AsyncTaskによりワーカースレッドで通信する
+        mAsyncTask = new PrivateCertificateHttpsGet(this) {
+            @Override
+            protected void onPostExecute(Object result) {
+                // UIスレッドで通信結果を処理する
+                if (result instanceof Exception) {
+                    Exception e = (Exception) result;
+                    System.out.println("exception = " + e);
+                    Toast.makeText(LoginPage.this, "ユーザ名かパスワードが違います",Toast.LENGTH_LONG).show();
+                    // mMsgBox.append("\n例外発生\n" + e.toString());
+                } else if(result !=null) {
+                    //byte[] data = (byte[]) result;
+                    //Bitmap bmp = BitmapFactory.decodeByteArray(data, 0, data.length);
+                    Toast.makeText(LoginPage.this, "ログインしました",Toast.LENGTH_LONG).show();
+                    intent.setClassName("com.wakakusa.kutportal","com.wakakusa.kutportal.TopPage");
+                    startActivity(intent);
+                    //dbw.LoginWrite("sessionID", result.toString());
                 }
-            }.execute(url);    // URLを渡して非同期処理を開始
+                else{
+                    Toast.makeText(LoginPage.this, "ユーザ名かパスワードが違います",Toast.LENGTH_LONG).show();
+                }
+            }
+        }.execute(url);    // URLを渡して非同期処理を開始
     }
 }
