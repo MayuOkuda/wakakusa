@@ -1,0 +1,44 @@
+apply plugin: 'com.android.application'
+
+//apply plugin: 'com.google.gms.google-services'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
+
+    defaultConfig {
+        applicationId "com.wakakusa.pushmessage"
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+
+
+// google play service
+    compile 'com.google.android.gms:play-services-base:10.0.1'
+    compile 'com.google.android.gms:play-services-gcm:10.0.1'
+    compile 'com.google.android.gms:play-services-analytics:10.0.1'
+
+    // ADD Firebase
+    compile 'com.google.firebase:firebase-core:10.0.1'
+    compile 'com.google.firebase:firebase-messaging:10.0.1'
+    compile 'com.google.firebase:firebase-crash:10.0.1'
+
+    compile 'com.android.support:appcompat-v7:25.0.1'
+    //compile 'com.google.firebase:firebase-analytics:9.0.0'
+   // compile 'com.android.support:multidex:1.0.1'
+}
+apply plugin: 'com.google.gms.google-services'
