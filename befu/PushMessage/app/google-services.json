@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "249973384977",
+    "firebase_url": "https://wakakusa-d286f.firebaseio.com",
+    "project_id": "wakakusa-d286f",
+    "storage_bucket": "wakakusa-d286f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:249973384977:android:d6be9c9dab098124",
+        "android_client_info": {
+          "package_name": "com.wakakusa.kutportal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "249973384977-uoi7d6avrvv6rbrt6bpvsjs7sgbvqsln.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADSjfeNEWHfbqu-7VHGkeKN2LKCdM0yCM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:249973384977:android:08abd06ccc79b255",
+        "android_client_info": {
+          "package_name": "com.wakakusa.pushmessage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "249973384977-uoi7d6avrvv6rbrt6bpvsjs7sgbvqsln.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADSjfeNEWHfbqu-7VHGkeKN2LKCdM0yCM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
