@@ -1,0 +1,56 @@
+
+student　　　　　　　　　 学生情報テーブル        
+( id        TEXT,      学籍番号
+  name      TEXT,      氏名
+  birth     TEXT,　　　　生年月日
+  adm       TEXT,      入学年月日
+  ug        TEXT,      学部等
+  dpm       TEXT,      学科
+  mjr       TEXT,      専攻
+  sub1      TEXT,　　　　副専攻１
+  sub2      TEXT,　　　　副専攻２
+  teacher   TEXT,　　　　主指導教員
+  address   TEXT,　　　　住所
+  mailaddress   TEXT)　　　メールアドレス
+
+
+course    　　　　　　　　履修科目テーブル
+( scode     TEXT,      科目コード
+  subject   TEXT,　　　　科目名称
+  daytime   TEXT,　　　　開講曜時
+  teacher   TEXT,　　　　担当教員（氏名）
+  period    TEXT,　　　　開講時期
+  room      TEXT,　　　　教室名称
+  sj        TEXT,      単位区分
+  sjclass   TEXT)　　　  単位数
+
+
+score    　　　　　　　　　成績テーブル
+( scode     TEXT,      科目コード
+  score     TEXT,　　　　成績
+  year      TEXT,　　　　開講年
+  period    TEXT   )　　開講時期
+
+
+test                   テスト日テーブル
+( scode     TEXT,　　　　科目コード
+  test1     TEXT,　　　　テスト日１
+  test2     TEXT  ) 　　テスト日２
+
+
+news		お知らせテーブル
+( newscode  TEXT,      お知らせコード
+  day       TEXT,      送信日
+  adduser   TEXT,      送信者
+  address   TEXT,　　　　送信者アドレス
+  title     TEXT,　　　　タイトル
+  content   TEXT,　　　　お知らせ内容
+  neclass   TEXT   )　　お知らせ区分
+
+
+loginData              ログインテーブル
+( sessionID Integer,   セッションID
+  time      Integer,   更新日時
+  ara       TEXT    )  自動認証機能
+
+
