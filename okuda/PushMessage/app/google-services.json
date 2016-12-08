@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "551608981414",
+    "firebase_url": "https://wakakusa-d9c68.firebaseio.com",
+    "project_id": "wakakusa-d9c68",
+    "storage_bucket": "wakakusa-d9c68.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:551608981414:android:08abd06ccc79b255",
+        "android_client_info": {
+          "package_name": "com.wakakusa.pushmessage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "551608981414-9vhkk3gh61n0opdm5s0e4odavu8jbb2b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeSmuwSPQVDHAGBnxGUsXnsjn-gvBTMVo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
