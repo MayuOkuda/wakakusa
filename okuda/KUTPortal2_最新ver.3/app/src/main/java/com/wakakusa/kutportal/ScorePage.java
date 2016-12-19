@@ -32,12 +32,6 @@ public class ScorePage extends BasePage{
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-
-
-
-
-
     }
 
 

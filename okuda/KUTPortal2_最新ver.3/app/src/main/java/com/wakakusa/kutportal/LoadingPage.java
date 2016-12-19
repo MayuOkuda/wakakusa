@@ -92,7 +92,7 @@ public class LoadingPage extends AppCompatActivity implements LoaderManager.Load
                     }
                 }
 
-                    textView.setText(dbReader[0].readDB(dbWriter[0].property, 0)); //データの入力
+                    textView.setText(dbReader[0].readDB(dbWriter[0].property,0)); //データの入力
 
 
             } catch (JSONException e) {

@@ -44,7 +44,7 @@ public class TopPage extends BasePage{
         String[] str = {"id"};
         TextView tex1 = (TextView) findViewById(R.id.au);
 
-        String s = rd.readDB(str,0);
+        String s = rd.readDB(str, 0);
         tex1.setText(s);
 
     }

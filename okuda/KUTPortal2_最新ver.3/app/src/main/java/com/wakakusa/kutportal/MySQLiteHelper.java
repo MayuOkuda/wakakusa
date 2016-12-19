@@ -98,10 +98,10 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
 class DatabaseWriter {
     //private SQLiteDatabase read;
-    private SQLiteDatabase write;
+    SQLiteDatabase write;
     static MySQLiteHelper helper = null;
-     String[] property;
-    private String Table_name;
+    String[] property;
+    String Table_name;
 
     final String[] tableName = {"student", "course","score", "test", "news"};
     final String[] student_property = {"id","name", "birth","ug","mjr","sub1","sub2","teacher","address","mailaddress"};
@@ -158,7 +158,6 @@ class DatabaseReader {
 
     //属性名、数
     public String readDB(String[] table, int n) {
-
         String num = null;
         if(n != 0) num = String.valueOf(n);
 
@@ -170,21 +169,20 @@ class DatabaseReader {
         //startManagingCursor(c);
         String str = "";
         while (c.moveToNext()) {
-            for(String i : table) str += c.getString(c.getColumnIndex(i))  + "\n";
-
+            for(String i : table)
+                str += c.getString(c.getColumnIndex(i)) + "\n";
         }
         c.close();
         return str;
 
     }
 
-    //table=取り出す属性　type=条件属性 param=条件内容
-    public String readDB2(String[] table, String type, String param) {
-        String where = type +"=?";
+    //table=取り出す属性　where=条件内容 param=条件内容
+    public String readDB2(String[] table, String where, String[] param) {
 
         //データの検索結果はCursor型で返される
         // queryメソッドの実行例
-        Cursor c =read.query(this.Table_name,table,where,new String[]{param},
+        Cursor c =read.query(this.Table_name,table,where,param,
                 null, null, null,null);
 
         //データベースのデータを読み取って表示する。
