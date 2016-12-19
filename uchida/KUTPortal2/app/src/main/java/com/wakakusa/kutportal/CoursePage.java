@@ -17,8 +17,11 @@ import android.view.MenuItem;
 import android.content.Intent;
 import android.widget.TabHost;
 import android.support.v4.content.ContextCompat;
+import android.widget.TextView;
 
 public class CoursePage extends BasePage {
+
+    static DatabaseReader rd;
 
         @Override
         protected void onCreate (Bundle savedInstanceState) {
@@ -42,6 +45,15 @@ public class CoursePage extends BasePage {
 
             NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
             navigationView.setNavigationItemSelectedListener(this);
+
+//            rd = new DatabaseReader(this, "student");
+//            String[] str = {"id"};
+//            TextView tex1 = (TextView) findViewById(R.id.time_a1);
+//
+//            String s = rd.readDB(str);
+//            tex1.setText(s);
+
+
         }
 
     protected void initTabs() {
@@ -87,6 +99,16 @@ public class CoursePage extends BasePage {
         } catch (RuntimeException e) {
             e.printStackTrace();
         }
+    }
+
+    public void Tab1(View view){
+
+            DatabaseReader rd = new DatabaseReader(this, "student");
+            String[] str = {"id"};
+            TextView tex1 = (TextView) findViewById(R.id.time_a1);
+
+            String s = rd.readDB(str);
+            tex1.setText(s);
     }
 
 }

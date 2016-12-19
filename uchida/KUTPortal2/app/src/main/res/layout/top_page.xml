@@ -21,7 +21,8 @@
         android:fitsSystemWindows="true"
         android:background="#888888"
         app:headerLayout="@layout/nav_header"
-        app:menu="@menu/page_drawer" />
+        app:menu="@menu/page_drawer"
+        app:itemTextColor="#FFFFFF"/>
 
 
 </android.support.v4.widget.DrawerLayout>

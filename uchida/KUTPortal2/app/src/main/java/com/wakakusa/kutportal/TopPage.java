@@ -46,7 +46,6 @@ public class TopPage extends BasePage{
 
         String s = rd.readDB(str);
         tex1.setText(s);
-
     }
     private void setViews() {
         TextView textview = (TextView) findViewById(R.id.firstclass);
