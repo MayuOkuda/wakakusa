@@ -36,6 +36,11 @@
                 android:id="@+id/setus_num"
                 android:layout_weight="0.05" />
 
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.12" />
+
             <TextView
                 android:text="Name"
                 android:textSize="22sp"
@@ -43,11 +48,6 @@
                 android:layout_height="match_parent"
                 android:id="@+id/setus_name"
                 android:layout_weight="0.96" />
-
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.12" />
 
         </LinearLayout>
 
@@ -126,7 +126,8 @@
                 android:id="@+id/checkBox2"
                 android:layout_below="@+id/textView8"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                android:checked="true" />
 
             <CheckBox
                 android:text="事務連絡"
@@ -135,16 +136,8 @@
                 android:id="@+id/checkBox3"
                 android:layout_below="@+id/checkBox2"
                 android:layout_alignLeft="@+id/checkBox2"
-                android:layout_alignStart="@+id/checkBox2" />
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/checkBox4"
-                android:layout_below="@+id/checkBox3"
-                android:layout_alignLeft="@+id/checkBox3"
-                android:layout_alignStart="@+id/checkBox3"
-                android:text="イベント" />
+                android:layout_alignStart="@+id/checkBox2"
+                android:checked="true" />
 
             <CheckBox
                 android:text="その他"
@@ -153,7 +146,18 @@
                 android:id="@+id/checkBox5"
                 android:layout_below="@+id/checkBox4"
                 android:layout_alignLeft="@+id/checkBox4"
-                android:layout_alignStart="@+id/checkBox4" />
+                android:layout_alignStart="@+id/checkBox4"
+                android:checked="true" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/checkBox4"
+                android:text="イベント"
+                android:layout_below="@+id/checkBox3"
+                android:layout_alignLeft="@+id/checkBox3"
+                android:layout_alignStart="@+id/checkBox3"
+                android:checked="true" />
         </RelativeLayout>
 
         <LinearLayout
