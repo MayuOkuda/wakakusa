@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/help1"
+        android:scaleType="fitCenter"
+        android:id="@+id/helpphoto"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="前へ"
+        android:id="@+id/help_previous"
+        android:background="@drawable/conf_background"
+        android:textSize="30dp"
+        android:width="100dp"
+        android:height="73dp"
+        android:onClick="b001"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="21dp"
+        android:layout_marginStart="21dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="閉じる"
+        android:id="@+id/help_close"
+        android:background="@drawable/conf_background"
+        android:textSize="30dp"
+        android:width="100dp"
+        android:height="73dp"
+        android:onClick="b002"
+
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/help_previous"
+        android:layout_toEndOf="@+id/help_previous"
+        android:layout_marginLeft="33dp"
+        android:layout_marginStart="33dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="次へ"
+        android:id="@+id/help_next"
+        android:background="@drawable/conf_background"
+        android:textSize="30dp"
+        android:width="100dp"
+        android:height="73dp"
+        android:onClick="b000"
+
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="22dp"
+        android:layout_marginEnd="22dp" />
+
+
+
+
+
+</RelativeLayout>
