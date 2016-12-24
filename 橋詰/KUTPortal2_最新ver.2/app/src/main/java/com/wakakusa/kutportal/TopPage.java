@@ -17,6 +17,8 @@ import android.content.Intent;
 import android.app.AlertDialog;//アラートダイアログ(ポップアップ表示)
 import android.widget.TextView;//アラートダイアログ用
 import android.widget.ImageView;//ポップアップ画像表示用
+import android.view.KeyEvent;
+import android.widget.ViewFlipper;
 
 public class TopPage extends BasePage{
 
@@ -44,10 +46,11 @@ public class TopPage extends BasePage{
         String[] str = {"id"};
         TextView tex1 = (TextView) findViewById(R.id.au);
 
-        String s = rd.readDB(str);
+        String s = rd.readDB(str,0);
         tex1.setText(s);
 
     }
+    Intent intent = new Intent();
     private void setViews() {
         TextView textview = (TextView) findViewById(R.id.firstclass);
         TextView textview2 = (TextView) findViewById(R.id.secondclass);
@@ -122,4 +125,18 @@ public class TopPage extends BasePage{
                     .show();
         }
     };
+/*
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        if(keyCode==KeyEvent.KEYCODE_BACK){
+
+
+
+
+            return true;
+        }
+        return false;
+    }
+    */
 }

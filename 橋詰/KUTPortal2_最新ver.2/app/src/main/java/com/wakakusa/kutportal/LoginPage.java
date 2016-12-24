@@ -17,6 +17,7 @@ import java.net.URI;
 
 public class LoginPage extends AppCompatActivity {
 
+
     //ユーザ名とパスワードを入力するための変数
     static EditText userName;
     static EditText password;
@@ -57,7 +58,8 @@ public class LoginPage extends AppCompatActivity {
         String url = "https://wakakusa.info.kochi-tech.ac.jp/test/main.php";
         name = userName.getText().toString();
         pass = password.getText().toString();
-        uri = new URI("https://wakakusa.info.kochi-tech.ac.jp/test/main.php");
+        uri = new URI("http://wakakusa.info.kochi-tech.ac.jp");
+
 
         // 直前の非同期処理が終わってないこともあるのでキャンセルしておく
         if (mAsyncTask != null) mAsyncTask.cancel(true);
@@ -68,15 +70,20 @@ public class LoginPage extends AppCompatActivity {
                     // UIスレッドで通信結果を処理する
                     if (result instanceof Exception) {
 
+                    }else if(result.equals("nochange")){
                         // mMsgBox.append("\n例外発生\n" + e.toString());
-                    } else {
+                        Toast.makeText(LoginPage.this, "自動ログインできませんでした。再度ログインし直してください。",Toast.LENGTH_LONG).show();
+                    }
+                    else {
                         //byte[] data = (byte[]) result;
                         //Bitmap bmp = BitmapFactory.decodeByteArray(data, 0, data.length);
                         Toast.makeText(LoginPage.this, "ログインしました",Toast.LENGTH_LONG).show();
                         intent.setClassName("com.wakakusa.kutportal","com.wakakusa.kutportal.TopPage");
                         startActivity(intent);
+
                     }
                 }
+
             }.execute(url);    // URLを渡して非同期処理を開始
     }
 }
