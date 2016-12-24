@@ -28,9 +28,8 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-
-            android:layout_height="47dp"
-           >
+            android:layout_weight="1"
+            android:layout_height="0dp">
 
 
             <TextView
@@ -45,7 +44,8 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="221dp">
+            android:layout_height="0dp"
+            android:layout_weight="4">
 
             <RelativeLayout
                 android:layout_height="match_parent"
@@ -600,7 +600,8 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="0dp"
+            android:layout_weight="4">
 
             <LinearLayout
                 android:orientation="vertical"
@@ -618,35 +619,55 @@
                 android:layout_weight="26"
                 >
 
-                <RelativeLayout
+                <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="0dp"
+                    android:layout_weight="2">
 
-                    <ImageButton
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="6">
+
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        app:srcCompat="@drawable/testbutton"
-                        android:scaleType="fitCenter"
-                        android:background="@drawable/im_button_bd"
-                        android:id="@+id/hometest"
-                        android:layout_centerVertical="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentEnd="true" />
+                        android:layout_height="match_parent">
 
-                    <TextView
-                        android:text="10"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textView11"
-                        android:textSize="60sp"
-                        android:textColor="@color/Black"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginBottom="44dp"
-                        android:layout_alignParentBottom="true"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true" />
-                </RelativeLayout>
+                        <ImageButton
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:srcCompat="@drawable/testbutton"
+                            android:scaleType="fitCenter"
+                            android:background="@drawable/im_button_bd"
+                            android:id="@+id/hometest"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true" />
+
+                        <TextView
+                            android:text="10"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/textView11"
+                            android:textSize="60sp"
+
+                            android:textColor="@color/Black"
+                            android:gravity="bottom" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2">
+
+                </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
@@ -669,16 +690,32 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="13"
+                    android:layout_weight="2"
+                    />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="3"
                     >
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="3dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:id="@+id/sp6"/>
 
                         <Button
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:text="お知らせ"
                             android:id="@+id/button2"
                             android:background="@drawable/news_background"
@@ -686,18 +723,11 @@
                             android:height="60dp"
                             android:textSize="25dp"
                             android:layout_weight="1"
-                            android:layout_alignParentBottom="true"
+                            android:layout_above="@+id/sp6"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentStart="true" />
+
                     </RelativeLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    >
 
                 </LinearLayout>
 
@@ -705,16 +735,24 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="13"
+                    android:layout_weight="3"
                     >
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="3dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:id="@+id/sp7"/>
+
                         <Button
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:text="設定"
                             android:id="@+id/button3"
                             android:background="@drawable/conf_background"
@@ -722,11 +760,20 @@
                             android:width="130dp"
                             android:height="60dp"
                             android:onClick="optionButton"
-                            android:layout_alignParentTop="true"
+                            android:layout_below="@+id/sp7"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentStart="true" />
                     </RelativeLayout>
                 </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    />
+
+
             </LinearLayout>
 
             <LinearLayout
