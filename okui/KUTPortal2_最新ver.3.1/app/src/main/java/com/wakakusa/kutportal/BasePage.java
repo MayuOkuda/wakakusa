@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 /**
  *
@@ -110,55 +111,81 @@ public class BasePage extends AppCompatActivity
         dialog.setView(layout);
 
 
-        Button button_next = (Button) layout.findViewById(R.id.help_next);
+        ImageButton button_next = (ImageButton) layout.findViewById(R.id.help_next);
         button_next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if (counter[0] == 0) {
-                    imageView2.setImageResource(R.drawable.help2);
+                    imageView2.setImageResource(R.drawable.home_help2);
                     counter[0] = 1;
                 } else if (counter[0] == 1) {
-                    imageView2.setImageResource(R.drawable.help3);
+                    imageView2.setImageResource(R.drawable.home_help3);
                     counter[0] = 2;
                 } else if (counter[0] == 2) {
-                    imageView2.setImageResource(R.drawable.help4);
+                    imageView2.setImageResource(R.drawable.home_help4);
                     counter[0] = 3;
                 } else if (counter[0] == 3) {
-                    imageView2.setImageResource(R.drawable.help5);
+                    imageView2.setImageResource(R.drawable.menu_help1);
                     counter[0] = 4;
                 } else if (counter[0] == 4) {
-                    imageView2.setImageResource(R.drawable.help6);
+                    imageView2.setImageResource(R.drawable.menu_help2);
                     counter[0] = 5;
                 } else if (counter[0] == 5) {
-                    imageView2.setImageResource(R.drawable.help7);
+                    imageView2.setImageResource(R.drawable.menu_help3);
                     counter[0] = 6;
+                } else if (counter[0] == 6) {
+                    imageView2.setImageResource(R.drawable.seiseki_help);
+                    counter[0] = 7;
+                } else if (counter[0] == 7){
+                    imageView2.setImageResource(R.drawable.risyu_help);
+                    counter[0] = 8;
+                } else if (counter[0] == 8){
+                    imageView2.setImageResource(R.drawable.info_help);
+                    counter[0] = 9;
+                } else if (counter[0] == 9){
+                    imageView2.setImageResource(R.drawable.setting_help);
+                    counter[0] = 10;
+
                 }
+
             }
 
 
         });
 
-        Button button_pre = (Button) layout.findViewById(R.id.help_previous);
+        ImageButton button_pre = (ImageButton) layout.findViewById(R.id.help_previous);
         button_pre.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
                 if (counter[0] == 1) {
-                    imageView2.setImageResource(R.drawable.help1);
+                    imageView2.setImageResource(R.drawable.home_help1);
                     counter[0] = 0;
                 } else if (counter[0] == 2) {
-                    imageView2.setImageResource(R.drawable.help2);
+                    imageView2.setImageResource(R.drawable.home_help2);
                     counter[0] = 1;
                 } else if (counter[0] == 3) {
-                    imageView2.setImageResource(R.drawable.help3);
+                    imageView2.setImageResource(R.drawable.home_help3);
                     counter[0] = 2;
                 } else if (counter[0] == 4) {
-                    imageView2.setImageResource(R.drawable.help4);
+                    imageView2.setImageResource(R.drawable.home_help4);
                     counter[0] = 3;
                 } else if (counter[0] == 5) {
-                    imageView2.setImageResource(R.drawable.help5);
+                    imageView2.setImageResource(R.drawable.menu_help1);
                     counter[0] = 4;
                 } else if (counter[0] == 6) {
-                    imageView2.setImageResource(R.drawable.help6);
+                    imageView2.setImageResource(R.drawable.menu_help2);
                     counter[0] = 5;
+                } else if (counter[0] == 7) {
+                    imageView2.setImageResource(R.drawable.menu_help3);
+                    counter[0] = 6;
+                } else if (counter[0] == 8){
+                    imageView2.setImageResource(R.drawable.seiseki_help);
+                    counter[0] = 7;
+                } else if (counter[0] == 9){
+                    imageView2.setImageResource(R.drawable.risyu_help);
+                    counter[0] = 8;
+                } else if (counter[0] == 10){
+                    imageView2.setImageResource(R.drawable.info_help);
+                    counter[0] = 9;
                 }
             }
         });

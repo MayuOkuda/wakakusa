@@ -648,6 +648,14 @@
                             android:layout_alignParentRight="true"
                             android:layout_alignParentEnd="true" />
 
+                        <Space
+                            android:layout_height="match_parent"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:id="@+id/sp8"
+                            android:layout_width="1dp" />
+
                         <TextView
                             android:text="10"
                             android:layout_width="match_parent"
@@ -656,7 +664,12 @@
                             android:textSize="60sp"
 
                             android:textColor="@color/Black"
-                            android:gravity="bottom" />
+                            android:gravity="bottom"
+                            android:layout_alignParentTop="true"
+                            android:layout_toRightOf="@+id/sp8"
+                            android:layout_toEndOf="@+id/sp8"
+                            android:layout_marginLeft="18dp"
+                            android:layout_marginStart="18dp" />
                     </RelativeLayout>
                 </LinearLayout>
 
@@ -718,7 +731,7 @@
                             android:layout_height="match_parent"
                             android:text="お知らせ"
                             android:id="@+id/button2"
-                            android:background="@drawable/news_background"
+                            android:background="@drawable/conf_background"
                             android:width="130dp"
                             android:height="60dp"
                             android:textSize="25dp"

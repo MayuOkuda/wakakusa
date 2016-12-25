@@ -2,71 +2,148 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/Help_bd">
 
 
-    <ImageView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/help1"
-        android:scaleType="fitCenter"
-        android:id="@+id/helpphoto"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_height="match_parent">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="前へ"
-        android:id="@+id/help_previous"
-        android:background="@drawable/conf_background"
-        android:textSize="30dp"
-        android:width="100dp"
-        android:height="73dp"
-        android:onClick="b001"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="21dp"
-        android:layout_marginStart="21dp" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="閉じる"
-        android:id="@+id/help_close"
-        android:background="@drawable/conf_background"
-        android:textSize="30dp"
-        android:width="100dp"
-        android:height="73dp"
-        android:onClick="b002"
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="×"
+                    android:id="@+id/help_close"
+                    android:background="@drawable/im_button_bd"
+                    android:textSize="30dp"
+                    android:width="100dp"
+                    android:height="73dp"
+                    android:onClick="b002"
 
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/help_previous"
-        android:layout_toEndOf="@+id/help_previous"
-        android:layout_marginLeft="33dp"
-        android:layout_marginStart="33dp" />
+                    android:layout_weight="1"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+            </LinearLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="次へ"
-        android:id="@+id/help_next"
-        android:background="@drawable/conf_background"
-        android:textSize="30dp"
-        android:width="100dp"
-        android:height="73dp"
-        android:onClick="b000"
-
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="22dp"
-        android:layout_marginEnd="22dp" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="10">
 
 
+            </LinearLayout>
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <Space
+                        android:layout_width="10dp"
+                        android:layout_height="fill_parent"
+                        android:layout_centerInParent="true"
+                        android:layout_alignParentRight="true"
+                        android:id="@+id/sp9"
+                        />
+
+                    <ImageButton
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        app:srcCompat="@drawable/leftbutton"
+                        android:id="@+id/help_previous"
+                        android:adjustViewBounds="false"
+                        android:background="@drawable/im_button_bd"
+                        android:scaleType="fitCenter"
+                        android:onClick="b001"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="9">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/home_help1"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/helpphoto"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <Space
+                        android:layout_width="10dp"
+                        android:layout_height="fill_parent"
+                        android:layout_centerInParent="true"
+                        android:layout_alignParentLeft="true"
+                        android:id="@+id/sp10"
+                        />
+
+                    <ImageButton
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        app:srcCompat="@drawable/rightbutton"
+                        android:id="@+id/help_next"
+                        android:background="@drawable/im_button_bd"
+                        android:scaleType="fitCenter"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:onClick="b000" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 
 </RelativeLayout>
