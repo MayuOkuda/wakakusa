@@ -19,7 +19,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     static final int DB_ver = 1;                //DBのバージョン
 
     //SQL文をString型に保持
-    static String DB_name = "wakakusa_ver4.db";
+    static String DB_name = "wakakusa_ver5.db";
 
     //テーブル作成のSQL文
     final String  userData = "CREATE TABLE student(" +
@@ -68,8 +68,8 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             "neclass   TEXT  )";
 
     final String loginData =    "CREATE TABLE loginData("+
-            "sessionID TEXT,"+
-            "time      TEXT,"+
+            "realtime  TEXT,"+
+            "limittime      TEXT,"+
             "ara       TEXT )";
 
     //コンストラクタ
@@ -103,12 +103,13 @@ class DatabaseWriter {
     String[] property;
     String Table_name;
 
-    final String[] tableName = {"student", "course","score", "test", "news"};
+    final String[] tableName = {"student", "course","score", "test", "news","loginData"};
     final String[] student_property = {"id","name", "birth","ug","mjr","sub1","sub2","teacher","address","mailaddress"};
     final String[] course_property = {"scode", "subject", "daytime","teacher","period","room","sj","sjclass"};
     final String[] score_property = {"scode","score","year","period"};
     final String[] test_property = {"scode","test1","test2"};
     final String[] news_property = {"newscode","day","adduser","address","title","content","neclass"};
+    final String[] time_property = {"realtime","limittime","ara"};
 
     //コンストラクタ
     public DatabaseWriter(Context context, String table) {
@@ -120,6 +121,7 @@ class DatabaseWriter {
         else if(Table_name.equals(tableName[2])) property = score_property;
         else if(Table_name.equals(tableName[3])) property = test_property;
         else if(Table_name.equals(tableName[4])) property = news_property;
+        else if(Table_name.equals(tableName[5])) property = time_property;
     }
 
     //データベースに入れる値を順番に入れる

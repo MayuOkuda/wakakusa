@@ -150,10 +150,13 @@ public class TopPage extends BasePage{
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd #E");
         TextView tex1 = (TextView) findViewById(R.id.day_text);
         String[] str = sdf.format(c.getTime()).split("#",0);
-        tex1.setText(str[0]+ " (" +map.get(str[1]) + "曜日)");
+        //曜日処理　　　day
+        String day = map.get(str[1]);
+        if(day == null) day = str[1];
+        tex1.setText(str[0]+ " (" + day + "曜日)");
         //時間割の表示
         Today today = todayDatabase(str[0]);
-        todayStudy(today, map.get(str[1]));
+        todayStudy(today, day);
         findViewById(R.id.lef_button).setVisibility(View.INVISIBLE);
         dayflag = 0;
 
@@ -172,9 +175,13 @@ public class TopPage extends BasePage{
             TextView tex1 = (TextView) findViewById(R.id.day_text);
             String[] str = sdf.format(c.getTime()).split("#",0);
             tex1.setText(str[0]+ " (" +map.get(str[1]) + "曜日)");
+            //曜日処理　　　day
+            String day = map.get(str[1]);
+            if(day == null) day = str[1];
+            tex1.setText(str[0]+ " (" + day + "曜日)");
             //時間割の表示
             Today today = todayDatabase(str[0]);
-            todayStudy(today, map.get(str[1]));
+            todayStudy(today, day);
             dayflag++;
             if(dayflag == 2) findViewById(R.id.ri_button).setVisibility(View.INVISIBLE);
         }
@@ -192,10 +199,15 @@ public class TopPage extends BasePage{
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd #E");
             TextView tex1 = (TextView) findViewById(R.id.day_text);
             String[] str = sdf.format(c.getTime()).split("#",0);
+            System.out.println(str[1]);
             tex1.setText(str[0]+ " (" +map.get(str[1]) + "曜日)");
+            //曜日処理　　　day
+            String day = map.get(str[1]);
+            if(day == null) day = str[1];
+            tex1.setText(str[0]+ " (" + day + "曜日)");
             //時間割の表示
             Today today = todayDatabase(str[0]);
-            todayStudy(today, map.get(str[1]));
+            todayStudy(today, day);
             dayflag--;
             if(dayflag == 0) findViewById(R.id.lef_button).setVisibility(View.INVISIBLE);
         }
@@ -354,12 +366,12 @@ public class TopPage extends BasePage{
     }
     //表示の初期化
     void textviewReset(){
-        textview.setText("　　　　　　　　　　");
+        textview.setText("　　　 　　　　　　　");
         textview2.setText("     ");
         textview3.setText("     ");
         textview4.setText("     ");
         textview5.setText("     ");
-        roomtext.setText("   ");
+        roomtext.setText("    ");
         roomtext2.setText("   ");
         roomtext3.setText("   ");
         roomtext4.setText("   ");
