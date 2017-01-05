@@ -9,4 +9,10 @@
     <color name="Orange">#FEF9E0</color><!--暖色-->
     <color name="Blue">#C0E3FE</color><!--青色-->
     <color name="LightGreen">#E0F4D6</color><!--薄緑色-->
+    <color name="Tabletop">#cedbad</color>
+    <color name="Tableline">#9cba5f</color>
+    <color name="Table1">#e1e9cd</color>
+    <color name="Table2">#eff3e5</color>
+    <color name="ButtonLine">#617338</color>
+
 </resources>
