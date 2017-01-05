@@ -3,7 +3,7 @@
     <color name="colorPrimary">#bbd347</color> <!--若草色-->
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="backcolor">#FFFFFF</color><!--表の背景色-->
+    <color name="backcolor">#ffffff</color><!--表の背景色-->
     <color name="head">#7FA87F</color><!--表のヘッダーの色-->
     <color name="Black">#000000</color><!--黒色-->
     <color name="Orange">#FEF9E0</color><!--暖色-->

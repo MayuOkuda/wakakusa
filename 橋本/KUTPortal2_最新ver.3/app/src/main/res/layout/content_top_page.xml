@@ -266,16 +266,16 @@
         android:textSize="40dp" />
 
 
-    <!--お知らせボタン-->
+
+
 
 
     <!--設定ボタン-->
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="設定"
-        android:id="@+id/button3"
+        android:id="@+id/optionbotton"
         android:background="@drawable/conf_background"
         android:textSize="30dp"
         android:width="130dp"
@@ -284,12 +284,12 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="74dp" />
-
+    <!--お知らせボタン-->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="お知らせ"
-        android:id="@+id/button2"
+        android:id="@+id/newsbotton"
         android:background="@drawable/news_background"
         android:width="130dp"
         android:height="73dp"

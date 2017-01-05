@@ -78,7 +78,7 @@ public class PushMessage extends AppCompatActivity {
         String title = data.get("title");
         String body = data.get("body");
         NotificationCompat.Builder notificationCompatBuilder = new NotificationCompat.Builder(this);
-        notificationCompatBuilder.setSmallIcon(R.mipmap.ic_launcher);
+        notificationCompatBuilder.setSmallIcon(R.mipmap.wakakusa);
         notificationCompatBuilder.setContentTitle((title != null) ? title : "");
         notificationCompatBuilder.setContentText((body != null) ? body : "");
         notificationCompatBuilder.setDefaults(Notification.DEFAULT_ALL);

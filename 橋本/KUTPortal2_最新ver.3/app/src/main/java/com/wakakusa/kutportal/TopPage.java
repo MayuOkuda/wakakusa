@@ -18,6 +18,7 @@ import android.app.AlertDialog;//アラートダイアログ(ポップアップ�
 import android.widget.TextView;//アラートダイアログ用
 import android.widget.ImageView;//ポップアップ画像表示用
 
+
 public class TopPage extends BasePage{
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,9 +45,8 @@ public class TopPage extends BasePage{
         String[] str = {"id"};
         TextView tex1 = (TextView) findViewById(R.id.au);
 
-        String s = rd.readDB(str);
+        String s = rd.readDB(str, 0);
         tex1.setText(s);
-
     }
     private void setViews() {
         TextView textview = (TextView) findViewById(R.id.firstclass);
@@ -55,12 +55,16 @@ public class TopPage extends BasePage{
         TextView textview4 = (TextView) findViewById(R.id.fourthclass);
         TextView textview5 = (TextView) findViewById(R.id.fifthclass);
         TextView textview6 = (TextView) findViewById(R.id.hometest);
+        TextView textview7 = (TextView) findViewById(R.id.newsbotton);
+        TextView textview8 = (TextView) findViewById(R.id.optionbotton);
         textview.setOnClickListener(onClick_textview);
         textview2.setOnClickListener(onClick_textview2);
         textview3.setOnClickListener(onClick_textview3);
         textview4.setOnClickListener(onClick_textview4);
         textview5.setOnClickListener(onClick_textview5);
         textview6.setOnClickListener(onClick_textview6);
+        textview7.setOnClickListener(onClick_textview7);
+        textview8.setOnClickListener(onClick_textview8);
     }
     private View.OnClickListener onClick_textview = new View.OnClickListener(){
         @Override
@@ -120,6 +124,22 @@ public class TopPage extends BasePage{
                     .setMessage("12/6" + "\n" + "　　 1. 文化としての戦略と戦術")
                     .setPositiveButton("OK", null)
                     .show();
+        }
+    };
+    private View.OnClickListener onClick_textview7 = new View.OnClickListener(){
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent();
+            intent.setClassName("com.wakakusa.kutportal", "com.wakakusa.kutportal.NewsPage");
+            startActivity(intent);
+        }
+    };
+    private View.OnClickListener onClick_textview8 = new View.OnClickListener(){
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent();
+            intent.setClassName("com.wakakusa.kutportal", "com.wakakusa.kutportal.OptionPage");
+            startActivity(intent);
         }
     };
 }

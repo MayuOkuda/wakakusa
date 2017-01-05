@@ -1,3 +1,4 @@
+
 package com.wakakusa.kutportal;
 
 import android.content.ContentValues;
@@ -19,7 +20,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     static final int DB_ver = 1;                //DBのバージョン
 
     //SQL文をString型に保持
-    static String DB_name = "wakakusa_ver4.db";
+    static String DB_name = "wakakusa_ver5.db";
 
     //テーブル作成のSQL文
     final String  userData = "CREATE TABLE student(" +
@@ -68,8 +69,8 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             "neclass   TEXT  )";
 
     final String loginData =    "CREATE TABLE loginData("+
-            "sessionID TEXT,"+
-            "time      TEXT,"+
+            "realtime  TEXT,"+
+            "limittime TEXT,"+
             "ara       TEXT )";
 
     //コンストラクタ
@@ -98,17 +99,18 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
 class DatabaseWriter {
     //private SQLiteDatabase read;
-    private SQLiteDatabase write;
+    SQLiteDatabase write;
     static MySQLiteHelper helper = null;
-     String[] property;
-    private String Table_name;
+    String[] property;
+    String Table_name;
 
-    final String[] tableName = {"student", "course","score", "test", "news"};
+    final String[] tableName = {"student", "course","score", "test", "news","loginData"};
     final String[] student_property = {"id","name", "birth","ug","mjr","sub1","sub2","teacher","address","mailaddress"};
     final String[] course_property = {"scode", "subject", "daytime","teacher","period","room","sj","sjclass"};
     final String[] score_property = {"scode","score","year","period"};
     final String[] test_property = {"scode","test1","test2"};
     final String[] news_property = {"newscode","day","adduser","address","title","content","neclass"};
+    final String[] time_property = {"realtime","limittime","ara"};
 
     //コンストラクタ
     public DatabaseWriter(Context context, String table) {
@@ -120,6 +122,7 @@ class DatabaseWriter {
         else if(Table_name.equals(tableName[2])) property = score_property;
         else if(Table_name.equals(tableName[3])) property = test_property;
         else if(Table_name.equals(tableName[4])) property = news_property;
+        else if(Table_name.equals(tableName[5])) property = time_property;
     }
 
     //データベースに入れる値を順番に入れる
@@ -136,7 +139,7 @@ class DatabaseWriter {
     }
 
     //str1属性がold_wordの時、その場所のstr2属性値をnew_wordに書き換える
-    public void update(String str1, String str2, String old_word, String new_word) {
+    public void update(String str1, String old_word, String str2, String new_word) {
         ContentValues updateValues = new ContentValues();
         updateValues.put(str2, new_word);
         write.update(this.Table_name, updateValues, str1 + "=?", new String[]{old_word});
@@ -155,21 +158,46 @@ class DatabaseReader {
         helper = new MySQLiteHelper(context);
         read = helper.getWritableDatabase();
     }
-    public String readDB(String[] table) {
+
+    //属性名、数
+    public String readDB(String[] table, int n) {
+        String num = null;
+        if(n != 0) num = String.valueOf(n);
+
         //データの検索結果はCursor型で返される
         // queryメソッドの実行例
         Cursor c = read.query(this.Table_name, table, null,
-                null, null, null, null);
+                null, null, null, num);
         //データベースのデータを読み取って表示する。
         //startManagingCursor(c);
+        String str = "";
+        while (c.moveToNext()) {
+            for(String i : table)
+                str += c.getString(c.getColumnIndex(i)) + "\n";
+        }
+        c.close();
+        return str;
+
+    }
+
+    //table=取り出す属性　where=条件内容 param=条件内容
+    public String readDB2(String[] table, String where, String[] param) {
+
+        //データの検索結果はCursor型で返される
+        // queryメソッドの実行例
+        Cursor c =read.query(this.Table_name,table,where,param,
+                null, null, null,null);
+
+        //データベースのデータを読み取って表示する。
+        //startManagingCursor(c);
+
         String str = "";
         while (c.moveToNext()) {
             for(String i : table) str += c.getString(c.getColumnIndex(i))  + "\n";
 
         }
-
+        c.close();
         return str;
     }
-
 
 }
