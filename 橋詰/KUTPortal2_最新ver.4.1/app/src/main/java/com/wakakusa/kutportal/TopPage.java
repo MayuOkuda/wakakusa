@@ -145,18 +145,7 @@ public class TopPage extends BasePage{
         score_db_R = new DatabaseReader(this, "score");
 
 
-        //日付けの表示
-        //フォーマットパターンを指定して表示する
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd #E");
-        TextView tex1 = (TextView) findViewById(R.id.day_text);
-        String[] str = sdf.format(c.getTime()).split("#",0);
-        //曜日処理　　　day
-        String day = map.get(str[1]);
-        if(day == null) day = str[1];
-        tex1.setText(str[0]+ " (" + day + "曜日)");
-        //時間割の表示
-        Today today = todayDatabase(str[0]);
-        todayStudy(today, day);
+       threedays("center");
         findViewById(R.id.lef_button).setVisibility(View.INVISIBLE);
         dayflag = 0;
 
@@ -170,18 +159,7 @@ public class TopPage extends BasePage{
             if(dayflag == 0) findViewById(R.id.lef_button).setVisibility(View.VISIBLE);
             // 日を指定
             c.add(c.DAY_OF_MONTH, 1);
-            //フォーマットパターンを指定して表示する
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd #E");
-            TextView tex1 = (TextView) findViewById(R.id.day_text);
-            String[] str = sdf.format(c.getTime()).split("#",0);
-            tex1.setText(str[0]+ " (" +map.get(str[1]) + "曜日)");
-            //曜日処理　　　day
-            String day = map.get(str[1]);
-            if(day == null) day = str[1];
-            tex1.setText(str[0]+ " (" + day + "曜日)");
-            //時間割の表示
-            Today today = todayDatabase(str[0]);
-            todayStudy(today, day);
+            threedays("right");
             dayflag++;
             if(dayflag == 2) findViewById(R.id.ri_button).setVisibility(View.INVISIBLE);
         }
@@ -195,25 +173,36 @@ public class TopPage extends BasePage{
             if(dayflag == 2) findViewById(R.id.ri_button).setVisibility(View.VISIBLE);
             // 日を指定
             c.add(c.DAY_OF_MONTH, -1);
-            //フォーマットパターンを指定して表示する
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd #E");
-            TextView tex1 = (TextView) findViewById(R.id.day_text);
-            String[] str = sdf.format(c.getTime()).split("#",0);
-            System.out.println(str[1]);
-            tex1.setText(str[0]+ " (" +map.get(str[1]) + "曜日)");
-            //曜日処理　　　day
-            String day = map.get(str[1]);
-            if(day == null) day = str[1];
-            tex1.setText(str[0]+ " (" + day + "曜日)");
-            //時間割の表示
-            Today today = todayDatabase(str[0]);
-            todayStudy(today, day);
+            threedays("left");
             dayflag--;
             if(dayflag == 0) findViewById(R.id.lef_button).setVisibility(View.INVISIBLE);
         }
     }
 
-    //設定ボタンの処理
+    //日付表示
+    void threedays(String dist){
+        //フォーマットパターンを指定して表示する
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd #E");
+        TextView tex1 = (TextView) findViewById(R.id.day_text);
+        String[] str = sdf.format(c.getTime()).split("#",0);
+        System.out.println(str[1]);
+        tex1.setText(str[0]+ " (" +map.get(str[1]) + "曜日)");
+        //曜日処理　　　day
+        String day = map.get(str[1]);
+        if(day == null) day = str[1];
+        if(day.equals("日")){
+            if(dist.equals("left"))c.add(c.DAY_OF_MONTH, -1);
+            else  c.add(c.DAY_OF_MONTH, 1);
+            threedays(null);
+        }else {
+            tex1.setText(str[0] + " (" + day + "曜日)");
+            //時間割の表示
+            Today today = todayDatabase(str[0]);
+            todayStudy(today, day);
+        }
+    }
+
+    //設定ボタン
     public void optionButton(View view){
         Intent intent = new Intent();
         intent.setClassName("com.wakakusa.kutportal", "com.wakakusa.kutportal.OptionPage");
@@ -352,7 +341,7 @@ public class TopPage extends BasePage{
                     }
                     else if(time.substring(1,2).equals("4")){
                         textview4.setText(t.subject);
-                        roomtext4.setText(t.subject);
+                        roomtext4.setText(t.room);
                     }
                     else if(time.substring(1,2).equals("5")){
                         textview5.setText(t.subject);
