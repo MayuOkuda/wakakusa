@@ -114,7 +114,6 @@ class FcmTestFirebaseInstanceIdService extends FirebaseInstanceIdService {
 
         // InstanceIDトークンを取得
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
-
         Log.i(TAG, "Refreshed token: " + refreshedToken);
     }
 

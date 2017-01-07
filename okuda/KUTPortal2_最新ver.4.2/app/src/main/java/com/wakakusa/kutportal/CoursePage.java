@@ -22,10 +22,6 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.widget.TextView;
-
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 public class CoursePage extends BasePage
         implements ViewPager.OnPageChangeListener {
@@ -50,13 +46,6 @@ public class CoursePage extends BasePage
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-        //年度表示
-        Calendar c = Calendar.getInstance();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
-        TextView tex1 = (TextView) findViewById(R.id.yeartext);
-        String str = sdf.format(c.getTime());
-        tex1.setText(str);
     }
 
     protected void initTabs() {
@@ -124,5 +113,55 @@ public class CoursePage extends BasePage
 
     }
 
+        /*
+        try {
+            TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
+            tabHost.setup();
+            TabHost.TabSpec spec;
+            Intent intent;
+            //1Q
+            intent = new Intent().setClassName(this, "activity_tab1.class");
+            spec = tabHost.newTabSpec("Tab1")
+                    .setIndicator("1Q")
+                    .setContent(intent);
+            //.setContent(intent);
+            tabHost.addTab(spec);
 
+            //2Q
+            intent = new Intent().setClassName(this, "activity_tab2.class");
+            spec = tabHost.newTabSpec("Tab2")
+                    .setIndicator("2Q")
+                    .setContent(intent);
+            tabHost.addTab(spec);
+
+            // 3Q
+            intent = new Intent().setClassName(this, "activity_tab3.class");
+            spec = tabHost.newTabSpec("Tab3")
+                    .setIndicator("3Q")
+                    .setContent(intent);
+            tabHost.addTab(spec);
+
+            //4Q
+            intent = new Intent().setClassName(this, "activity_tab4.class");
+            spec = tabHost.newTabSpec("Tab4")
+                    .setIndicator("4Q")
+                    .setContent(intent);
+            tabHost.addTab(spec);
+
+            //集中
+            intent = new Intent().setClassName(this, "activity_tab5.class");
+            spec = tabHost.newTabSpec("Tab5")
+                    .setIndicator("集中")
+                    .setContent(intent);
+            tabHost.addTab(spec);
+
+
+            tabHost.setCurrentTab(0);
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        }
+    }
+    */
 }
