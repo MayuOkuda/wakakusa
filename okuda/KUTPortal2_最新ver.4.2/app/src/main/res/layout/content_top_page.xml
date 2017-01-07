@@ -646,7 +646,8 @@
                             android:id="@+id/hometest"
                             android:layout_centerVertical="true"
                             android:layout_alignParentRight="true"
-                            android:layout_alignParentEnd="true" />
+                            android:layout_alignParentEnd="true"
+                            android:onClick="testButton" />
 
                         <Space
                             android:layout_height="match_parent"

@@ -209,6 +209,13 @@ public class TopPage extends BasePage{
         startActivity(intent);
     }
 
+    //設定ボタン
+    public void testButton(View view){
+        Intent intent = new Intent();
+        intent.setClassName("com.wakakusa.kutportal", "com.wakakusa.kutportal.TestCount");
+        startActivity(intent);
+    }
+
 
 
     private void setViews() {
