@@ -1,15 +1,11 @@
+
+
 package com.wakakusa.kutportal;
 
 import android.content.ContentValues;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.os.SystemClock;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -30,7 +26,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TopPage extends BasePage{
+public class TopPage extends BasePage {
 
     static int dayflag = 0;
     static DatabaseReader course_db_R;
@@ -52,6 +48,8 @@ public class TopPage extends BasePage{
     //TextView textview6 = (TextView) findViewById(R.id.hometest);
     //現在日時を取得する
     Calendar c = Calendar.getInstance();
+
+
     Map<String, String> map = new HashMap<String, String>() {
         {   put("Sun","日");
             put("Mon","月");
@@ -132,7 +130,7 @@ public class TopPage extends BasePage{
         dbWriter.write.insert(dbWriter.Table_name,null, cvalue);
 
 
-//データベース書き込み処理
+    //データベース書き込み処理
         DatabaseWriter dbWriter2 = new DatabaseWriter(this, "score");
 
         ContentValues cvalue2 = new ContentValues();
@@ -144,8 +142,8 @@ public class TopPage extends BasePage{
         course_db_R = new DatabaseReader(this,"course");
         score_db_R = new DatabaseReader(this, "score");
 
-
-       threedays("center");
+        //今日の時間割
+        threedays("center");
         findViewById(R.id.lef_button).setVisibility(View.INVISIBLE);
         dayflag = 0;
 
@@ -185,7 +183,6 @@ public class TopPage extends BasePage{
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd #E");
         TextView tex1 = (TextView) findViewById(R.id.day_text);
         String[] str = sdf.format(c.getTime()).split("#",0);
-        System.out.println(str[1]);
         tex1.setText(str[0]+ " (" +map.get(str[1]) + "曜日)");
         //曜日処理　　　day
         String day = map.get(str[1]);
@@ -379,36 +376,37 @@ public class TopPage extends BasePage{
 
 }
 
-class Today{
+class Today {
     String scode;
     String subject;
     String room;
     String[] daytime;
     Today next;
 
-    Today(){
+    Today() {
     }
 
-    Today(String[] str1, String[] str2){
+    Today(String[] str1, String[] str2) {
         Today koko = this;
 
-        for(int i = 0; i + 4 <= str1.length ; i +=4){
-            if(mawasu(str1[i],str2)) continue;
+        for (int i = 0; i + 4 <= str1.length; i += 4) {
+            if (mawasu(str1[i], str2)) continue;
             koko.scode = str1[i];
-            koko.subject = str1[i+1];
-            koko.room = str1[i+2];
-            koko.daytime = str1[i+3].split("、",0);
+            koko.subject = str1[i + 1];
+            koko.room = str1[i + 2];
+            koko.daytime = str1[i + 3].split("、", 0);
             koko.next = new Today();
             koko = koko.next;
         }
 
     }
-    boolean mawasu(String s, String[] str){
+
+    boolean mawasu(String s, String[] str) {
 
         boolean flag = true;
 
-        for(String i : str)
-            if(s.equals(i)) flag = false;
+        for (String i : str)
+            if (s.equals(i)) flag = false;
 
         return flag;
     }

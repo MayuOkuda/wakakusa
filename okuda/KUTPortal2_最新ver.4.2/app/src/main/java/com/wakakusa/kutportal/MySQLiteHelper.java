@@ -95,7 +95,6 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
 }
 
-
 class DatabaseWriter {
     //private SQLiteDatabase read;
     SQLiteDatabase write;

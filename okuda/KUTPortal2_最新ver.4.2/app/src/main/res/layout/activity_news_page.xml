@@ -9,9 +9,10 @@
     tools:openDrawer="start">
 
     <include
-        layout="@layout/app_bar_user_page"
+        layout="@layout/app_bar_news_page"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
@@ -23,5 +24,6 @@
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/page_drawer"
         app:itemTextColor="#FFFFFF"/>
+
 
 </android.support.v4.widget.DrawerLayout>

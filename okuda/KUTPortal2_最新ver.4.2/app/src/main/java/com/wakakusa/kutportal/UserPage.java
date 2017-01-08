@@ -18,7 +18,8 @@ import android.widget.TextView;
 public class UserPage extends BasePage {
 
     final String[] student_property = {"id","name", "birth","ug","mjr","sub1","sub2","teacher","address","mailaddress"};
-    //final int[] id_box = {R.id.setus_num, R.id.setus_name, R.id.,};
+    final int[] id_box = {R.id.userinfo1, R.id.userinfo2, R.id.userinfo3,R.id.userinfo4,R.id.userinfo5
+                                ,R.id.userinfo6,R.id.userinfo7,R.id.userinfo8,R.id.userinfo9,R.id.userinfo10,};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,15 +42,17 @@ public class UserPage extends BasePage {
 
     //データベースからユーザ情報を記述するためのメソッド
     void userinfo(){
-        DatabaseWriter w_db = new DatabaseWriter(this,"student");
-        ContentValues cvalue = new ContentValues();
-        cvalue.put("id","1180XXX");
-        w_db.write.insert(w_db.Table_name,null, cvalue);
 
-
+        //学籍番号と名前の表示
         DatabaseReader r_db = new DatabaseReader(this, "student");
-        String s = r_db.readDB(student_property, 0);
-        TextView tex1 = (TextView) findViewById(1);
+        String[] s = r_db.readDB(student_property, 0).split("\n",0);
+        int num = 0;
+        for(int i : id_box){
+            TextView tex1 = (TextView) findViewById(i);
+            if(s[num].equals("null"))tex1.setText("　　");
+            else tex1.setText(" " + s[num]);
+            num++;
+        }
 
     }
 

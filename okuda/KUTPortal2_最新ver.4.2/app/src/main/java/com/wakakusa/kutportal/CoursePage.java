@@ -22,9 +22,19 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.widget.TextView;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class CoursePage extends BasePage
         implements ViewPager.OnPageChangeListener {
+
+    Calendar c = Calendar.getInstance();
+
+    //detabase
+    static DatabaseReader r_db;
+    static String nemui;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +56,17 @@ public class CoursePage extends BasePage
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        r_db = new DatabaseReader(this,"course");
+
+        //年度表示
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
+        String str = sdf.format(c.getTime());
+        TextView year = (TextView) findViewById(R.id.course_year);
+        year.setText(str);
+
+        couse_appearance("1Q");
+
     }
 
     protected void initTabs() {
@@ -100,16 +121,26 @@ public class CoursePage extends BasePage
 
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
     }
 
     @Override
     public void onPageSelected(int position) {
+        TextView text = (TextView) findViewById(R.id.time_a1);
+        text.setText(nemui);
 
     }
 
     @Override
     public void onPageScrollStateChanged(int state) {
+
+    }
+
+    //クオータを入れると表示
+    static void couse_appearance(String Q){
+        String[] str2 = {"scode", "subject", "daytime"};
+        //属性名３が値３の属性１と属性２のデータを取ってくる。
+        nemui = r_db.readDB2(str2, "period =?", new String[]{Q});
+
 
     }
 

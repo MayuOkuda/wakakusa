@@ -25,6 +25,7 @@ public class activity_tab5 extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         int page = getArguments().getInt("page", 0);
         View view = inflater.inflate(R.layout.activity_tab5, container, false);
+        CoursePage.couse_appearance("集中");
         return view;
     }
 }

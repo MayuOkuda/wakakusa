@@ -1,11 +1,14 @@
 package com.wakakusa.kutportal;
 
+import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.LayoutInflater;
+
+
 
 public class activity_tab1 extends Fragment{
 
@@ -25,6 +28,7 @@ public class activity_tab1 extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         int page = getArguments().getInt("page", 0);
         View view = inflater.inflate(R.layout.activity_tab1, container, false);
+        CoursePage.couse_appearance("1Q");
         return view;
     }
 }

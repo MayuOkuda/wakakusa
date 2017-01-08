@@ -24,6 +24,7 @@ public class activity_tab3 extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         int page = getArguments().getInt("page", 0);
         View view = inflater.inflate(R.layout.activity_tab3, container, false);
+        CoursePage.couse_appearance("3Q");
         return view;
     }
 }
