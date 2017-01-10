@@ -27,7 +27,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/spinner"
-                    android:entries="@array/tag"
+
                     android:layout_gravity="center"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
