@@ -175,6 +175,10 @@ public class TopPage extends BasePage {
         course_db_R = new DatabaseReader(this,"course");
         score_db_R = new DatabaseReader(this, "score");
 
+        String[] str1 = {"score.year"};
+        //属性名３が値３の属性１と属性２のデータを取ってくる。
+        String scode = score_db_R.readDB3(new String[]{"sjclass"}, "score.scode = course.scode AND score.year!=?", new String[]{"2017"},"score, course");
+        System.out.println("scode="+scode);
 
         //今日の時間割
         threedays("center");
@@ -319,7 +323,7 @@ public class TopPage extends BasePage {
         //回す
         while (t.scode != null) {
             for (String time : t.daytime) {
-                    System.out.println("t="+time);
+
                 if (time.substring(0,1).equals(E)) {
                     if(time.substring(1,2).equals("1")){
                         pop[0] = t;
