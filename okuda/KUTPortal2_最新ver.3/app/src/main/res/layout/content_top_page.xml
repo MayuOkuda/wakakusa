@@ -13,291 +13,677 @@
     tools:showIn="@layout/app_bar_topage">
 
     <!--日付表示-->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:id="@+id/au" />
     <!--時間割表示テーブル設定-->
-    <TableLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tableLayout"
-        android:layout_below="@+id/textView2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="20dp"
-        android:background="#000000">
-        <!--間隔をあける
-        android:layout_marginLeft="61dp"
-        android:layout_marginStart="61dp"
-        android:layout_marginTop="45dp" -->
-
-        <!--目次の行-->
-        <TableRow android:layout_height="match_parent"
-            android:layout_width="match_parent">
-            <TextView android:layout_gravity="center_vertical"
-                android:layout_marginLeft="@dimen/ground_line"
-                android:layout_marginRight="@dimen/line"
-                android:layout_marginTop="@dimen/ground_line"
-                android:layout_marginBottom="@dimen/line"
-                android:width="30dp"
-                android:height="@dimen/hed_Hsize"
-                android:textSize="18sp"
-                android:gravity="center_vertical|center_horizontal"
-                android:background="@color/head"
-                android:layout_width="match_parent" />
-            <TextView android:text="@string/head1"
-                android:layout_marginRight="@dimen/line"
-                android:layout_marginTop="@dimen/ground_line"
-                android:layout_marginBottom="@dimen/line"
-                android:layout_width="match_parent"
-                android:layout_gravity="center_vertical"
-                android:width="120dp"
-                android:height="@dimen/hed_Hsize"
-                android:textSize="17sp"
-                android:gravity="center_vertical|center_horizontal"
-                android:background="@color/head" />
-            <TextView android:text="@string/head2"
-                android:layout_marginRight="@dimen/line"
-                android:layout_marginTop="@dimen/ground_line"
-                android:layout_marginBottom="@dimen/line"
-                android:layout_gravity="center_vertical"
-                android:height="@dimen/hed_Hsize"
-                android:textSize="17sp"
-                android:gravity="center_vertical|center_horizontal"
-                android:background="@color/head"
-                android:width="172dp"
-                android:layout_width="match_parent" />
-            <TextView android:text="@string/head3"
-                android:layout_marginRight="@dimen/ground_line"
-                android:layout_marginTop="@dimen/ground_line"
-                android:layout_marginBottom="@dimen/line"
-                android:layout_gravity="center_vertical"
-                android:height="@dimen/hed_Hsize"
-                android:textSize="17sp"
-                android:gravity="center_vertical|center_horizontal"
-                android:width="50dp"
-                android:background="@color/head"
-                android:layout_width="match_parent" />
-        </TableRow>
-
-        <!--`1行目-->
-        <TableRow android:layout_height="match_parent"
-            android:layout_width="match_parent">
-            <TextView android:text="@string/num1"
-                android:layout_marginLeft="@dimen/ground_line"
-                android:layout_marginRight="@dimen/line"
-                android:layout_marginBottom="@dimen/line"
-                android:gravity="center_vertical|center_horizontal"
-                android:background="@color/backcolor"
-                android:height="@dimen/row_Hsize" />
-            <TextView android:hint="@string/time1"
-                android:layout_marginRight="@dimen/line"
-                android:layout_marginBottom="@dimen/line"
-                android:gravity="center_vertical|center_horizontal"
-                android:background="@color/backcolor"
-                android:height="@dimen/row_Hsize" />
-            <TextView android:text="文化としての戦略と戦術"
-                android:id="@+id/firstclass"
-                android:layout_marginRight="@dimen/line"
-                android:layout_marginBottom="@dimen/line"
-                android:gravity="center_vertical|center_horizontal"
-                android:background="@color/backcolor"
-                android:height="@dimen/row_Hsize"
-                android:width="172dp"
-                android:layout_height="match_parent" />
-            <TextView android:text="row1"
-                android:layout_marginRight="@dimen/ground_line"
-                android:layout_marginBottom="@dimen/line"
-                android:gravity="center_vertical|center_horizontal"
-                android:background="@color/backcolor"
-                android:height="@dimen/row_Hsize" />
-        </TableRow>
-
-        <!--2行目-->
-        <TableRow >
-            <TextView android:text="@string/num2"
-                android:layout_marginLeft="@dimen/ground_line"
-                android:layout_marginRight="@dimen/line"
-                android:layout_marginBottom="@dimen/line"
-                android:gravity="center_vertical|center_horizontal"
-                android:background="@color/backcolor"
-                android:height="@dimen/row_Hsize" />
-            <TextView android:text="@string/time2"
-                android:layout_marginRight="@dimen/line"
-                android:layout_marginBottom="@dimen/line"
-                android:gravity="center_vertical|center_horizontal"
-                android:background="@color/backcolor"
-                android:height="@dimen/row_Hsize" />
-            <TextView android:text="コンパイラ"
-                android:id="@+id/secondclass"
-                android:layout_marginRight="@dimen/line"
-                android:layout_marginBottom="@dimen/line"
-                android:gravity="center_vertical|center_horizontal"
-                android:background="@color/backcolor"
-                android:height="@dimen/row_Hsize"
-                android:width="172dp"
-                android:layout_height="match_parent"
-                android:layout_width="match_parent" />
-            <TextView android:text="row1"
-                android:layout_marginRight="@dimen/ground_line"
-                android:layout_marginBottom="@dimen/line"
-                android:gravity="center_vertical|center_horizontal"
-                android:background="@color/backcolor"
-                android:height="@dimen/row_Hsize" />
-        </TableRow>
-
-        <!--3行目-->
-        <TableRow android:layout_height="match_parent"
-            android:layout_width="match_parent">
-            <TextView android:text="@string/num3"
-                android:layout_marginLeft="@dimen/ground_line"
-                android:layout_marginRight="@dimen/line"
-                android:layout_marginBottom="@dimen/line"
-                android:gravity="center_vertical|center_horizontal"
-                android:background="@color/backcolor"
-                android:height="@dimen/row_Hsize" />
-            <TextView android:text="@string/time3"
-                android:layout_marginRight="@dimen/line"
-                android:layout_marginBottom="@dimen/line"
-                android:gravity="center_vertical|center_horizontal"
-                android:background="@color/backcolor"
-                android:height="@dimen/row_Hsize" />
-            <TextView android:text="データベース"
-                android:id="@+id/thirdclass"
-                android:layout_marginRight="@dimen/line"
-                android:layout_marginBottom="@dimen/line"
-                android:gravity="center_vertical|center_horizontal"
-                android:background="@color/backcolor"
-                android:height="@dimen/row_Hsize"
-                android:width="172dp"
-                android:layout_height="match_parent"
-                android:layout_width="match_parent" />
-            <TextView android:text="row1"
-                android:layout_marginRight="@dimen/ground_line"
-                android:layout_marginBottom="@dimen/line"
-                android:gravity="center_vertical|center_horizontal"
-                android:background="@color/backcolor"
-                android:height="@dimen/row_Hsize" />
-        </TableRow>
-
-        <!--4行目-->
-        <TableRow >
-            <TextView android:text="@string/num4"
-                android:layout_marginLeft="@dimen/ground_line"
-                android:layout_marginRight="@dimen/line"
-                android:layout_marginBottom="@dimen/line"
-                android:gravity="center_vertical|center_horizontal"
-                android:background="@color/backcolor"
-                android:height="@dimen/row_Hsize" />
-            <TextView android:text="@string/time4"
-                android:layout_marginRight="@dimen/line"
-                android:layout_marginBottom="@dimen/line"
-                android:gravity="center_vertical|center_horizontal"
-                android:background="@color/backcolor"
-                android:height="@dimen/row_Hsize" />
-            <TextView android:text="コンピュータグラフィックス"
-                android:id="@+id/fourthclass"
-                android:layout_marginRight="@dimen/line"
-                android:layout_marginBottom="@dimen/line"
-                android:gravity="center_vertical|center_horizontal"
-                android:background="@color/backcolor"
-                android:height="@dimen/row_Hsize"
-                android:width="172dp"
-                android:layout_height="match_parent"
-                android:layout_width="match_parent" />
-            <TextView android:text="row1"
-                android:layout_marginRight="@dimen/ground_line"
-                android:layout_marginBottom="@dimen/line"
-                android:gravity="center_vertical|center_horizontal"
-                android:background="@color/backcolor"
-                android:height="@dimen/row_Hsize" />
-        </TableRow>
-        <!--５行目-->
-        <TableRow>
-            <TextView android:text="@string/num5"
-                android:layout_marginLeft="@dimen/ground_line"
-                android:layout_marginRight="@dimen/line"
-                android:layout_marginBottom="@dimen/ground_line"
-                android:gravity="center_vertical|center_horizontal"
-                android:background="@color/backcolor"
-                android:height="@dimen/row_Hsize" />
-            <TextView android:text="@string/time5"
-                android:layout_marginRight="@dimen/line"
-                android:layout_marginBottom="@dimen/ground_line"
-                android:gravity="center_vertical|center_horizontal"
-                android:background="@color/backcolor"
-                android:height="@dimen/row_Hsize" />
-            <TextView android:text="ソフトウェア工学"
-                android:id="@+id/fifthclass"
-                android:layout_marginRight="@dimen/line"
-                android:layout_marginBottom="@dimen/ground_line"
-                android:gravity="center_vertical|center_horizontal"
-                android:background="@color/backcolor"
-                android:height="@dimen/row_Hsize"
-                android:width="172dp"
-                android:layout_height="match_parent"
-                android:layout_width="match_parent" />
-            <TextView android:text="row1"
-                android:layout_marginRight="@dimen/ground_line"
-                android:layout_marginBottom="@dimen/ground_line"
-                android:gravity="center_vertical|center_horizontal"
-                android:background="@color/backcolor"
-                android:height="@dimen/row_Hsize" />
-        </TableRow>
-    </TableLayout>
 
     <!--テストまであと何日ボタン-->
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="テストまであと何日"
-        android:id="@+id/hometest"
-        android:layout_below="@+id/tableLayout"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="23dp"
-        android:layout_alignParentBottom="true"
-        android:width="210dp"
-        android:background="@drawable/testbutton_background"
-        android:textSize="40dp" />
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+
+            android:layout_height="47dp"
+            android:weightSum="1">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Large Text"
+                android:gravity="center"
+                android:id="@+id/day_text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="221dp">
+
+            <RelativeLayout
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="7">
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="fill_parent"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/sp5"
+                    />
+
+                <ImageButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+
+                    app:srcCompat="@drawable/leftbutton"
+                    android:id="@+id/lef_button"
+                    android:adjustViewBounds="false"
+                    android:background="@drawable/im_button_bd"
+                    android:scaleType="fitCenter"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:onClick="leftButton" />
+            </RelativeLayout>
+            <View
+                android:layout_width="2dp"
+                android:background="@color/Tableline"
+                android:layout_height="wrap_content" />
+            <TableLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4">
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/Tableline"/>
+
+                <TableRow
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/Tabletop"
+                    >
+
+                    <TextView
+                        android:text="　"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView40" />
+                </TableRow>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="3dp"
+                    android:background="@color/Tableline"/>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:background="@color/Table1"
+                    >
+
+                    <TextView
+                        android:text="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:lines="2"
+                        android:id="@+id/textView41" />
+
+                </TableRow>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/Tableline"/>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:background="@color/Table2">
+
+                    <TextView
+                        android:text="2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:lines="2"
+                        android:id="@+id/textView42" />
+                </TableRow>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/Tableline"/>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:background="@color/Table1">
+
+                    <TextView
+                        android:text="3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:lines="2"
+                        android:id="@+id/textView43" />
+                </TableRow>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/Tableline"/>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:background="@color/Table2">
+
+                    <TextView
+                        android:text="4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:lines="2"
+                        android:id="@+id/textView44" />
+                </TableRow>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/Tableline"/>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:background="@color/Table1">
+
+                    <TextView
+                        android:text="5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:lines="2"
+                        android:id="@+id/textView45" />
+                </TableRow>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/Tableline"/>
+            </TableLayout>
+            <View
+                android:layout_width="2dp"
+                android:background="@color/Tableline"
+                android:layout_height="wrap_content" />
+            <TableLayout
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="10">
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/Tableline"/>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/Tabletop">
+
+                    <TextView
+                        android:text="時間"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:id="@+id/textView46" />
+                </TableRow>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="3dp"
+                    android:background="@color/Tableline"/>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:background="@color/Table1">
+
+                    <TextView
+                        android:text="8:50~\n10:20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:lines="2"
+                        android:id="@+id/textView47" />
+
+                </TableRow>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/Tableline"/>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:background="@color/Table2">
+
+                    <TextView
+                        android:text="10:30~\n12:00"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:lines="2"
+                        android:id="@+id/textView48" />
+                </TableRow>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/Tableline"/>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:background="@color/Table1">
+
+                    <TextView
+                        android:text="13:00~\n14:30"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:lines="2"
+                        android:id="@+id/textView49" />
+                </TableRow>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/Tableline"/>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:background="@color/Table2">
+
+                    <TextView
+                        android:text="14:40~\n16:10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:lines="2"
+                        android:id="@+id/textView50" />
+                </TableRow>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/Tableline"/>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:background="@color/Table1">
+
+                    <TextView
+                        android:text="14:20~\n17:50"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:lines="2"
+                        android:id="@+id/textView51" />
+                </TableRow>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/Tableline"/>
+            </TableLayout>
+
+            <View
+                android:layout_width="2dp"
+                android:background="@color/Tableline"
+                android:layout_height="wrap_content" />
+
+            <TableLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="31">
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/Tableline"/>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/Tabletop">
+
+                    <TextView
+                        android:text="科目"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:id="@+id/textView52" />
+                </TableRow>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="3dp"
+                    android:background="@color/Tableline"/>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:background="@color/Table1">
+
+                    <TextView
+                        android:text="文化としての戦略と戦術"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:lines="2"
+                        android:id="@+id/firstclass" />
+                </TableRow>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/Tableline"/>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:background="@color/Table2">
+
+                    <TextView
+                        android:text="オペレーティングシステム"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:lines="2"
+                        android:id="@+id/secondclass" />
+                </TableRow>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/Tableline"/>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:background="@color/Table1">
+
+                    <TextView
+                        android:text="データベース"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:lines="2"
+                        android:id="@+id/thirdclass" />
+                </TableRow>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/Tableline"/>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:background="@color/Table2">
+
+                    <TextView
+                        android:text="コンピュータグラフィックス"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:lines="2"
+                        android:id="@+id/fourthclass" />
+                </TableRow>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/Tableline"/>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:background="@color/Table1">
+
+                    <TextView
+                        android:text="ソフトウェア工学"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:lines="2"
+                        android:id="@+id/fifthclass" />
+                </TableRow>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/Tableline"/>
+            </TableLayout>
+            <View
+                android:layout_width="2dp"
+                android:background="@color/Tableline"
+                android:layout_height="wrap_content" />
+            <TableLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="9">
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/Tableline"/>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/Tabletop">
+
+                    <TextView
+                        android:text="教室"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:id="@+id/textView58"
+                        android:layout_width="match_parent" />
+                </TableRow>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="3dp"
+                    android:background="@color/Tableline"/>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:background="@color/Table1">
+
+                    <TextView
+                        android:text="A106"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:lines="2"
+                        android:id="@+id/roomtext" />
+                </TableRow>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/Tableline"/>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:background="@color/Table2">
+
+                    <TextView
+                        android:text="A107"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:lines="2"
+                        android:id="@+id/roomtext2" />
+                </TableRow>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/Tableline"/>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:background="@color/Table1">
+
+                    <TextView
+                        android:text="A106"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:lines="2"
+                        android:id="@+id/roomtext3" />
+                </TableRow>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/Tableline"/>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:background="@color/Table2">
+
+                    <TextView
+                        android:text="A106"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:lines="2"
+                        android:id="@+id/roomtext4" />
+                </TableRow>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/Tableline"/>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:background="@color/Table1">
+
+                    <TextView
+                        android:text="K101"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:lines="2"
+                        android:id="@+id/roomtext5" />
+                </TableRow>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/Tableline"/>
+            </TableLayout>
+
+            <View
+                android:layout_width="2dp"
+                android:background="@color/Tableline"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="7"
+                >
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="fill_parent"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentLeft="true"
+                    android:id="@+id/sp4"
+                    />
+
+                <ImageButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:srcCompat="@drawable/rightbutton"
+                    android:id="@+id/ri_button"
+                    android:background="@drawable/im_button_bd"
+                    android:scaleType="fitCenter"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:onClick="rightButton" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="お知らせ"
+                android:id="@+id/button2"
+                android:background="@drawable/news_background"
+                android:width="130dp"
+                android:height="60dp"
+                android:textSize="25dp"
+                android:layout_toRightOf="@+id/sp1"
+                android:layout_alignTop="@+id/sp1"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="設定"
+                android:id="@+id/button3"
+                android:background="@drawable/conf_background"
+                android:textSize="25dp"
+                android:width="130dp"
+                android:height="60dp"
+                android:layout_toRightOf="@+id/sp1"
+                android:layout_below="@+id/sp3"
+                android:onClick="optionButton" />
+
+            <Space
+                android:layout_height="146dp"
+                android:id="@+id/sp1"
+                android:layout_toRightOf="@+id/hometest"
+                android:layout_alignTop="@+id/hometest"
+                android:layout_width="20dp" />
+
+            <Space
+                android:layout_height="146dp"
+                android:id="@+id/sp2"
+                android:layout_width="36dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <Space
+                android:layout_width="125dp"
+                android:layout_height="10dp"
+                android:id="@+id/sp3"
+                android:layout_below="@+id/button2"
+                android:layout_toRightOf="@+id/sp1"
+                android:layout_alignRight="@+id/button2"
+                android:layout_alignEnd="@+id/button2" />
+
+            <ImageButton
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                app:srcCompat="@drawable/testbutton"
+                android:scaleType="fitCenter"
+                android:background="@drawable/im_button_bd"
+                android:layout_alignTop="@+id/sp2"
+                android:layout_toRightOf="@+id/sp2"
+                android:layout_toEndOf="@+id/sp2"
+                android:id="@+id/hometest" />
+
+            <TextView
+                android:text="10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="14dp"
+                android:layout_marginStart="14dp"
+                android:id="@+id/textView11"
+                android:textSize="60sp"
+                android:textColor="@color/Black"
+                android:layout_alignBaseline="@+id/button3"
+                android:layout_alignBottom="@+id/button3"
+                android:layout_toRightOf="@+id/sp2"
+                android:layout_toEndOf="@+id/sp2" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
 
     <!--お知らせボタン-->
 
 
     <!--設定ボタン-->
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="設定"
-        android:id="@+id/button3"
-        android:background="@drawable/conf_background"
-        android:textSize="30dp"
-        android:width="130dp"
-        android:height="73dp"
-        android:layout_alignTop="@+id/hometest"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="74dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="お知らせ"
-        android:id="@+id/button2"
-        android:background="@drawable/news_background"
-        android:width="130dp"
-        android:height="73dp"
-        android:textSize="30dp"
-        android:layout_below="@+id/tableLayout"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="11dp" />
 
 
 </RelativeLayout>

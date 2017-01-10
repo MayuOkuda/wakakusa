@@ -1,5 +1,6 @@
 package com.wakakusa.kutportal;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -20,10 +21,18 @@ import android.widget.ImageView;//ポップアップ画像表示用
 import android.view.KeyEvent;
 import android.widget.ViewFlipper;
 
+
 public class TopPage extends BasePage{
+    private final int checkActivity=1001;
+
+
 
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
+        LoadingPage.actFlag.setFlagState(true);
+
         setContentView(R.layout.top_page);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -128,15 +137,15 @@ public class TopPage extends BasePage{
 /*
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-
-        if(keyCode==KeyEvent.KEYCODE_BACK){
-
-
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            moveTaskToBack(true);
 
 
-            return true;
-        }
+
+                return true;
+
+            }
         return false;
     }
-    */
+*/
 }
