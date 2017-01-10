@@ -735,6 +735,7 @@
                             android:background="@drawable/conf_background"
                             android:width="130dp"
                             android:height="60dp"
+                            android:onClick="newsButton"
                             android:textSize="25dp"
                             android:layout_weight="1"
                             android:layout_above="@+id/sp6"
