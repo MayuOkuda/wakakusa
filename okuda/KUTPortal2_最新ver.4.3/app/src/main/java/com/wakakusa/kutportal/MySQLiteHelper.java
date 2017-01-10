@@ -69,7 +69,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     final String loginData =    "CREATE TABLE loginData("+
             "realtime  TEXT,"+
-            "limittime      TEXT,"+
+            "limittime TEXT,"+
             "ara       TEXT )";
 
     //コンストラクタ
@@ -99,7 +99,7 @@ class DatabaseWriter {
     //private SQLiteDatabase read;
     SQLiteDatabase write;
     static MySQLiteHelper helper = null;
-    String[] property;
+    static String[] property;
     String Table_name;
 
     final String[] tableName = {"student", "course","score", "test", "news","loginData"};

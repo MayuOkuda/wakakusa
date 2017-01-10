@@ -176,6 +176,7 @@ public class LoadingPage extends AppCompatActivity implements LoaderManager.Load
 
                     for (int j = 1; j < 5; j++) {
                         for (int i = 1; i < tableData[j].length(); i++) {
+                            //空の時入れない
                             if(!tableData[i].toString().equals("[]")) {
                                 JSONObject jsonObject = tableData[j].getJSONObject(i);
                                 dbWriter[j].writeDB(jsonObject);
