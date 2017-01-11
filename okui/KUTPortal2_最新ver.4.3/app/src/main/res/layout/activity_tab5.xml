@@ -143,7 +143,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    />
+                    android:lines="2"/>
             </TableRow>
 
             <View
@@ -161,7 +161,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/ct101" />
+                    android:id="@+id/ct101"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -179,7 +181,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/ct107" />
+                    android:id="@+id/ct107"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -197,7 +201,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/ct201" />
+                    android:id="@+id/ct201"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -215,7 +221,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/ct207" />
+                    android:id="@+id/ct207"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
             <View
                 android:layout_width="fill_parent"
@@ -249,7 +257,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    />
+                    android:lines="2"/>
             </TableRow>
 
             <View
@@ -267,7 +275,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/ct102" />
+                    android:id="@+id/ct102"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -285,7 +295,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/ct108" />
+                    android:id="@+id/ct108"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -303,7 +315,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/ct202" />
+                    android:id="@+id/ct202"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -321,7 +335,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/ct208" />
+                    android:id="@+id/ct208"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
             <View
                 android:layout_width="fill_parent"
@@ -355,7 +371,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    />
+                    android:lines="2"/>
             </TableRow>
 
             <View
@@ -373,7 +389,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/ct103" />
+                    android:id="@+id/ct103"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -391,7 +409,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/ct109" />
+                    android:id="@+id/ct109"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -409,7 +429,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/ct203" />
+                    android:id="@+id/ct203"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -427,7 +449,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/ct209" />
+                    android:id="@+id/ct209"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
             <View
                 android:layout_width="fill_parent"
@@ -461,7 +485,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    />
+                    android:lines="2"/>
             </TableRow>
 
             <View
@@ -479,7 +503,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/ct104" />
+                    android:id="@+id/ct104"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -497,7 +523,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/ct110" />
+                    android:id="@+id/ct110"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -515,7 +543,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/ct204" />
+                    android:id="@+id/ct204"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -533,7 +563,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/ct210" />
+                    android:id="@+id/ct210"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
             <View
                 android:layout_width="fill_parent"
@@ -566,7 +598,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    />
+                    android:lines="2"/>
             </TableRow>
 
             <View
@@ -584,7 +616,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/ct105" />
+                    android:id="@+id/ct105"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -602,7 +636,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/ct111" />
+                    android:id="@+id/ct111"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -620,7 +656,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/ct205" />
+                    android:id="@+id/ct205"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -638,7 +676,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/ct211" />
+                    android:id="@+id/ct211"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
             <View
                 android:layout_width="fill_parent"
@@ -671,7 +711,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    />
+                    android:lines="2"/>
             </TableRow>
 
             <View
@@ -689,7 +729,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/ct106" />
+                    android:id="@+id/ct106"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -707,7 +749,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/ct112" />
+                    android:id="@+id/ct112"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -725,7 +769,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/ct206" />
+                    android:id="@+id/ct206"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -743,7 +789,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/ct212" />
+                    android:id="@+id/ct212"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
             <View
                 android:layout_width="fill_parent"

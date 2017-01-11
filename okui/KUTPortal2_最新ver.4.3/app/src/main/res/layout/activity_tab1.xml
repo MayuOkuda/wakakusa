@@ -163,7 +163,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    />
+                    android:lines="2"/>
             </TableRow>
 
             <View
@@ -181,7 +181,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/time1_a1" />
+                    android:id="@+id/time1_a1"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -199,7 +201,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/time1_a2" />
+                    android:id="@+id/time1_a2"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -217,7 +221,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/time1_a3" />
+                    android:id="@+id/time1_a3"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -235,7 +241,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/time1_a4" />
+                    android:id="@+id/time1_a4"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
             <View
                 android:layout_width="fill_parent"
@@ -253,7 +261,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/time1_a5" />
+                    android:id="@+id/time1_a5"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
             <View
                 android:layout_width="fill_parent"
@@ -286,7 +296,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    />
+                    android:lines="2"/>
             </TableRow>
 
             <View
@@ -304,7 +314,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/time1_b1" />
+                    android:id="@+id/time1_b1"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -322,7 +334,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/time1_b2" />
+                    android:id="@+id/time1_b2"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -340,7 +354,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/time1_b3" />
+                    android:id="@+id/time1_b3"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -358,7 +374,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/time1_b4" />
+                    android:id="@+id/time1_b4"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
             <View
                 android:layout_width="fill_parent"
@@ -376,7 +394,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/time1_b5" />
+                    android:id="@+id/time1_b5"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
             <View
                 android:layout_width="fill_parent"
@@ -409,7 +429,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    />
+                    android:lines="2"/>
             </TableRow>
 
             <View
@@ -427,7 +447,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/time1_c1" />
+                    android:id="@+id/time1_c1"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -445,7 +467,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/time1_c2" />
+                    android:id="@+id/time1_c2"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -463,7 +487,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/time1_c3" />
+                    android:id="@+id/time1_c3"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -481,7 +507,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/time1_c4" />
+                    android:id="@+id/time1_c4"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
             <View
                 android:layout_width="fill_parent"
@@ -499,7 +527,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/time1_c5" />
+                    android:id="@+id/time1_c5"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
             <View
                 android:layout_width="fill_parent"
@@ -532,7 +562,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    />
+                    android:lines="2"/>
             </TableRow>
 
             <View
@@ -550,7 +580,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/time1_d1" />
+                    android:id="@+id/time1_d1"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -568,7 +600,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/time1_d2" />
+                    android:id="@+id/time1_d2"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -586,7 +620,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/time1_d3" />
+                    android:id="@+id/time1_d3"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -604,7 +640,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/time1_d4" />
+                    android:id="@+id/time1_d4"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
             <View
                 android:layout_width="fill_parent"
@@ -622,7 +660,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/time1_d5" />
+                    android:id="@+id/time1_d5"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
             <View
                 android:layout_width="fill_parent"
@@ -654,7 +694,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    />
+                    android:lines="2"/>
             </TableRow>
 
             <View
@@ -672,7 +712,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/time1_e1" />
+                    android:id="@+id/time1_e1"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -690,7 +732,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/time1_e2" />
+                    android:id="@+id/time1_e2"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -708,7 +752,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/time1_e3" />
+                    android:id="@+id/time1_e3"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -726,7 +772,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/time1_e4" />
+                    android:id="@+id/time1_e4"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
             <View
                 android:layout_width="fill_parent"
@@ -744,7 +792,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/time1_e5" />
+                    android:id="@+id/time1_e5"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
             <View
                 android:layout_width="fill_parent"
@@ -776,7 +826,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    />
+                    android:lines="2"/>
             </TableRow>
 
             <View
@@ -794,7 +844,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/time1_f1" />
+                    android:id="@+id/time1_f1"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -812,7 +864,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/time1_f2" />
+                    android:id="@+id/time1_f2"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -830,7 +884,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/time1_f3" />
+                    android:id="@+id/time1_f3"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
 
             <View
@@ -848,7 +904,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/time1_f4" />
+                    android:id="@+id/time1_f4"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
             <View
                 android:layout_width="fill_parent"
@@ -866,7 +924,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:id="@+id/time1_f5" />
+                    android:id="@+id/time1_f5"
+                    android:lines="3"
+                    android:ellipsize="end"/>
             </TableRow>
             <View
                 android:layout_width="fill_parent"

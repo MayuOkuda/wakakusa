@@ -96,9 +96,10 @@
                     >
 
                     <TextView
-                        android:text="　"
-                        android:layout_width="wrap_content"
+                        android:text=""
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:id="@+id/textView40" />
                 </TableRow>
                 <View
@@ -114,9 +115,10 @@
 
                     <TextView
                         android:text="1"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:layout_weight="1"
                         android:lines="2"
                         android:id="@+id/textView41" />
 
@@ -133,9 +135,10 @@
 
                     <TextView
                         android:text="2"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:layout_weight="1"
                         android:lines="2"
                         android:id="@+id/textView42" />
                 </TableRow>
@@ -151,9 +154,10 @@
 
                     <TextView
                         android:text="3"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:layout_weight="1"
                         android:lines="2"
                         android:id="@+id/textView43" />
                 </TableRow>
@@ -169,9 +173,10 @@
 
                     <TextView
                         android:text="4"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:layout_weight="1"
                         android:lines="2"
                         android:id="@+id/textView44" />
                 </TableRow>
@@ -187,9 +192,10 @@
 
                     <TextView
                         android:text="5"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:layout_weight="1"
                         android:lines="2"
                         android:id="@+id/textView45" />
                 </TableRow>
@@ -218,9 +224,10 @@
 
                     <TextView
                         android:text="時間"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:layout_weight="1"
                         android:id="@+id/textView46" />
                 </TableRow>
                 <View
@@ -235,9 +242,10 @@
 
                     <TextView
                         android:text="8:50~\n10:20"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:layout_weight="1"
                         android:lines="2"
                         android:id="@+id/textView47" />
 
@@ -254,9 +262,10 @@
 
                     <TextView
                         android:text="10:30~\n12:00"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:layout_weight="1"
                         android:lines="2"
                         android:id="@+id/textView48" />
                 </TableRow>
@@ -272,9 +281,10 @@
 
                     <TextView
                         android:text="13:00~\n14:30"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:layout_weight="1"
                         android:lines="2"
                         android:id="@+id/textView49" />
                 </TableRow>
@@ -290,9 +300,10 @@
 
                     <TextView
                         android:text="14:40~\n16:10"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:layout_weight="1"
                         android:lines="2"
                         android:id="@+id/textView50" />
                 </TableRow>
@@ -308,9 +319,10 @@
 
                     <TextView
                         android:text="14:20~\n17:50"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:layout_weight="1"
                         android:lines="2"
                         android:id="@+id/textView51" />
                 </TableRow>
@@ -341,9 +353,10 @@
 
                     <TextView
                         android:text="科目"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:layout_weight="1"
                         android:id="@+id/textView52" />
                 </TableRow>
                 <View
@@ -358,11 +371,13 @@
 
                     <TextView
                         android:text="文化としての戦略と戦術"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:layout_weight="1"
                         android:lines="2"
-                        android:id="@+id/firstclass" />
+                        android:id="@+id/firstclass"
+                        android:ellipsize="end"/>
                 </TableRow>
                 <View
                     android:layout_width="fill_parent"
@@ -376,10 +391,12 @@
 
                     <TextView
                         android:text="オペレーティングシステム"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:layout_weight="1"
                         android:lines="2"
+                        android:ellipsize="end"
                         android:id="@+id/secondclass" />
                 </TableRow>
                 <View
@@ -394,10 +411,12 @@
 
                     <TextView
                         android:text="データベース"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:gravity="center"
                         android:lines="2"
+                        android:ellipsize="end"
                         android:id="@+id/thirdclass" />
                 </TableRow>
                 <View
@@ -412,10 +431,12 @@
 
                     <TextView
                         android:text="コンピュータグラフィックス"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:gravity="center"
                         android:lines="2"
+                        android:ellipsize="end"
                         android:id="@+id/fourthclass" />
                 </TableRow>
                 <View
@@ -430,10 +451,12 @@
 
                     <TextView
                         android:text="ソフトウェア工学"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:layout_weight="1"
                         android:lines="2"
+                        android:ellipsize="end"
                         android:id="@+id/fifthclass" />
                 </TableRow>
                 <View
@@ -464,7 +487,8 @@
                         android:layout_height="match_parent"
                         android:gravity="center"
                         android:id="@+id/textView58"
-                        android:layout_width="match_parent" />
+                        android:layout_width="0dp"
+                        android:layout_weight="1"/>
                 </TableRow>
                 <View
                     android:layout_width="fill_parent"
@@ -478,10 +502,12 @@
 
                     <TextView
                         android:text="A106"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:layout_weight="1"
                         android:lines="2"
+                        android:ellipsize="end"
                         android:id="@+id/roomtext" />
                 </TableRow>
                 <View
@@ -496,10 +522,12 @@
 
                     <TextView
                         android:text="A107"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:layout_weight="1"
                         android:lines="2"
+                        android:ellipsize="end"
                         android:id="@+id/roomtext2" />
                 </TableRow>
                 <View
@@ -514,10 +542,12 @@
 
                     <TextView
                         android:text="A106"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:layout_weight="1"
                         android:lines="2"
+                        android:ellipsize="end"
                         android:id="@+id/roomtext3" />
                 </TableRow>
                 <View
@@ -532,10 +562,12 @@
 
                     <TextView
                         android:text="A106"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:lines="2"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
                         android:id="@+id/roomtext4" />
                 </TableRow>
                 <View
@@ -550,10 +582,12 @@
 
                     <TextView
                         android:text="K101"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:layout_weight="1"
                         android:lines="2"
+                        android:ellipsize="end"
                         android:id="@+id/roomtext5" />
                 </TableRow>
                 <View
