@@ -1,0 +1,29 @@
+外部のサーバが公開しているjsonは読める
+自分達で作ったサーバのjsonが読めない
+
+java内のMainActibity.javaとJsonLoader.javaに問題があると思われる
+
+参考にしたサイト
+http://android.swift-studying.com/entry/20151024/1445697702
+
+json公開しているサーバ？(String urlTextの横）
+外部のサーバ（読み込めるjson)
+http://animemap.net/api/table/tokyo.json
+http://weather.livedoor.com/forecast/webservice/json/v1?city=270000
+http://www.ajaxtower.jp/googlemaps/gdownloadurl/data.json
+
+それ以外は、個人的に用意したローカルサーバ(気にしなくていいです)と実際に作ってるサーバ(学校の)
+サーバを起動していないと見れない
+（サーバの起動方法？）
+サーバのターミナルで「/cakephptest/test」に移動して、そこで「bin/cake server -H 222.229.69.240 -p 8000」で起動できます。終了は「Ctrl - c」です
+
+起動中は
+ブラウザで「http://222.229.69.240:8000/posts」でデータベースが見れ
+「http://222.229.69.240:8000/posts.json」でjsonが見れます。
+使用しているデータベースは本番用ではなくてテスト用に作った物です。
+
+セキュリティ関係は何もしてないので、そこらへんは気おつけてください。
+
+
+わからないことがあれば連絡ください（内田）
+

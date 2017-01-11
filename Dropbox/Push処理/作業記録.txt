@@ -1,0 +1,15 @@
+1.build.gradle（PushMessage）の編集
+
+2.build.gradle（app）の編集
+
+3.SDKマネージャに色々入れる	
+	Google Play service
+	Google Repository
+
+Refreshedtoken:
+duiBPM0vAwU:APA91bHwGBOVRRkwDV4voSV_j0KYdorN5v1GmVM5qqQMJVTTq5SZKgrSfAQEw2UFpmLsUsgNxKZkcDnSmuqlKAey4Qm8_78iIGyBujwoYVm5EJ7aLiYFhNqKNAgpIvM6ybH0xK3hOE8R
+
+Refreshed token: 
+fkGJe6FmugM:APA91bHs8pJIjwAOv_Hakqn7XdWt3hp1-lin_pQgBXPncMoKBZwQ60d_Q24s_PmQWkhocZhUaMLpDAA8sCp4_Oj4r_m3_B4GCCELBu2fiePMtyqwhvxDVTo7hl-xDSRK_yIsmlIRIoHv
+
+https://www.androidfilehost.com/?fid=23252070760974384

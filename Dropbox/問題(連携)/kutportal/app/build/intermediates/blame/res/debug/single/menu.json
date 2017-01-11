@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/hashimotomasaaki/AndroidStudioProjects/KUTPortal/app/build/intermediates/res/merged/debug/menu/top_page.xml",
+        "source": "/Users/hashimotomasaaki/AndroidStudioProjects/KUTPortal/app/src/main/res/menu/top_page.xml"
+    },
+    {
+        "merged": "/Users/hashimotomasaaki/AndroidStudioProjects/KUTPortal/app/build/intermediates/res/merged/debug/menu/top_page_drawer.xml",
+        "source": "/Users/hashimotomasaaki/AndroidStudioProjects/KUTPortal/app/src/main/res/menu/top_page_drawer.xml"
+    }
+]

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SampleGetJson</string>
+    <string name="action_settings">Settings</string>
+    <string name="userid">1X002b</string>>
+    <string name="password">aukamoyo</string>
+    <string name="login">login</string>
+</resources>

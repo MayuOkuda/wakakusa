@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    api-level="17"
+    density="xhdpi"
+    format="8"
+    plugin-version="2.2.0"
+    timestamp="199068707449307"
+    token="1328418680404678632"
+    verifier="FULL_BUILD_REQUESTED" >
+
+    <task
+        name="javac"
+        duration="2931" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="472" />
+    <task
+        name="verifier"
+        duration="112" />
+
+    <artifact
+        location="/Users/hashimotomasaaki/AndroidStudioProjects/KUTPortal/app/build/outputs/apk/app-debug.apk"
+        type="MAIN" />
+
+    <build
+        timestamp="199068707449307"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="/Users/hashimotomasaaki/AndroidStudioProjects/KUTPortal/app/build/outputs/apk/app-debug.apk"
+            type="MAIN" />
+    </build>
+
+</instant-run>
