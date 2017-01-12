@@ -156,11 +156,14 @@ class Test{
     Test(){}
 
     Test(String[] str){
+
+        if(str==null) return;
         Test lo = this;
         SimpleDateFormat sdf2 = new SimpleDateFormat("yyyyMMdd");
         int year = Integer.parseInt(sdf2.format(c.getTime()));
 
         for(int i = 0;i+2 < str.length;i+=3){
+            if(str[i+1].equals("null")) continue;
             if(year <= Integer.parseInt(str[i+1])){
                 lo.day = str[i+1];
                 lo.subject = str[i];
