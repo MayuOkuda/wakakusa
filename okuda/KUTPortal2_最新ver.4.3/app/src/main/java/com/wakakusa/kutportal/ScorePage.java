@@ -164,6 +164,7 @@ public class ScorePage extends BasePage{
                 // 選択されたアイテムを取得
                 String spinneritem = (String) spinner.getSelectedItem();
                 item = spinneritem;
+                System.out.println("item="+item);
 
                 scoreapp();
                 scorecount();

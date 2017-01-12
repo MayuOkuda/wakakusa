@@ -100,6 +100,7 @@ public class TopPage extends BasePage {
         cvalue.put("subject","文化としての戦略と戦術");
         cvalue.put("daytime","火1、木2");
         cvalue.put("period","4Q");
+        cvalue.put("room","A102");
         cvalue.put("teacher","篠森先生");
         cvalue.put("sj","専門発展科目");
         cvalue.put("sjclass","2");
@@ -157,7 +158,6 @@ public class TopPage extends BasePage {
         cvalue.put("sjclass","2");
         dbWriter.write.insert(dbWriter.Table_name,null, cvalue);
 
-
         //データベース書き込み処理
         DatabaseWriter dbWriter2 = new DatabaseWriter(this, "score");
         dbWriter2.deleteDB();
@@ -166,7 +166,7 @@ public class TopPage extends BasePage {
         cvalue2.put("year","2017");
         dbWriter.write.insert(dbWriter2.Table_name,null, cvalue2);
 
-        cvalue2.put("scode","1005");
+        cvalue2.put("scode","10000000000");
         cvalue2.put("year","2017");
         dbWriter.write.insert(dbWriter2.Table_name,null, cvalue2);
 
@@ -275,11 +275,8 @@ public class TopPage extends BasePage {
         //textview6.setOnClickListener(onClick_textview6);
     }
     private View.OnClickListener onClick_textview;
-
     private View.OnClickListener onClick_textview2;
-
     private View.OnClickListener onClick_textview3;
-
     private View.OnClickListener onClick_textview4;
     private View.OnClickListener onClick_textview5;
 

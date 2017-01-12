@@ -179,7 +179,11 @@ public class LoadingPage extends AppCompatActivity implements LoaderManager.Load
                             //空の時入れない
                             if(!tableData[i].toString().equals("[]")) {
                                 JSONObject jsonObject = tableData[j].getJSONObject(i);
+                                String ext =  jsonObject.getString(dbWriter[j].property[0]);
+                                //もしもともと同じidの値が入っていれば消す
+                                dbWriter[j].deleteDB2(dbWriter[j].property[0],ext);
                                 dbWriter[j].writeDB(jsonObject);
+
                             }
                         }
                     }

@@ -253,9 +253,9 @@ class JsonLoader extends AsyncTaskLoader<JSONObject> {
 
         cookiestore =new MyCookieStore(mContext);
 
-            manager = new CookieManager();
+        manager = new CookieManager();
 //以下をコメントにするとセッションは働きません
-            buildCookieManager();
+        buildCookieManager();
 
         CookieSyncManager.createInstance(mContext);
     }
