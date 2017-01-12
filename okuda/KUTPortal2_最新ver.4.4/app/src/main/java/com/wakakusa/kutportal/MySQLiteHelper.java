@@ -69,7 +69,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     final String loginData =    "CREATE TABLE loginData("+
             "realtime  TEXT,"+
-            "limittime TEXT,"+
+            "limittime      TEXT,"+
             "ara       TEXT )";
 
     //コンストラクタ
@@ -99,7 +99,7 @@ class DatabaseWriter {
     //private SQLiteDatabase read;
     SQLiteDatabase write;
     static MySQLiteHelper helper = null;
-    static String[] property;
+    String[] property;
     String Table_name;
 
     final String[] tableName = {"student", "course","score", "test", "news","loginData"};
@@ -139,7 +139,7 @@ class DatabaseWriter {
     //a=属性名　"値"
     public void deleteDB2(String a, String b) {
         //データベースの削除
-        write.delete(this.Table_name,a+"='"+b+"'", null);
+        write.delete(this.Table_name,a+"= '"+ b + "'", null);
     }
 
     //str1属性がold_wordの時、その場所のstr2属性値をnew_wordに書き換える

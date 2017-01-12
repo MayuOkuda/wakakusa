@@ -101,7 +101,7 @@ public class TestCount extends BasePage {
         //年度表示
         SimpleDateFormat sdf = new SimpleDateFormat("MMdd");
         today = Integer.parseInt(sdf.format(c.getTime()));
-        this_Q = TopPage.quartJudge(today);
+        //this_Q = TopPage.quartJudge(today);
 
         DatabaseReader db_R = new DatabaseReader(this, "test");
         String test = db_R.readDB3(new String[]{"subject","test1", "test2"}, "test.scode = course.scode AND course.period='"+this_Q+"'", new String[]{},"test, course");
