@@ -1,5 +1,6 @@
 package com.wakakusa.kutportal;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
@@ -49,52 +50,54 @@ public class OptionPage extends BasePage {
         //学籍番号と名前の表示
         int[] id = {R.id.setus_num, R.id.setus_name};
         DatabaseReader r_db = new DatabaseReader(this, "student");
-        String[] s = r_db.readDB(new String[]{"id","name"}, 0).split("\n",0);
+        String[] s = r_db.readDB(new String[]{"id", "name"}, 0).split("\n", 0);
         int num = 0;
-        for(int i : id) {
+        for (int i : id) {
             TextView tex1 = (TextView) findViewById(i);
             tex1.setText(s[num]);
             num++;
         }
-            final DatabaseWriter dbWriter = new DatabaseWriter(this, "loginData"); //データベースへの書き込み(初期値false)
-            /*ContentValues cvalue = new ContentValues(); cvalue.put("ara","false");
-            dbWriter.write.insert(dbWriter.Table_name,null, cvalue);*/
-            final DatabaseReader rd = new DatabaseReader(this, "loginData");
-            final String[] str = {"ara"};
-            final Switch tex2 = (Switch) findViewById(R.id.switch2);
-            tex2.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    if (isChecked) {
-                        String s2 = rd.readDB(str, 0);
-                        //System.out.println("gyaaaaaaa; " + s2);
-                        dbWriter.update("ara", "false", "ara", "true");
-                        s2 = rd.readDB(str, 0);
-                        //System.out.println("gyaaaaaaa2; " + s);
-                    } else {
-                        String s2 = rd.readDB(str, 0);
-                        //System.out.println("waaaaaa" + s2);
-                        dbWriter.update("ara", "true", "ara", "false");
-                        s2 = rd.readDB(str, 0);
-                        //System.out.println("waaaaaaa2; " + s2);
-                    }
+        final DatabaseWriter dbWriter = new DatabaseWriter(this, "loginData"); //データベースへの書き込み(初期値false)
+        //ContentValues cvalue = new ContentValues(); cvalue.put("ara","false");
+        //dbWriter.write.insert(dbWriter.Table_name,null, cvalue);
+        final DatabaseReader rd2 = new DatabaseReader(this, "loginData");
+        final String[] str = {"ara"};
+        final Switch tex2 = (Switch) findViewById(R.id.switch2);
+        tex2.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    //String s2 = rd2.readDB(str, 0);
+                    //System.out.println("gyaaaaaaa; " + s2);
+                    dbWriter.update("ara", "ara", "false", "true");
+                    //s2 = rd2.readDB(str, 0);
+                    //System.out.println("gyaaaaaaa2; " + s2);
+                } else {
+                    //String s2 = rd2.readDB(str, 0);
+                    //System.out.println("waaaaaa" + s2);
+                    dbWriter.update("ara", "ara", "true", "false");
+                    //s2 = rd2.readDB(str, 0);
+                    //System.out.println("waaaaaaa2; " + s2);
                 }
-            });
-            String s2 = String.valueOf(rd.readDB(str, 0));
-            if ("true\n".equals(s)) {
-                tex2.setChecked(true);
-                //System.out.println("trueで維持");
-            } else {
-                tex2.setChecked(false);
-                //System.out.println(s2);
-                //System.out.println("falseで維持");
             }
+        });
+        String s2 = String.valueOf(rd2.readDB(str, 0));
+        if ("true\n".equals(s2)) {
+            tex2.setChecked(true);
+            System.out.println("trueで維持");
+        } else {
+            tex2.setChecked(false);
+            //System.out.println(s2);
+            System.out.println("falseで維持");
         }
+    }
+
     //ユーザページボタンの移動メソッド
-       public void UserpageIntent(View view){
-            Intent intent = new Intent();
-            intent.setClassName("com.wakakusa.kutportal", "com.wakakusa.kutportal.UserPage");
-            startActivity(intent);
-        }
+    public void UserpageIntent(View view) {
+        Intent intent = new Intent();
+        intent.setClassName("com.wakakusa.kutportal", "com.wakakusa.kutportal.UserPage");
+        startActivity(intent);
+    }
 
 }
+

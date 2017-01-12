@@ -96,7 +96,7 @@ public class TopPage extends BasePage {
         dbWriter.deleteDB();
 
         ContentValues cvalue = new ContentValues();
-        cvalue.put("scode","1000");
+        cvalue.put("scode","1111");
         cvalue.put("subject","文化としての戦略と戦術");
         cvalue.put("daytime","火1、木2");
         cvalue.put("period","4Q");
@@ -163,14 +163,14 @@ public class TopPage extends BasePage {
         dbWriter2.deleteDB();
         ContentValues cvalue2 = new ContentValues();
         cvalue2.put("scode","1000");
-        cvalue2.put("year","2016");
+        cvalue2.put("year","2017");
         dbWriter.write.insert(dbWriter2.Table_name,null, cvalue2);
 
         cvalue2.put("scode","1005");
         cvalue2.put("year","2017");
         dbWriter.write.insert(dbWriter2.Table_name,null, cvalue2);
 
-
+        dbWriter.deleteDB2("scode","1111");
 
         course_db_R = new DatabaseReader(this,"course");
         score_db_R = new DatabaseReader(this, "score");
@@ -242,6 +242,13 @@ public class TopPage extends BasePage {
             Today today = todayDatabase(str[0]);
             todayStudy(today, day);
         }
+    }
+
+    //お知らせボタン
+    public void newsButton(View view){
+        Intent intent = new Intent();
+        intent.setClassName("com.wakakusa.kutportal", "com.wakakusa.kutportal.NewsPage");
+        startActivity(intent);
     }
 
     //設定ボタン

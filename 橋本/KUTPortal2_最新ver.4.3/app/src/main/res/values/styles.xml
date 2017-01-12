@@ -25,5 +25,13 @@
         <item>2016年度</item>
     </string-array>
 
+    <!-- NewsのSpinner -->
+    <string-array name="tag">
+        <item>すべて</item>
+        <item>講義関連</item>
+        <item>事務連絡</item>
+        <item>イベント</item>
+        <item>その他</item>
+    </string-array>>
 
 </resources>
