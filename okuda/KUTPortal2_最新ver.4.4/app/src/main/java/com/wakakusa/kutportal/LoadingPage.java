@@ -16,8 +16,7 @@ import android.webkit.CookieSyncManager;
 import android.widget.TextView;
 import android.os.Build;
 
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
+
 
 import org.json.JSONArray;
 import org.json.JSONException;
