@@ -260,6 +260,7 @@ class JsonLoader extends AsyncTaskLoader<JSONObject> {
     private URI uri;
     private JSONObject json;
     private HttpsURLConnection response;
+    private String limit;
 
     public JsonLoader(Context context, String urlText)throws Exception {
         super(context);
@@ -351,7 +352,7 @@ class JsonLoader extends AsyncTaskLoader<JSONObject> {
             String[] str3 = {"ara"};
 
 
-            String limit = dbReader.readDB(str1, 0);
+            limit = dbReader.readDB(str1, 0);
             String real = dbReader.readDB(str2, 0);
 
             String ara = dbReader.readDB(str3, 0);
@@ -605,7 +606,7 @@ class JsonLoader extends AsyncTaskLoader<JSONObject> {
 
         } catch (IOException exception) {
             System.out.println("3check Exception");
-
+            if(limit.substring(0, 14).equals("00000000000001")){return null;}
 
             return object;
 
