@@ -343,7 +343,7 @@ class JsonLoader2 extends AsyncTaskLoader<JSONObject> {
             String[] str1 = {"limittime"};
             String[] str2 = {"realtime"};
             String[] str3 = {"ara"};
-            String[] str4 = {"sessionID"};
+            String[] str4 = {"tokenID"};
             limit = dbReader.readDB(str1, 0);
             String real = dbReader.readDB(str2, 0);
 
