@@ -355,7 +355,7 @@ class JsonLoader2 extends AsyncTaskLoader<JSONObject> {
             System.out.println("Check limit:" + limit);
             System.out.println(ara.length());
             ContentValues cvalue = new ContentValues();
-            cvalue.put("sessionID","null");
+            cvalue.put("tokenID","");
             cvalue.put("ara", "true");
             cvalue.put("limittime", "00000000000001");
             cvalue.put("realtime", "00000000000000");

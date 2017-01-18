@@ -2,8 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        app:srcCompat="@drawable/update"
         android:id="@+id/renew"
         android:orderInCategory="100"
         android:title="@string/action_settings"
+        android:background="@drawable/im_button_bd"
         app:showAsAction="always" />
 </menu>
