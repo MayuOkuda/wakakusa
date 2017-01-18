@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.google.firebase.messaging.FirebaseMessaging;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -144,6 +146,11 @@ class DatabaseWriter {
     public void deleteDB2(String a, String b) {
         //データベースの削除
         write.delete(this.Table_name,a+"= '"+ b + "'", null);
+
+        //科目topic参加削除
+        if(this.Table_name.equals("course") && a.equals("scode")){
+            FirebaseMessaging.getInstance().unsubscribeFromTopic(b);
+        }
     }
 
     //str1属性がold_wordの時、その場所のstr2属性値をnew_wordに書き換える

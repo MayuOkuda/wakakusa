@@ -337,9 +337,7 @@ class JsonLoader2 extends AsyncTaskLoader<JSONObject> {
             SimpleDateFormat sdf1 = new SimpleDateFormat("yyyyMMddHHmmss");
             Date date = new Date();
 
-            //long in = Long.parseLong(t);
 
-            //dbWriter.deleteDB();
             String[] str1 = {"limittime"};
             String[] str2 = {"realtime"};
             String[] str3 = {"ara"};

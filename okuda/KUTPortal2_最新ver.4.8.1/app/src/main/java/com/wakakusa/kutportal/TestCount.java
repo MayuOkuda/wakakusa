@@ -43,69 +43,7 @@ public class TestCount extends BasePage {
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-//        //データ入力
-//        DatabaseWriter dbr1 = new DatabaseWriter(this,"test");
-//        DatabaseWriter dbr2 = new DatabaseWriter(this,"course");
-//
-//        dbr1.deleteDB();
-//        dbr2.deleteDB();
-//        ContentValues cvalue = new ContentValues();
-//        cvalue.put("scode", "10000"); //科目コード
-//        cvalue.put("test1", "20170120"); //取得単位
-//        cvalue.put("test2", "20170201"); //取得年度
-//        dbr1.write.insert(dbr1.Table_name, null, cvalue);
-//
-//        cvalue.put("scode", "10001"); //科目コード
-//        cvalue.put("test1", "20170202"); //取得単位
-//        cvalue.put("test2", "20170301"); //取得年度
-//        dbr1.write.insert(dbr1.Table_name, null, cvalue);
-//
-//        cvalue.put("scode", "10002"); //科目コード
-//        cvalue.put("test1", "20170202"); //取得単位
-//        cvalue.put("test2", "20170301"); //取得年度
-//        dbr1.write.insert(dbr1.Table_name, null, cvalue);
-//
-//
-//        ContentValues cvalue2 = new ContentValues();
-//        cvalue2.put("scode","10000");
-//        cvalue2.put("subject","文化としての戦略と戦術");
-//        cvalue2.put("daytime","火1、木2");
-//        cvalue2.put("period","4Q");
-//        cvalue2.put("teacher","篠森先生");
-//        cvalue2.put("sj","専門発展科目");
-//        cvalue2.put("sjclass","2");
-//        dbr2.write.insert(dbr2.Table_name,null, cvalue2);
-//
-//
-//        cvalue2.put("scode","10001");
-//        cvalue2.put("subject","数学");
-//        cvalue2.put("daytime","火3、木3");
-//        cvalue2.put("period","4Q");
-//        cvalue2.put("room","A106");
-//        cvalue2.put("teacher","篠森先生");
-//        cvalue2.put("sj","専門発展科目");
-//        cvalue2.put("sjclass","2");
-//        dbr2.write.insert(dbr2.Table_name,null, cvalue2);
-//
-//        cvalue2.put("scode","10002");
-//        cvalue2.put("subject","キャリアプラン");
-//        cvalue2.put("daytime","火4");
-//        cvalue2.put("period","4Q");
-//        cvalue2.put("room","A106");
-//        cvalue2.put("teacher","篠森先生");
-//        cvalue2.put("sj","専門発展科目");
-//        cvalue2.put("sjclass","2");
-//        dbr2.write.insert(dbr2.Table_name,null, cvalue2);
 
-        //年度表示
-//        SimpleDateFormat sdf = new SimpleDateFormat("MMdd");
-//        today = Integer.parseInt(sdf.format(c.getTime()));
-//        //this_Q = TopPage.quartJudge(today);
-//
-//        DatabaseReader db_R = new DatabaseReader(this, "test");
-//        String test = db_R.readDB3(new String[]{"subject","test1", "test2"}, "test.scode = course.scode AND course.period='"+this_Q+"'", new String[]{},"test, course");
-//        String[] str = test.split("\n",0);
-//        testclass = new Test(str);
         SetTextView();
 
 

@@ -73,6 +73,8 @@ public class LoadingPage extends AppCompatActivity implements LoaderManager.Load
 
     public static EFlag actFlag;
     public static EFlag actFlag2;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

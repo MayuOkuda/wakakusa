@@ -29,6 +29,8 @@ import android.widget.Button;
 import android.widget.Toast;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
+import com.google.firebase.messaging.FirebaseMessaging;
+
 public class OptionPage extends BasePage {
 
     @Override
@@ -244,6 +246,17 @@ public class OptionPage extends BasePage {
             public void onClick(View v) {
                 // ボタンがクリックされた時に呼び出されます
                 dbWriter.deleteDB();
+
+                //全トピック脱退処理
+                FirebaseMessaging.getInstance().subscribeToTopic("all");
+
+                //学群トピック脱退処理
+                FirebaseMessaging.getInstance().subscribeToTopic(TopPage.ug);
+
+                //科目トピック脱退処理
+                String[] course = TopPage.course_db_R.readDB(new String[]{"scode"},0).split("\n",0);
+                for(String scode : course)
+                    FirebaseMessaging.getInstance().subscribeToTopic(scode);
 
                 // ログアウト後にログイン画面へ遷移
                 Intent intent = new Intent();

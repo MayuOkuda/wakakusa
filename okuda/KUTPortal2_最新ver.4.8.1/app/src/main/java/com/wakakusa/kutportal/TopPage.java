@@ -35,7 +35,11 @@ public class TopPage extends BasePage {
     static int dayflag = 0;
     static DatabaseReader course_db_R;
     static DatabaseReader score_db_R;
+    static DatabaseReader user_db_R;
     String thisYears;
+
+    //学群控えておく変数
+    static String ug;
 
     static Test testclass;
 
@@ -78,6 +82,7 @@ public class TopPage extends BasePage {
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
@@ -99,7 +104,11 @@ public class TopPage extends BasePage {
 
         course_db_R = new DatabaseReader(this,"course");
         score_db_R = new DatabaseReader(this, "score");
-;
+        user_db_R = new DatabaseReader(this, "student");
+
+
+        //トピックさんか関数
+        joinTopic();
 
         //今日の時間割
         threedays("center");
@@ -235,11 +244,6 @@ public class TopPage extends BasePage {
         String test = db_R.readDB3(new String[]{"subject","test1", "test2"}, "test.scode = course.scode AND course.period='"+q+"'", new String[]{},"test, course");
         String[] minday = test.split("\n",0);
         testclass = new Test(minday);
-
-        //topic参加の処理
-        FirebaseMessaging.getInstance().subscribeToTopic("all");
-        //DatabaseReader db_T = new DatabaseReader(this, "score");
-        //String topic = db_T.readDB(new String[]{"scode"}, "score =''");
 
 
         //テストが存在するとき以下
@@ -422,6 +426,29 @@ public class TopPage extends BasePage {
 
         }
         return false;
+    }
+
+    //topic参加処理
+    void joinTopic(){
+
+        //全員参加topic参加の処理
+        FirebaseMessaging.getInstance().subscribeToTopic("all");
+
+        //学群ごとトピック参加
+        HashMap<String,String> mj_map = new HashMap<String,String>();
+        mj_map.put("システム工学群", "system");
+        mj_map.put("環境理工学群", "milieu");
+        mj_map.put("情報学群", "info");
+        mj_map.put("経済・マネジメント学群", "manage");
+
+        ug = user_db_R.readDB(new String[]{"ug"},0).split("\n",0)[0];
+        FirebaseMessaging.getInstance().subscribeToTopic(mj_map.get(ug));
+
+        String[] course = course_db_R.readDB(new String[]{"scode"},0).split("\n",0);
+
+        //科目ごとトピック参加
+        for(String scode : course)
+        FirebaseMessaging.getInstance().subscribeToTopic(scode);
     }
 
 

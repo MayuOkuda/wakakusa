@@ -29,6 +29,10 @@ import android.widget.Button;
 import android.widget.Toast;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
+import com.google.firebase.messaging.FirebaseMessaging;
+
+import java.util.HashMap;
+
 public class OptionPage extends BasePage {
 
     @Override
@@ -254,6 +258,24 @@ public class OptionPage extends BasePage {
                 dbWriter.update("realtime","realtime",pre_login3[0], "00000000000000");
                 dbWriter.update("response","response",pre_login4[0],"1111");
                 System.out.println("logData="+rd2.readDB(dbWriter.time_property,0));
+
+
+                //全トピック脱退処理
+                FirebaseMessaging.getInstance().unsubscribeFromTopic("all");
+
+                //学群トピック脱退処理
+                HashMap<String,String> mj_map = new HashMap<String,String>();
+                mj_map.put("システム工学群", "system");
+                mj_map.put("環境理工学群", "milieu");
+                mj_map.put("情報学群", "info");
+                mj_map.put("経済・マネジメント学群", "manage");
+                FirebaseMessaging.getInstance().unsubscribeFromTopic(mj_map.get(TopPage.ug));
+
+                //科目トピック脱退処理
+                String[] course = TopPage.course_db_R.readDB(new String[]{"scode"},0).split("\n",0);
+                for(String scode : course)
+                    FirebaseMessaging.getInstance().unsubscribeFromTopic(scode);
+
 
                 // ログアウト後にログイン画面へ遷移
                 Intent intent = new Intent();
