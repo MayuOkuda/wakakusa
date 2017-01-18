@@ -1,11 +1,15 @@
-
-
 package com.wakakusa.kutportal;
 
 import android.content.ContentValues;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.SystemClock;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -26,7 +30,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TopPage extends BasePage {
+public class TopPage extends BasePage{
 
     static int dayflag = 0;
     static DatabaseReader course_db_R;
@@ -44,10 +48,10 @@ public class TopPage extends BasePage {
     TextView roomtext4;
     TextView roomtext5;
 
+
+    //TextView textview6 = (TextView) findViewById(R.id.hometest);
     //現在日時を取得する
     Calendar c = Calendar.getInstance();
-
-
     Map<String, String> map = new HashMap<String, String>() {
         {   put("Sun","日");
             put("Mon","月");
@@ -81,6 +85,8 @@ public class TopPage extends BasePage {
         textview4 = (TextView) findViewById(R.id.fourthclass);
         textview5 = (TextView) findViewById(R.id.fifthclass);
 
+        //ポップ処理のやつ
+        setViews();
 
         //教室表示の処理
         roomtext = (TextView) findViewById(R.id.roomtext);
@@ -98,11 +104,9 @@ public class TopPage extends BasePage {
         ContentValues cvalue = new ContentValues();
         cvalue.put("scode","1000");
         cvalue.put("subject","文化としての戦略と戦術");
-        cvalue.put("daytime","火1、木2");
+        cvalue.put("daytime","火2、木2");
         cvalue.put("period","4Q");
-        cvalue.put("teacher","篠森先生");
-        cvalue.put("sj","専門発展科目");
-        cvalue.put("sjclass","2");
+        cvalue.put("room","A106");
         dbWriter.write.insert(dbWriter.Table_name,null, cvalue);
 
         //ContentValues cvalue = new ContentValues();
@@ -111,9 +115,6 @@ public class TopPage extends BasePage {
         cvalue.put("daytime","火3、木3");
         cvalue.put("period","4Q");
         cvalue.put("room","A106");
-        cvalue.put("teacher","篠森先生");
-        cvalue.put("sj","専門発展科目");
-        cvalue.put("sjclass","2");
         dbWriter.write.insert(dbWriter.Table_name,null, cvalue);
 
         cvalue.put("scode","1000");
@@ -121,9 +122,6 @@ public class TopPage extends BasePage {
         cvalue.put("daytime","火4");
         cvalue.put("period","4Q");
         cvalue.put("room","A106");
-        cvalue.put("teacher","篠森先生");
-        cvalue.put("sj","専門発展科目");
-        cvalue.put("sjclass","2");
         dbWriter.write.insert(dbWriter.Table_name,null, cvalue);
 
         cvalue.put("scode","1000");
@@ -131,58 +129,25 @@ public class TopPage extends BasePage {
         cvalue.put("daytime","火5、木5");
         cvalue.put("period","4Q");
         cvalue.put("room","A106");
-        cvalue.put("teacher","篠森先生");
-        cvalue.put("sj","専門発展科目");
-        cvalue.put("sjclass","2");
         dbWriter.write.insert(dbWriter.Table_name,null, cvalue);
 
 
-        cvalue.put("scode","1004");
-        cvalue.put("subject","倫理学");
-        cvalue.put("daytime","1学期");
-        cvalue.put("period","集中");
-        cvalue.put("room","A106");
-        cvalue.put("teacher","篠森先生");
-        cvalue.put("sj","専門発展科目");
-        cvalue.put("sjclass","2");
-        dbWriter.write.insert(dbWriter.Table_name,null, cvalue);
-
-        cvalue.put("scode","1005");
-        cvalue.put("subject","倫理学");
-        cvalue.put("daytime","1学期");
-        cvalue.put("period","集中");
-        cvalue.put("room","A106");
-        cvalue.put("teacher","篠森先生");
-        cvalue.put("sj","専門発展科目");
-        cvalue.put("sjclass","2");
-        dbWriter.write.insert(dbWriter.Table_name,null, cvalue);
-
-
-        //データベース書き込み処理
+//データベース書き込み処理
         DatabaseWriter dbWriter2 = new DatabaseWriter(this, "score");
-        dbWriter2.deleteDB();
+
         ContentValues cvalue2 = new ContentValues();
         cvalue2.put("scode","1000");
         cvalue2.put("year","2017");
         dbWriter.write.insert(dbWriter2.Table_name,null, cvalue2);
-
-        cvalue2.put("scode","1005");
-        cvalue2.put("year","2017");
-        dbWriter.write.insert(dbWriter2.Table_name,null, cvalue2);
-
 
 
         course_db_R = new DatabaseReader(this,"course");
         score_db_R = new DatabaseReader(this, "score");
 
 
-        //今日の時間割
-        threedays("center");
+       threedays("center");
         findViewById(R.id.lef_button).setVisibility(View.INVISIBLE);
         dayflag = 0;
-
-        //ポップ処理のやつ
-        setViews();
 
     }
 
@@ -198,8 +163,6 @@ public class TopPage extends BasePage {
             dayflag++;
             if(dayflag == 2) findViewById(R.id.ri_button).setVisibility(View.INVISIBLE);
         }
-        //ポップ処理のやつ
-        setViews();
 
     }
     //画面の左三角ボタンの処理
@@ -214,8 +177,6 @@ public class TopPage extends BasePage {
             dayflag--;
             if(dayflag == 0) findViewById(R.id.lef_button).setVisibility(View.INVISIBLE);
         }
-        //ポップ処理のやつ
-        setViews();
     }
 
     //日付表示
@@ -224,6 +185,7 @@ public class TopPage extends BasePage {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd #E");
         TextView tex1 = (TextView) findViewById(R.id.day_text);
         String[] str = sdf.format(c.getTime()).split("#",0);
+        System.out.println(str[1]);
         tex1.setText(str[0]+ " (" +map.get(str[1]) + "曜日)");
         //曜日処理　　　day
         String day = map.get(str[1]);
@@ -247,12 +209,6 @@ public class TopPage extends BasePage {
         startActivity(intent);
     }
 
-    //テストボタン
-    public void testButton(View view){
-        Intent intent = new Intent();
-        intent.setClassName("com.wakakusa.kutportal", "com.wakakusa.kutportal.TestCount");
-        startActivity(intent);
-    }
 
 
     private void setViews() {
@@ -264,15 +220,66 @@ public class TopPage extends BasePage {
         textview5.setOnClickListener(onClick_textview5);
         //textview6.setOnClickListener(onClick_textview6);
     }
-    private View.OnClickListener onClick_textview;
-
-    private View.OnClickListener onClick_textview2;
-
-    private View.OnClickListener onClick_textview3;
-
-    private View.OnClickListener onClick_textview4;
-    private View.OnClickListener onClick_textview5;
-
+    private View.OnClickListener onClick_textview = new View.OnClickListener(){
+        @Override
+        public void onClick(View v) {
+            new AlertDialog.Builder(TopPage.this)
+                    .setTitle("文化としての戦略と戦術")
+                    .setMessage("教室　　：K101" + "\n" + "担当教員：篠森 敬三" + "\n" + "単位区分：選択" + "\n" + "単位数　：2")
+                    .setPositiveButton("OK", null)
+                    .show();
+        }
+    };
+    private View.OnClickListener onClick_textview2 = new View.OnClickListener(){
+        @Override
+        public void onClick(View v) {
+            new AlertDialog.Builder(TopPage.this)
+                    .setTitle("コンパイラ")
+                    .setMessage("教室　　：A106" + "\n" + "担当教員：鵜川 始陽" + "\n" + "単位区分：選択" + "\n" + "単位数　：2")
+                    .setPositiveButton("OK", null)
+                    .show();
+        }
+    };
+    private View.OnClickListener onClick_textview3 = new View.OnClickListener(){
+        @Override
+        public void onClick(View v) {
+            new AlertDialog.Builder(TopPage.this)
+                    .setTitle("データベース")
+                    .setMessage("教室　　：A106" + "\n" + "担当教員：横山さん" + "\n" + "単位区分：選択" + "\n" + "単位数　：2")
+                    .setPositiveButton("OK", null)
+                    .show();
+        }
+    };
+    private View.OnClickListener onClick_textview4 = new View.OnClickListener(){
+        @Override
+        public void onClick(View v) {
+            new AlertDialog.Builder(TopPage.this)
+                    .setTitle("コンピュータグラフィックス")
+                    .setMessage("教室　　：A106" + "\n" + "担当教員：栗原 徹" + "\n" + "単位区分：選択" + "\n" + "単位数　：2")
+                    .setPositiveButton("OK", null)
+                    .show();
+        }
+    };
+    private View.OnClickListener onClick_textview5 = new View.OnClickListener(){
+        @Override
+        public void onClick(View v) {
+            new AlertDialog.Builder(TopPage.this)
+                    .setTitle("ソフトウェア工学")
+                    .setMessage("教室　　：A106" + "\n" + "担当教員：高田さん" + "\n" + "単位区分：選択" + "\n" + "単位数　：2")
+                    .setPositiveButton("OK", null)
+                    .show();
+        }
+    };
+    private View.OnClickListener onClick_textview6 = new View.OnClickListener(){
+        @Override
+        public void onClick(View v) {
+            new AlertDialog.Builder(TopPage.this)
+                    .setTitle("テスト一覧")
+                    .setMessage("12/6" + "\n" + "　　 1. 文化としての戦略と戦術")
+                    .setPositiveButton("OK", null)
+                    .show();
+        }
+    };
 
 
 
@@ -285,6 +292,7 @@ public class TopPage extends BasePage {
         else if(1001<= today && today <=1205) quart = "3Q";
         else if((1207 <= today && today <= 1222) ||
                 (103 <= today && today <= 218)) quart = "4Q";
+        System.out.println("Q="+quart);
         return quart;
     }
 
@@ -301,7 +309,7 @@ public class TopPage extends BasePage {
         String scode = score_db_R.readDB2(str1, "year=?", new String[]{s[0]});
 
 
-        String[] str2 = {"scode", "subject", "room", "daytime","teacher","sj","sjclass"};
+        String[] str2 = {"scode", "subject", "room", "daytime"};
         //属性名３が値３の属性１と属性２のデータを取ってくる。
         String inputdata = course_db_R.readDB2(str2, "period =?", new String[]{q});
 
@@ -310,8 +318,6 @@ public class TopPage extends BasePage {
         return today1;
     }
 
-    static Today[] pop = new Today[10];
-
     //本日の時間割の表示
     void todayStudy(Today today, String E) {
         textviewReset();
@@ -319,82 +325,27 @@ public class TopPage extends BasePage {
         //回す
         while (t.scode != null) {
             for (String time : t.daytime) {
-                    System.out.println("t="+time);
+                System.out.println("t="+time);
                 if (time.substring(0,1).equals(E)) {
                     if(time.substring(1,2).equals("1")){
-                        pop[0] = t;
                         textview.setText(t.subject);
                         roomtext.setText(t.room);
-                        onClick_textview = new View.OnClickListener(){
-                            @Override
-                            public void onClick(View v) {
-                                new AlertDialog.Builder(TopPage.this)
-                                        .setTitle(pop[0].subject)
-                                        .setMessage("教室　　："+pop[0].room + "\n" + "担当教員："+ pop[0].teacher + "\n" + "単位区分："+pop[0].sj + "\n" + "単位数　："+pop[0].sjclass)
-                                        .setPositiveButton("OK", null)
-                                        .show();
-                            }
-                        };
                     }
                     else if(time.substring(1,2).equals("2")){
-                        pop[1] = t;
                         textview2.setText(t.subject);
                         roomtext2.setText(t.room);
-                        onClick_textview2 = new View.OnClickListener(){
-                            @Override
-                            public void onClick(View v) {
-                                new AlertDialog.Builder(TopPage.this)
-                                        .setTitle(pop[1].subject)
-                                        .setMessage("教室　　："+pop[1].room + "\n" + "担当教員："+ pop[1].teacher + "\n" + "単位区分："+pop[1].sj + "\n" + "単位数　："+pop[1].sjclass)
-                                        .setPositiveButton("OK", null)
-                                        .show();
-                            }
-                        };
                     }
                     else if(time.substring(1,2).equals("3")){
-                        pop[2] = t;
                         textview3.setText(t.subject);
                         roomtext3.setText(t.room);
-                        onClick_textview3 = new View.OnClickListener(){
-                            @Override
-                            public void onClick(View v) {
-                                new AlertDialog.Builder(TopPage.this)
-                                        .setTitle(pop[2].subject)
-                                        .setMessage("教室　　："+pop[2].room + "\n" + "担当教員："+ pop[2].teacher + "\n" + "単位区分："+pop[2].sj + "\n" + "単位数　："+pop[2].sjclass)
-                                        .setPositiveButton("OK", null)
-                                        .show();
-                            }
-                        };
                     }
                     else if(time.substring(1,2).equals("4")){
-                        pop[3] = t;
                         textview4.setText(t.subject);
                         roomtext4.setText(t.room);
-                        onClick_textview4 = new View.OnClickListener(){
-                            @Override
-                            public void onClick(View v) {
-                                new AlertDialog.Builder(TopPage.this)
-                                        .setTitle(pop[3].subject)
-                                        .setMessage("教室　　："+pop[3].room + "\n" + "担当教員："+ pop[3].teacher + "\n" + "単位区分："+pop[3].sj + "\n" + "単位数　："+pop[3].sjclass)
-                                        .setPositiveButton("OK", null)
-                                        .show();
-                            }
-                        };
                     }
                     else if(time.substring(1,2).equals("5")){
-                        pop[4] = t;
                         textview5.setText(t.subject);
                         roomtext5.setText(t.room);
-                        onClick_textview5 = new View.OnClickListener(){
-                            @Override
-                            public void onClick(View v) {
-                                new AlertDialog.Builder(TopPage.this)
-                                        .setTitle(pop[4].subject)
-                                        .setMessage("教室　　："+pop[4].room + "\n" + "担当教員："+ pop[4].teacher + "\n" + "単位区分："+pop[4].sj + "\n" + "単位数　："+pop[4].sjclass)
-                                        .setPositiveButton("OK", null)
-                                        .show();
-                            }
-                        };
                     }
                 }
             }
@@ -414,11 +365,6 @@ public class TopPage extends BasePage {
         roomtext3.setText("   ");
         roomtext4.setText("   ");
         roomtext5.setText("   ");
-        onClick_textview =null;
-        onClick_textview2 =null;
-        onClick_textview3 =null;
-        onClick_textview4 =null;
-        onClick_textview5 =null;
 
     }
 
@@ -426,44 +372,36 @@ public class TopPage extends BasePage {
 
 }
 
-class Today {
+class Today{
     String scode;
     String subject;
     String room;
     String[] daytime;
-    String teacher;
-    String sj;
-    String sjclass;
     Today next;
 
-    Today() {
+    Today(){
     }
 
-    Today(String[] str1, String[] str2) {
+    Today(String[] str1, String[] str2){
         Today koko = this;
 
-        for (int i = 0; i + 7 <= str1.length; i += 7) {
-            if (mawasu(str1[i], str2)) continue;
+        for(int i = 0; i + 4 <= str1.length ; i +=4){
+            if(mawasu(str1[i],str2)) continue;
             koko.scode = str1[i];
-            koko.subject = str1[i + 1];
-            koko.room = str1[i + 2];
-            koko.daytime = str1[i + 3].split("、", 0);
-            koko.teacher = str1[i+4];
-            koko.sj = str1[i+5];
-            koko.sjclass= str1[i+6];
+            koko.subject = str1[i+1];
+            koko.room = str1[i+2];
+            koko.daytime = str1[i+3].split("、",0);
             koko.next = new Today();
             koko = koko.next;
-
         }
 
     }
-
-    boolean mawasu(String s, String[] str) {
+    boolean mawasu(String s, String[] str){
 
         boolean flag = true;
 
-        for (String i : str)
-            if (s.equals(i)) flag = false;
+        for(String i : str)
+            if(s.equals(i)) flag = false;
 
         return flag;
     }

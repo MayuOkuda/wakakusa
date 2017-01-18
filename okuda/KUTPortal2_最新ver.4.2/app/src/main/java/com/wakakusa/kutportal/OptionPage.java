@@ -32,6 +32,9 @@ public class OptionPage extends BasePage {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+      //  final int FP = ViewGroup.LayoutParams.FILL_PARENT;
+       // final int WC = ViewGroup.LayoutParams.WRAP_CONTENT;
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -42,21 +45,10 @@ public class OptionPage extends BasePage {
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        //学籍番号と名前の表示
-        int[] id = {R.id.setus_num, R.id.setus_name};
-        DatabaseReader r_db = new DatabaseReader(this, "student");
-        String[] s = r_db.readDB(new String[]{"id","name"}, 0).split("\n",0);
-        int num = 0;
-        for(int i : id){
-        TextView tex1 = (TextView) findViewById(i);
-            tex1.setText(s[num]);
-            num++;
-        }
 
 
     }
 
-    //ユーザページボタンの移動メソッド
        public void UserpageIntent(View view){
             Intent intent = new Intent();
             intent.setClassName("com.wakakusa.kutportal", "com.wakakusa.kutportal.UserPage");

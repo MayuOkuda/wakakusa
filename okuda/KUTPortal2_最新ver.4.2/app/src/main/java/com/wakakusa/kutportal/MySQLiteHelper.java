@@ -95,6 +95,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
 }
 
+
 class DatabaseWriter {
     //private SQLiteDatabase read;
     SQLiteDatabase write;
@@ -192,26 +193,6 @@ class DatabaseReader {
         String str = "";
         while (c.moveToNext()) {
             for(String i : table) str += c.getString(c.getColumnIndex(i))  + "\n";
-
-        }
-        c.close();
-        return str;
-    }
-
-    //item=取り出す属性　where=条件内容 param=条件内容の値　table = "テーブル"
-    public String readDB3(String[] item, String where, String[] param, String table) {
-
-        //データの検索結果はCursor型で返される
-        // queryメソッドの実行例
-        Cursor c =read.query(table,item, where,param,
-                null, null, null,null);
-
-        //データベースのデータを読み取って表示する。
-        //startManagingCursor(c);
-
-        String str = "";
-        while (c.moveToNext()) {
-            for(String i : item) str += c.getString(c.getColumnIndex(i))  + "\n";
 
         }
         c.close();

@@ -12,6 +12,12 @@
     tools:context="com.wakakusa.kutportal.ScorePage"
     tools:showIn="@layout/app_bar_score_page">
 
+    <Button
+        android:text="成績明細"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scoreButton"
+        android:layout_alignParentRight="true"/>
 
     <!-- 全体スクロール -->
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -130,7 +136,7 @@
                         </TextView>
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginBottom="1dp"
                             android:layout_marginLeft="1dp"

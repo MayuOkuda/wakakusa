@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
+        FirebaseMessaging.getInstance().subscribeToTopic("all");
 
         // Google Play Servicesのインストールチェック
         // GCMの場合、GoogleApiClientで妥当なチェックできないため非推奨メソッドを利用

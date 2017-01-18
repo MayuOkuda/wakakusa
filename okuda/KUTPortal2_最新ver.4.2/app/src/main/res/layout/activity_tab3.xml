@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".tab3">
+    tools:context="com.wakakusa.kutportal.activity_tab3">
 
 
 
@@ -133,9 +133,9 @@
                     />
 
                 <TextView
-                    android:text="3Q"
+                    android:text="TextView"
                     android:layout_height="match_parent"
-                    android:id="@+id/time3_a1"
+                    android:id="@+id/time_a1"
                     android:background="#FFFFFF"
                     android:layout_marginBottom="1dp"
                     android:layout_marginLeft="1dp"
@@ -145,9 +145,9 @@
                     android:layout_width="match_parent" />
 
                 <TextView
-                    android:text="3Q"
+                    android:text="TextView"
                     android:layout_height="match_parent"
-                    android:id="@+id/time3_b1"
+                    android:id="@+id/time_b1"
                     android:background="#FFFFFF"
                     android:layout_marginTop="1dp"
                     android:layout_marginBottom="1dp"
@@ -156,8 +156,8 @@
                     android:layout_width="match_parent" />
 
                 <TextView
-                    android:text="3Q"
-                    android:id="@+id/time3_c1"
+                    android:text="TextView"
+                    android:id="@+id/time_c1"
                     android:layout_height="match_parent"
                     android:background="#FFFFFF"
                     android:layout_marginTop="1dp"
@@ -168,7 +168,7 @@
 
                 <TextView
                     android:text="TextView"
-                    android:id="@+id/time3_d1"
+                    android:id="@+id/time_d1"
                     android:layout_height="match_parent"
                     android:background="#FFFFFF"
                     android:layout_marginTop="1dp"
@@ -179,7 +179,7 @@
 
                 <TextView
                     android:text="TextView"
-                    android:id="@+id/time3_e1"
+                    android:id="@+id/time_e1"
                     android:layout_height="match_parent"
                     android:background="#FFFFFF"
                     android:layout_marginTop="1dp"
@@ -190,7 +190,7 @@
 
                 <TextView
                     android:text="TextView"
-                    android:id="@+id/time3_f1"
+                    android:id="@+id/time_f1"
                     android:layout_height="match_parent"
                     android:background="#FFFFFF"
                     android:layout_marginTop="1dp"
@@ -222,7 +222,7 @@
                 <TextView
                     android:text="TextView"
                     android:layout_height="match_parent"
-                    android:id="@+id/time3_a2"
+                    android:id="@+id/time_a2"
                     android:background="#FFFFFF"
                     android:layout_marginBottom="1dp"
                     android:layout_marginLeft="1dp"
@@ -233,7 +233,7 @@
                 <TextView
                     android:text="TextView"
                     android:layout_height="match_parent"
-                    android:id="@+id/time3_b2"
+                    android:id="@+id/time_b2"
                     android:background="#FFFFFF"
                     android:layout_marginBottom="1dp"
                     android:layout_marginRight="1dp"
@@ -242,7 +242,7 @@
 
                 <TextView
                     android:text="TextView"
-                    android:id="@+id/time3_c2"
+                    android:id="@+id/time_c2"
                     android:layout_height="match_parent"
                     android:background="#FFFFFF"
                     android:layout_marginBottom="1dp"
@@ -252,7 +252,7 @@
 
                 <TextView
                     android:text="TextView"
-                    android:id="@+id/time3_d2"
+                    android:id="@+id/time_d2"
                     android:layout_height="match_parent"
                     android:background="#FFFFFF"
                     android:layout_marginBottom="1dp"
@@ -262,7 +262,7 @@
 
                 <TextView
                     android:text="TextView"
-                    android:id="@+id/time3_e2"
+                    android:id="@+id/time_e2"
                     android:layout_height="match_parent"
                     android:background="#FFFFFF"
                     android:layout_marginBottom="1dp"
@@ -272,7 +272,7 @@
 
                 <TextView
                     android:text="TextView"
-                    android:id="@+id/time3_f2"
+                    android:id="@+id/time_f2"
                     android:layout_height="match_parent"
                     android:background="#FFFFFF"
                     android:layout_marginBottom="1dp"
@@ -302,7 +302,7 @@
                 <TextView
                     android:text="TextView"
                     android:layout_height="match_parent"
-                    android:id="@+id/time3_a3"
+                    android:id="@+id/time_a3"
                     android:background="#FFFFFF"
                     android:layout_marginBottom="1dp"
                     android:layout_marginLeft="1dp"
@@ -313,7 +313,7 @@
                 <TextView
                     android:text="TextView"
                     android:layout_height="match_parent"
-                    android:id="@+id/time3_b3"
+                    android:id="@+id/time_b3"
                     android:background="#FFFFFF"
                     android:layout_marginBottom="1dp"
                     android:layout_marginRight="1dp"
@@ -322,7 +322,7 @@
 
                 <TextView
                     android:text="TextView"
-                    android:id="@+id/time3_c3"
+                    android:id="@+id/time_c3"
                     android:layout_height="match_parent"
                     android:background="#FFFFFF"
                     android:layout_marginBottom="1dp"
@@ -332,7 +332,7 @@
 
                 <TextView
                     android:text="TextView"
-                    android:id="@+id/time3_d3"
+                    android:id="@+id/time_d3"
                     android:layout_height="match_parent"
                     android:background="#FFFFFF"
                     android:layout_marginBottom="1dp"
@@ -342,7 +342,7 @@
 
                 <TextView
                     android:text="TextView"
-                    android:id="@+id/time3_e3"
+                    android:id="@+id/time_e3"
                     android:layout_height="match_parent"
                     android:background="#FFFFFF"
                     android:layout_marginBottom="1dp"
@@ -352,7 +352,7 @@
 
                 <TextView
                     android:text="TextView"
-                    android:id="@+id/time3_f3"
+                    android:id="@+id/time_f3"
                     android:layout_height="match_parent"
                     android:background="#FFFFFF"
                     android:layout_marginBottom="1dp"
@@ -383,7 +383,7 @@
                 <TextView
                     android:text="TextView"
                     android:layout_height="match_parent"
-                    android:id="@+id/time3_a4"
+                    android:id="@+id/time_a4"
                     android:background="#FFFFFF"
                     android:layout_marginBottom="1dp"
                     android:layout_marginLeft="1dp"
@@ -394,7 +394,7 @@
                 <TextView
                     android:text="TextView"
                     android:layout_height="match_parent"
-                    android:id="@+id/time3_b4"
+                    android:id="@+id/time_b4"
                     android:background="#FFFFFF"
                     android:layout_marginBottom="1dp"
                     android:layout_marginRight="1dp"
@@ -403,7 +403,7 @@
 
                 <TextView
                     android:text="TextView"
-                    android:id="@+id/time3_c4"
+                    android:id="@+id/time_c4"
                     android:layout_height="match_parent"
                     android:background="#FFFFFF"
                     android:layout_marginBottom="1dp"
@@ -413,7 +413,7 @@
 
                 <TextView
                     android:text="TextView"
-                    android:id="@+id/time3_d4"
+                    android:id="@+id/time_d4"
                     android:layout_height="match_parent"
                     android:background="#FFFFFF"
                     android:layout_marginBottom="1dp"
@@ -423,7 +423,7 @@
 
                 <TextView
                     android:text="TextView"
-                    android:id="@+id/time3_e4"
+                    android:id="@+id/time_e4"
                     android:layout_height="match_parent"
                     android:background="#FFFFFF"
                     android:layout_marginBottom="1dp"
@@ -433,7 +433,7 @@
 
                 <TextView
                     android:text="TextView"
-                    android:id="@+id/time3_f4"
+                    android:id="@+id/time_f4"
                     android:layout_height="match_parent"
                     android:background="#FFFFFF"
                     android:layout_marginBottom="1dp"
@@ -463,7 +463,7 @@
                 <TextView
                     android:text="TextView"
                     android:layout_height="match_parent"
-                    android:id="@+id/time3_a5"
+                    android:id="@+id/time_a5"
                     android:background="#FFFFFF"
                     android:layout_marginBottom="1dp"
                     android:layout_marginLeft="1dp"
@@ -474,7 +474,7 @@
                 <TextView
                     android:text="TextView"
                     android:layout_height="match_parent"
-                    android:id="@+id/time3_b5"
+                    android:id="@+id/time_b5"
                     android:background="#FFFFFF"
                     android:layout_marginBottom="1dp"
                     android:layout_marginRight="1dp"
@@ -483,7 +483,7 @@
 
                 <TextView
                     android:text="TextView"
-                    android:id="@+id/time3_c5"
+                    android:id="@+id/time_c5"
                     android:layout_height="match_parent"
                     android:background="#FFFFFF"
                     android:layout_marginBottom="1dp"
@@ -493,7 +493,7 @@
 
                 <TextView
                     android:text="TextView"
-                    android:id="@+id/time3_d5"
+                    android:id="@+id/time_d5"
                     android:layout_height="match_parent"
                     android:background="#FFFFFF"
                     android:layout_marginBottom="1dp"
@@ -503,7 +503,7 @@
 
                 <TextView
                     android:text="TextView"
-                    android:id="@+id/time3_e5"
+                    android:id="@+id/time_e5"
                     android:layout_height="match_parent"
                     android:background="#FFFFFF"
                     android:layout_marginBottom="1dp"
@@ -513,7 +513,7 @@
 
                 <TextView
                     android:text="TextView"
-                    android:id="@+id/time3_f5"
+                    android:id="@+id/time_f5"
                     android:layout_height="match_parent"
                     android:background="#FFFFFF"
                     android:layout_marginBottom="1dp"
