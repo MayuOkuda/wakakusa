@@ -10,9 +10,15 @@ import android.widget.TextView;
 
 public class tab4 extends Fragment {
 
+    /*
+ * CouserPage(履修確認クラス)の4Qの時間割を表示するためのクラス
+ */
+
+
+
     View rootView;
 
-    //popに使う
+    //科目の詳細表示popに使う
     Today pop[][] = new Today[6][5];
     private View.OnClickListener[] onClick_textview = new View.OnClickListener[30];
 
@@ -37,8 +43,6 @@ public class tab4 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         //pop情報を格納する配列の初期化
-
-        int page = getArguments().getInt("page", 0);
         rootView = inflater.inflate(R.layout.activity_tab4, container, false);
         CoursePage.couse_appearance("4Q");
         SetTextView();
@@ -48,8 +52,9 @@ public class tab4 extends Fragment {
     //履修状況表示
     void SetTextView() {
         textviewReset();
+        //履修状況を表示するメソッド呼び出し
         Today t = CoursePage.course;
-        //回す
+        //科目の曜日判定と表示
         while (t.scode != null) {
             for (String time : t.daytime) {
                 if (time.substring(0, 1).equals("月")) {

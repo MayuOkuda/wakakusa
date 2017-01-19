@@ -12,9 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
-
 import com.google.firebase.messaging.FirebaseMessaging;
-
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -49,6 +47,13 @@ public class TopPage extends BasePage {
 
     //現在日時を取得する
     Calendar c = Calendar.getInstance();
+
+    //科目pop用の変数
+    private View.OnClickListener onClick_textview;
+    private View.OnClickListener onClick_textview2;
+    private View.OnClickListener onClick_textview3;
+    private View.OnClickListener onClick_textview4;
+    private View.OnClickListener onClick_textview5;
 
     Map<String, String> map = new HashMap<String, String>() {
         {   put("Sun","日");
@@ -91,6 +96,7 @@ public class TopPage extends BasePage {
         roomtext4 = (TextView) findViewById(R.id.roomtext4);
         roomtext5 = (TextView) findViewById(R.id.roomtext5);
 
+        //データベース読み込み
         course_db_R = new DatabaseReader(this,"course");
         score_db_R = new DatabaseReader(this, "score");
         user_db_R = new DatabaseReader(this, "student");
@@ -190,6 +196,7 @@ public class TopPage extends BasePage {
     }
 
 
+    //科目のpopの更新処理を行う
     private void setViews() {
 
         textview.setOnClickListener(onClick_textview);
@@ -197,17 +204,8 @@ public class TopPage extends BasePage {
         textview3.setOnClickListener(onClick_textview3);
         textview4.setOnClickListener(onClick_textview4);
         textview5.setOnClickListener(onClick_textview5);
-        //textview6.setOnClickListener(onClick_textview6);
+
     }
-
-    private View.OnClickListener onClick_textview;
-    private View.OnClickListener onClick_textview2;
-    private View.OnClickListener onClick_textview3;
-    private View.OnClickListener onClick_textview4;
-    private View.OnClickListener onClick_textview5;
-
-
-
 
     //クオーター判定のプログラム
     static String quartJudge(int today){
@@ -236,12 +234,6 @@ public class TopPage extends BasePage {
         String[] minday = test.split("\n",0);
         testclass = new Test(minday);
 
-        //topic参加の処理
-        FirebaseMessaging.getInstance().subscribeToTopic("all");
-        //DatabaseReader db_T = new DatabaseReader(this, "score");
-        //String topic = db_T.readDB(new String[]{"scode"}, "score =''");
-
-
         //テストが存在するとき以下
         if(testclass.day != null) {
             Test t = testclass;
@@ -250,7 +242,9 @@ public class TopPage extends BasePage {
                 if(Long.parseLong(t.day) < i) i = Integer.parseInt(t.day);
                 t = t.next;
             }
-            Calendar cal1 = Calendar.getInstance();   //カレンダーオブジェクトの生成
+
+            //カレンダーオブジェクトの生成
+            Calendar cal1 = Calendar.getInstance();
 
             TextView textView = (TextView)findViewById(R.id.textView11);
             int year = i/10000;
@@ -299,6 +293,7 @@ public class TopPage extends BasePage {
         return today1;
     }
 
+    //うまくpopで表示するための変数
     static Today[] pop = new Today[10];
 
     //本日の時間割の表示
@@ -391,6 +386,7 @@ public class TopPage extends BasePage {
         }
 
     }
+
     //表示の初期化
     void textviewReset(){
         textview.setText("　　　 　　　　　　　");
@@ -410,13 +406,12 @@ public class TopPage extends BasePage {
         onClick_textview5 =null;
 
     }
+
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             this.finish();
             overridePendingTransition(0,0);
-
-
 
             return true;
 
@@ -459,8 +454,12 @@ public class TopPage extends BasePage {
     }
 
 
-
 }
+
+
+/*
+ *科目情報を連結リストで保存しておくための変数
+ */
 
 class Today {
     String scode;
