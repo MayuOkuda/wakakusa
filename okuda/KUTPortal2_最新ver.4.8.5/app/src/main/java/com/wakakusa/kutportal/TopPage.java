@@ -101,11 +101,12 @@ public class TopPage extends BasePage {
         findViewById(R.id.lef_button).setVisibility(View.INVISIBLE);
         dayflag = 0;
 
+        //トピック参加関数
+        joinTopic();
+
         //ポップ処理のやつ
         setViews();
 
-        //トピック参加関数
-        joinTopic();
 
     }
 
@@ -437,12 +438,15 @@ public class TopPage extends BasePage {
 
         ug = user_db_R.readDB(new String[]{"ug"},0).split("\n",0)[0];
         if(mj_map.get(ug)!=null)
-        FirebaseMessaging.getInstance().subscribeToTopic(mj_map.get(ug));
+            FirebaseMessaging.getInstance().subscribeToTopic(mj_map.get(ug));
 
         //成績がついている科目については脱退
         String[] course = TopPage.score_db_R.readDB2(new String[]{"scode"},"score!=?",new String[]{""}).split("\n",0);
-        for(String scode : course)
-            FirebaseMessaging.getInstance().unsubscribeFromTopic(scode);
+        for(String scode : course) {
+            System.out.println("pop="+scode);
+            if (scode.equals(null))
+                FirebaseMessaging.getInstance().unsubscribeFromTopic(scode);
+        }
 
     }
 
