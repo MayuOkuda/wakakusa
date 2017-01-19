@@ -441,18 +441,20 @@ public class TopPage extends BasePage {
         if(mj_map.get(ug)!=null)
             FirebaseMessaging.getInstance().subscribeToTopic(mj_map.get(ug));
 
-        //学年トピック参加
-        grade = user_db_R.readDB(new String[]{"grade"},0).split("\n",0)[0];
-        if(grade!=null)
-            FirebaseMessaging.getInstance().subscribeToTopic(grade);
-
-
         //成績がついている科目については脱退
         String[] course = TopPage.score_db_R.readDB2(new String[]{"scode"},"score!=?",new String[]{""}).split("\n",0);
         for(String scode : course) {
-            if (scode.equals(null))
+            if (!scode.equals(null)&&!scode.equals(""))
                 FirebaseMessaging.getInstance().unsubscribeFromTopic(scode);
         }
+
+        //学年トピック参加
+        grade = user_db_R.readDB(new String[]{"grade"},0).split("\n",0)[0];
+        System.out.println("gread="+ grade);
+        if(!grade.equals(null)&&!grade.equals(""))
+            System.out.println("gread="+ grade);
+            FirebaseMessaging.getInstance().subscribeToTopic(grade);
+
 
     }
 
