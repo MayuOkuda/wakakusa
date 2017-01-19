@@ -16,7 +16,7 @@ import java.util.Map;
  * <p/>
  * Created by Shirai on 2016/08/05.
  */
-class FcmTestFirebaseMessagingService extends FirebaseMessagingService {
+public class FcmTestFirebaseMessagingService extends FirebaseMessagingService {
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
@@ -35,11 +35,13 @@ class FcmTestFirebaseMessagingService extends FirebaseMessagingService {
         notificationCompatBuilder.setContentText((body != null) ? body : "");
         notificationCompatBuilder.setDefaults(Notification.DEFAULT_ALL);
         notificationCompatBuilder.setAutoCancel(true);
+
         // タップ時の動作設定
-        Intent intent = new Intent(this, TopPage.class);
+        Intent intent = new Intent(this, LoadingPage.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         notificationCompatBuilder.setContentIntent(pendingIntent);
         notificationCompatBuilder.setFullScreenIntent(pendingIntent, false);
+
         if(res.substring(0,1).equals("1")&&title.equals("講義")
                 ||res.substring(1,2).equals("1")&&title.equals("イベント")
                 ||res.substring(2,3).equals("1")&&title.equals("事務連絡")

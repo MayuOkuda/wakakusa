@@ -10,9 +10,15 @@ import android.widget.TextView;
 
 public class tab5 extends Fragment {
 
+    /*
+ * CouserPage(履修確認クラス)の集中講義の時間割を表示するためのクラス
+ */
+
+
+
     View rootView;
 
-    //popに使う
+    //科目の詳細表示popに使う
     Today pop[][] = new Today[2][12];
     private View.OnClickListener[] onClick_textview = new View.OnClickListener[24];
 
@@ -36,7 +42,6 @@ public class tab5 extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        int page = getArguments().getInt("page", 0);
         rootView = inflater.inflate(R.layout.activity_tab5, container, false);
             CoursePage.couse_appearance("集中");
             SetTextView();
@@ -45,11 +50,12 @@ public class tab5 extends Fragment {
         return rootView;
     }
 
-    //表示
+    //履修状況表示
     void SetTextView() {
         textviewReset();
+        //履修状況を表示するメソッド呼び出し
         Today t = CoursePage.course;
-        //回す
+        //科目の曜日判定と表示
         int f = 0;
         int s = 0;
         while (t.scode != null) {
