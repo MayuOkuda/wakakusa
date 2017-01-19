@@ -1,5 +1,3 @@
-
-
 package com.wakakusa.kutportal;
 
 import android.app.AlertDialog;

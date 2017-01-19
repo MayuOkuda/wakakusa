@@ -1,0 +1,63 @@
+package com.wakakusa.kutportal;
+
+import android.app.Notification;
+import android.app.PendingIntent;
+import android.content.Intent;
+import android.support.v4.app.NotificationManagerCompat;
+import android.support.v7.app.NotificationCompat;
+
+import com.google.firebase.messaging.FirebaseMessagingService;
+import com.google.firebase.messaging.RemoteMessage;
+
+import java.util.Map;
+
+/**
+ * プッシュ通知を受け取るサービスです。
+ * <p/>
+ * Created by Shirai on 2016/08/05.
+ */
+public class FcmTestFirebaseMessagingService extends FirebaseMessagingService {
+
+    @Override
+    public void onMessageReceived(RemoteMessage remoteMessage) {
+        super.onMessageReceived(remoteMessage);
+        DatabaseReader dbReader = new DatabaseReader(this, "loginData");
+        String[] str4 = {"response"};
+        String res = dbReader.readDB(str4,0);
+
+        // 通知設定
+        Map<String, String> data = remoteMessage.getData();
+        String title = data.get("title");
+        String body = data.get("body");
+        NotificationCompat.Builder notificationCompatBuilder = new NotificationCompat.Builder(this);
+        notificationCompatBuilder.setSmallIcon(R.mipmap.wakakusa);
+        notificationCompatBuilder.setContentTitle((title != null) ? title : "");
+        notificationCompatBuilder.setContentText((body != null) ? body : "");
+        notificationCompatBuilder.setDefaults(Notification.DEFAULT_ALL);
+        notificationCompatBuilder.setAutoCancel(true);
+
+        // タップ時の動作設定
+        Intent intent = new Intent(this, LoadingPage.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        notificationCompatBuilder.setContentIntent(pendingIntent);
+        notificationCompatBuilder.setFullScreenIntent(pendingIntent, false);
+
+        if(res.substring(0,1).equals("1")&&title.equals("講義")
+                ||res.substring(1,2).equals("1")&&title.equals("イベント")
+                ||res.substring(2,3).equals("1")&&title.equals("事務連絡")
+                ||res.substring(3,4).equals("1")||title.equals("その他")){
+
+            NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(this);
+            notificationManagerCompat.notify(346, notificationCompatBuilder.build());
+        }
+
+
+
+
+
+
+        // 通知表示
+
+    }
+
+}
