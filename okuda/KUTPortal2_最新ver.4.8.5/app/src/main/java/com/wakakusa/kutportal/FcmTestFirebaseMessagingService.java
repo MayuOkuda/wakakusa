@@ -16,11 +16,14 @@ import java.util.Map;
  * <p/>
  * Created by Shirai on 2016/08/05.
  */
-public class FcmTestFirebaseMessagingService extends FirebaseMessagingService {
+class FcmTestFirebaseMessagingService extends FirebaseMessagingService {
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
+        DatabaseReader dbReader = new DatabaseReader(this, "loginData");
+        String[] str4 = {"response"};
+        String res = dbReader.readDB(str4,0);
 
         // 通知設定
         Map<String, String> data = remoteMessage.getData();
@@ -37,9 +40,22 @@ public class FcmTestFirebaseMessagingService extends FirebaseMessagingService {
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         notificationCompatBuilder.setContentIntent(pendingIntent);
         notificationCompatBuilder.setFullScreenIntent(pendingIntent, false);
+        if(res.substring(0,1).equals("1")&&title.equals("講義")
+                ||res.substring(1,2).equals("1")&&title.equals("イベント")
+                ||res.substring(2,3).equals("1")&&title.equals("事務連絡")
+                ||res.substring(3,4).equals("1")||title.equals("その他")){
+
+            NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(this);
+            notificationManagerCompat.notify(346, notificationCompatBuilder.build());
+        }
+
+
+
+
+
+
         // 通知表示
-        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(this);
-        notificationManagerCompat.notify(346, notificationCompatBuilder.build());
+
     }
 
 }
