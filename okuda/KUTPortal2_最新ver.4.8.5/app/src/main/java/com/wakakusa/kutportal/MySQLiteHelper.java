@@ -31,6 +31,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             "adm       TEXT,"+
             "ug        TEXT,"+
             "dpm       TEXT,"+
+            "grade     TEXT,"+
             "mjr       TEXT,"+
             "sub1      TEXT,"+
             "sub2      TEXT,"+
@@ -109,7 +110,7 @@ class DatabaseWriter {
     String Table_name;
 
     final String[] tableName = {"student", "course","score", "test", "news","loginData"};
-    final String[] student_property = {"id","name", "birth","adm","ug","dpm","mjr","sub1","sub2","teacher","address","mailaddress"};
+    final String[] student_property = {"id","name", "birth","adm","ug","dpm","grade","mjr","sub1","sub2","teacher","address","mailaddress"};
     final String[] course_property = {"scode", "subject", "daytime","teacher","period","room","sj","sjclass","sjclasssub"};
     final String[] score_property = {"scode","score","year","period"};
     final String[] test_property = {"scode","test1","test2"};

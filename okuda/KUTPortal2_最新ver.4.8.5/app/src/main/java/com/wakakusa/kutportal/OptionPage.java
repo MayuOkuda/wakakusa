@@ -277,6 +277,12 @@ public class OptionPage extends BasePage {
                         FirebaseMessaging.getInstance().unsubscribeFromTopic(scode);
 
                 }
+
+
+                //学年トピック参加
+                if(TopPage.grade!=null)
+                    FirebaseMessaging.getInstance().subscribeToTopic(TopPage.grade);
+
                 // ログアウト後にログイン画面へ遷移
                 Intent intent = new Intent();
                 BasePage.actFlag.setFlagState(true);

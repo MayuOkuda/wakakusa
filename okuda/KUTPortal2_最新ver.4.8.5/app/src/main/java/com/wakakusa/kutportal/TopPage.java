@@ -31,6 +31,7 @@ public class TopPage extends BasePage {
 
     //学群控えておく変数
     static String ug;
+    static String grade;
 
     static Test testclass;
 
@@ -440,10 +441,15 @@ public class TopPage extends BasePage {
         if(mj_map.get(ug)!=null)
             FirebaseMessaging.getInstance().subscribeToTopic(mj_map.get(ug));
 
+        //学年トピック参加
+        grade = user_db_R.readDB(new String[]{"grade"},0).split("\n",0)[0];
+        if(grade!=null)
+            FirebaseMessaging.getInstance().subscribeToTopic(grade);
+
+
         //成績がついている科目については脱退
         String[] course = TopPage.score_db_R.readDB2(new String[]{"scode"},"score!=?",new String[]{""}).split("\n",0);
         for(String scode : course) {
-            System.out.println("pop="+scode);
             if (scode.equals(null))
                 FirebaseMessaging.getInstance().unsubscribeFromTopic(scode);
         }
