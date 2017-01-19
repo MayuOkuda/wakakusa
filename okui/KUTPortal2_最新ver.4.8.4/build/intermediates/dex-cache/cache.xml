@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_c15de8f70f33cf585ee454107ed115a205777138/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-10.0.1_b5f601e17a04d5698739a191cb9df0e4e39aeed1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="4c829ff0ccfecb28a999ee46d9e75948dfc777a4">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-10.0.1_ae73f1a7461b49b66814808d55231b7d26c153ff/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_4d515e424872f316b069fc3bfe0ec57fcca0c7f1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_ec5b7d4448b5c7d43cea5bff37f004ef0da16ec4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-24.2.1_3e5fce228e28430ef2945bb75a9a9c38bd680321/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-10.0.1_3b229541a97b8cd57683d5706be6735665c83723/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.2.1_0151956652ded95eed23f7f47249e95b2ced331e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-10.0.1_40e0390120730831b024c182eb04ac24f088d4fd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-10.0.1_f2aa6a51ad32fbf001ebe757034708aba0eb8391/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_db0f1a6ce7be9348169a9570233d342aa3715751/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_942bc0b14a40af8d6f35e7bcabebc2afc53d5c82/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_c01ad58cfbbf69bf006f587bd82e251bdd676188/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_6e765bdc92358004f78e4e3105a0dbee298925ad/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="c9c12a5aab11a8d8bf3bec22f196a49767cadc35">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_a73b7e786ffdb1c1ad0950863347dd3350670511/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8308ed003522a2ee8958311afcc4cfd0470377cd">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-gcm-10.0.1_fd15a5687eb71dee1a0a7952877e0d93bc7a553a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_f3cffb511a642c1f745c30d2b892ef23026fe97f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="cf7f0d188b80c1aabfdd430ec9991a6065ef1ec8">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_143dbc7734c7e240fad9ee1ca0c58ebb6b93c18b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_cc5c075b8d31a2accd83e50f78eebf6aff01ba53/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics-impl/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="e871881b36b32e6bfd271a830c6eeb54ff0fc185">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-analytics-impl-10.0.1_42bbb73293c825ee5590760409f852faaef4caa9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-10.0.1_3a286d62b0bf59bb853e32e34991c1004408c852/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="6bb5d347ebc0c6ef3c83a905222a688da5d2f7b4">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-iid-10.0.1_8d9a9c4975737c61d8e5f51d20c8caf933b3a95f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_a1993bc6cd36a581c606eb24dd9c9a99caff82db/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_ea9dc7ce69725a84f52fc3a14fb065e63e210a76/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.google.firebase/firebase-messaging/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="4b17463c814bdc562fb0392fa3494063623a0904">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-messaging-10.0.1_49cb2132374dc060070a65b808b258b90ac21841/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager-v4-impl/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="f23ad0f8e58713ff4b55f61c0bbde3830378347c">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tagmanager-v4-impl-10.0.1_2c27436408ae53498bb5ce4577b2b8f55186b8e3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-10.0.1_a16031df7cd18954757b34eba9cfc1f3a5fa65a8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_0614596fe0694e44fa3fec6cab2b3c1b76dd696d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_2b5d5f3877853719b3d24c6db0c689a0b7fb1a56/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_1015b4ca2c6f04718237f40038b246c7032832d2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_93be3ae1ffa5f1236c90b5c69b35325f52922f08/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.google.firebase/firebase-crash/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="de29a39f9260f88151b1ef453140e71c76b6c415">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-crash-10.0.1_ae3fc2b1d5463abc459d46e458ee898fbf906c2b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-10.0.1_ebf828cd43a4fe75cfdbbd3e8cd5a80e23fbbde6/classes.dex" />
+    </item>
+
+</items>

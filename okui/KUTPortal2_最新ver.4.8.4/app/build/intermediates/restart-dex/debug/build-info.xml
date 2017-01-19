@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="x86"
+    api-level="25"
+    density="xhdpi"
+    format="8"
+    plugin-version="2.2.3"
+    timestamp="660844506994462"
+    token="3695230342716701106"
+    verifier="FULL_BUILD_REQUESTED" >
+
+    <task
+        name="javac"
+        duration="1176" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="441" />
+    <task
+        name="verifier"
+        duration="157" />
+
+    <artifact
+        location="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/outputs/apk/app-debug.apk"
+        type="MAIN" />
+
+    <build
+        timestamp="660844506994462"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/outputs/apk/app-debug.apk"
+            type="MAIN" />
+    </build>
+
+</instant-run>

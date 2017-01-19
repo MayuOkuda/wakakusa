@@ -1,0 +1,50 @@
+[
+    {
+        "merged": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/res/merged/debug/drawable-v21/ic_menu_sirabasu.xml",
+        "source": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/src/main/res/drawable-v21/ic_menu_sirabasu.xml"
+    },
+    {
+        "merged": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/res/merged/debug/drawable-v21/ic_menu_share.xml",
+        "source": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/src/main/res/drawable-v21/ic_menu_share.xml"
+    },
+    {
+        "merged": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/res/merged/debug/drawable-v21/ic_menu_send.xml",
+        "source": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/src/main/res/drawable-v21/ic_menu_send.xml"
+    },
+    {
+        "merged": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-v21/abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/res/merged/debug/drawable-v21/ic_menu_slideshow.xml",
+        "source": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/src/main/res/drawable-v21/ic_menu_slideshow.xml"
+    },
+    {
+        "merged": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/res/merged/debug/drawable-v21/ic_menu_help.xml",
+        "source": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/src/main/res/drawable-v21/ic_menu_help.xml"
+    },
+    {
+        "merged": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/res/merged/debug/drawable-v21/ic_menu_manage.xml",
+        "source": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/src/main/res/drawable-v21/ic_menu_manage.xml"
+    },
+    {
+        "merged": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/res/merged/debug/drawable-v21/ic_menu_camera.xml",
+        "source": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/src/main/res/drawable-v21/ic_menu_camera.xml"
+    },
+    {
+        "merged": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/res/merged/debug/drawable-v21/ic_menu_gallery.xml",
+        "source": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/src/main/res/drawable-v21/ic_menu_gallery.xml"
+    },
+    {
+        "merged": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/res/merged/debug/drawable-v21/test.jpg",
+        "source": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/src/main/res/drawable-v21/test.jpg"
+    },
+    {
+        "merged": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
+        "source": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-v21/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
+        "source": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/res/drawable-v21/abc_edit_text_material.xml"
+    }
+]

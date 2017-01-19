@@ -1,0 +1,7 @@
+#Wed Jan 18 23:58:13 JST 2017
+base.0=/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_143dbc7734c7e240fad9ee1ca0c58ebb6b93c18b
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_a73b7e786ffdb1c1ad0950863347dd3350670511/classes.dex
+base.1=/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_a73b7e786ffdb1c1ad0950863347dd3350670511
+file.0=/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_143dbc7734c7e240fad9ee1ca0c58ebb6b93c18b/classes.dex

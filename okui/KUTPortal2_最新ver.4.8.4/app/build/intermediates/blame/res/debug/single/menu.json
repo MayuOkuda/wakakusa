@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/res/merged/debug/menu/test_count.xml",
+        "source": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/src/main/res/menu/test_count.xml"
+    },
+    {
+        "merged": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/res/merged/debug/menu/activity_news_page_drawer.xml",
+        "source": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/src/main/res/menu/activity_news_page_drawer.xml"
+    },
+    {
+        "merged": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/res/merged/debug/menu/page_drawer.xml",
+        "source": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/src/main/res/menu/page_drawer.xml"
+    },
+    {
+        "merged": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/res/merged/debug/menu/news_page.xml",
+        "source": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/src/main/res/menu/news_page.xml"
+    },
+    {
+        "merged": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/res/merged/debug/menu/main.xml",
+        "source": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/src/main/res/menu/main.xml"
+    },
+    {
+        "merged": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/build/intermediates/res/merged/debug/menu/activity_test_count_drawer.xml",
+        "source": "/Users/okuirieko/Desktop/github/wakakusa/okui/KUTPortal2_最新ver.4.8.4/app/src/main/res/menu/activity_test_count_drawer.xml"
+    }
+]
