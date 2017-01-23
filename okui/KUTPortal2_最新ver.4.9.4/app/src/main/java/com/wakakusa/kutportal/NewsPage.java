@@ -290,7 +290,6 @@ public class NewsPage extends BasePage {
 
 
         String s = getS2();
-        System.out.println(s);
         setNews();
 
     }

@@ -467,7 +467,6 @@ public class TopPage extends BasePage {
         String[] grade = {"B1","B2","B3","B4","M1","M2"};
         //学年トピック参加
         this_grade = user_db_R.readDB(new String[]{"grade"},0).split("\n",0)[0];
-        System.out.println("gread="+ this_grade);
         for(String g : grade)  FirebaseMessaging.getInstance().subscribeToTopic(g);
 
         //自分の学年トピックからは脱退
@@ -517,6 +516,7 @@ class Today {
 
             //科目トピック参加
             FirebaseMessaging.getInstance().subscribeToTopic(koko.scode);
+
 
             koko.subject = str1[i + 1];
             koko.room = str1[i + 2];

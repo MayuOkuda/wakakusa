@@ -5,6 +5,7 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.NotificationCompat;
+import android.util.Log;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
@@ -26,6 +27,17 @@ public class FcmTestFirebaseMessagingService extends FirebaseMessagingService {
         Map<String, String> data = remoteMessage.getData();
         String title = data.get("title");
         String body = data.get("body");
+
+
+        DatabaseReader dbReader = new DatabaseReader(this, "loginData");
+        String[] str4 = {"response"};
+        String res = dbReader.readDB(str4, 0);
+        Log.e("BefuSInn","res="+ res + "title="+ body);
+        if ((res.substring(0, 1).equals("1") && body.equals("講義"))
+                || (res.substring(1, 2).equals("1") && body.equals("事務連絡"))
+                || (res.substring(2, 3).equals("1") && body.equals("イベント"))
+                || (res.substring(3, 4).equals("1") && body.equals("その他"))) {
+            Log.e("Befusan","res="+ title);
         NotificationCompat.Builder notificationCompatBuilder = new NotificationCompat.Builder(this);
         notificationCompatBuilder.setSmallIcon(R.mipmap.wakakusa);
         notificationCompatBuilder.setContentTitle((title != null) ? title : "");
@@ -41,7 +53,7 @@ public class FcmTestFirebaseMessagingService extends FirebaseMessagingService {
         NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(this);
         notificationManagerCompat.notify(346, notificationCompatBuilder.build());
 
-
+    }
 
     }
 
