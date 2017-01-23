@@ -32,12 +32,10 @@ public class FcmTestFirebaseMessagingService extends FirebaseMessagingService {
         DatabaseReader dbReader = new DatabaseReader(this, "loginData");
         String[] str4 = {"response"};
         String res = dbReader.readDB(str4, 0);
-        Log.e("BefuSInn","res="+ res + "title="+ body);
         if ((res.substring(0, 1).equals("1") && body.equals("講義"))
                 || (res.substring(1, 2).equals("1") && body.equals("事務連絡"))
                 || (res.substring(2, 3).equals("1") && body.equals("イベント"))
                 || (res.substring(3, 4).equals("1") && body.equals("その他"))) {
-            Log.e("Befusan","res="+ title);
         NotificationCompat.Builder notificationCompatBuilder = new NotificationCompat.Builder(this);
         notificationCompatBuilder.setSmallIcon(R.mipmap.wakakusa);
         notificationCompatBuilder.setContentTitle((title != null) ? title : "");
