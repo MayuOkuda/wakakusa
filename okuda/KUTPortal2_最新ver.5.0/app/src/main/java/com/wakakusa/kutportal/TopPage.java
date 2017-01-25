@@ -41,7 +41,7 @@ public class TopPage extends BasePage {
     private int help2;
 
     static Test testclass;
-
+    static Test testclass2;
     //時間割表示用
     TextView textview;
     TextView textview2;
@@ -256,10 +256,10 @@ public class TopPage extends BasePage {
         testclass = new Test(minday);
 
         //テストが存在するとき以下
-        if(testclass.day != null) {
-            Test t = testclass;
-            int i = Integer.parseInt(testclass.day);
-            while (t.day != null) {
+        if(testclass2 != null) {
+            Test t = testclass2;
+            int i = Integer.parseInt(testclass2.day);
+            while (t != null) {
                 if(Long.parseLong(t.day) < i) i = Integer.parseInt(t.day);
                 t = t.next;
             }
