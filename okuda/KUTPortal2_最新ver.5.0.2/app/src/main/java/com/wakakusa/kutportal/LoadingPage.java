@@ -487,8 +487,7 @@ class JsonLoader extends AsyncTaskLoader<JSONObject> {
             //データベース書き込み
             dbWriter.update("realtime", "realtime", real.substring(0, 14), sdf1.format(date));
             dbWriter.update("limittime", "limittime", limit.substring(0, 14), sdf1.format(cal.getTime()));
-            limit = dbReader.readDB(str1, 0);
-            real = dbReader.readDB(str2, 0);
+
             cookiestore.add(uri, cookie);
             json = new JSONObject(new String(outputStream.toByteArray()));
             outputStream.close();
@@ -504,6 +503,10 @@ class JsonLoader extends AsyncTaskLoader<JSONObject> {
             // 処理なし
 
         } catch (IOException exception) {
+            String str[] = {"limittime"};
+            DatabaseReader dbReader = new DatabaseReader(mContext, "loginData");
+            limit = dbReader.readDB(str, 0);
+
             Log.d("aubykddi","limit = " + limit);
             if(limit.split("\n", 0)[0].equals("00000000000001")){return null;}
 
