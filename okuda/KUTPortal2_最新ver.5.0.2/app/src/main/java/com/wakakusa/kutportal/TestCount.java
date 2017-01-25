@@ -91,7 +91,7 @@ class Test{
     Test(){}
 
     Test(String[] str){
-        if(str[0].equals(null)) return;
+        if(str[0].equals(null)|| str.length <= 3) return;
         Test testclass= this;
         SimpleDateFormat sdf2 = new SimpleDateFormat("yyyyMMdd");
         int year = Integer.parseInt(sdf2.format(c.getTime()));
@@ -103,7 +103,7 @@ class Test{
 
         }
         else if(year <= Integer.parseInt(str[2])) {
-           testclass.day = str[2];
+            testclass.day = str[2];
 
         }
 
