@@ -10,13 +10,12 @@ import android.widget.TextView;
 
 
 /*
- * CouserPage(履修確認クラス)の2Qの時間割を表示するためのクラス
+ * CoursePageの2Qの時間割を表示するためのクラス
  */
 
 
 
 public class tab2 extends Fragment {
-
 
     View rootView;
 
@@ -42,7 +41,6 @@ public class tab2 extends Fragment {
         return fragment;
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.activity_tab2, container, false);
@@ -52,11 +50,10 @@ public class tab2 extends Fragment {
         return rootView;
     }
 
-
     //履修状況表示
     void SetTextView() {
         textviewReset();
-        //1Qの履修科目情報をtに保存しておく
+        //2Qの履修科目情報をtに保存しておく
         Today t = CoursePage.course;
         //科目の曜日判定と表示
         while (t.scode != null) {
@@ -117,7 +114,6 @@ public class tab2 extends Fragment {
             }
         }
     }
-
 
     //以下pop表示のためのメソッド;
     void tabpop() {

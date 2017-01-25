@@ -1,6 +1,6 @@
+package com.wakakusa.kutportal;
 
-        package com.wakakusa.kutportal;
-        import android.app.AlertDialog;
+import android.app.AlertDialog;
         import android.content.Intent;
         import android.os.Bundle;
         import android.util.Log;
@@ -18,19 +18,24 @@
         import android.widget.TextView;
         import android.view.View.OnClickListener;
         import java.util.Arrays;
+
 public class NewsPage extends BasePage {
+
     /*
-*お知らせページ
-* 最新30件のお知らせを表示 */
+    * お知らせ画面クラス
+    * 最新30件のお知らせを表示
+    */
+
     static int i=1;
     private View.OnClickListener onClick_textview;
     TextView[] npop = new TextView[11];
     static String s3[];
     String item;
     DatabaseReader rd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        ;
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_page);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -42,7 +47,9 @@ public class NewsPage extends BasePage {
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        content(); }
+        content();
+    }
+
     void content(){
         rd = new DatabaseReader(this, "news");
         final DatabaseWriter dbWriter = new DatabaseWriter(this, "news");
@@ -60,12 +67,14 @@ public class NewsPage extends BasePage {
         Button btn11 = (Button)findViewById(R.id.deletebutton8);
         Button btn12 = (Button)findViewById(R.id.deletebutton9);
         Button btn13 = (Button)findViewById(R.id.deletebutton10);
+
         btn1.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 i=1;
                 System.out.println(i);
-                setNews(); }
+                setNews();
+            }
         });
         btn2.setOnClickListener(new OnClickListener() {
             @Override
@@ -96,6 +105,7 @@ public class NewsPage extends BasePage {
                 dbWriter.deleteDB2("newscode",s2[i-1]);
                 setNews(); }
         });
+
         btn5.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {

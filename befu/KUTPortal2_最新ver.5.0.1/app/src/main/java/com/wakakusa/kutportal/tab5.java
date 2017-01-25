@@ -11,8 +11,8 @@ import android.widget.TextView;
 public class tab5 extends Fragment {
 
     /*
- * CouserPage(履修確認クラス)の集中講義の時間割を表示するためのクラス
- */
+     * CoursePage(履修確認クラス)の集中講義の時間割を表示するためのクラス
+     */
 
     View rootView;
 

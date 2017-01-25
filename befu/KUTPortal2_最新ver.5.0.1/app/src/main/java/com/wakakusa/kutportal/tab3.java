@@ -12,8 +12,8 @@ public class tab3 extends Fragment {
 
 
     /*
- * CouserPage(履修確認クラス)の3Qの時間割を表示するためのクラス
- */
+     * CoursePageの3Qの時間割を表示するためのクラス
+     */
 
 
     View rootView;
@@ -52,7 +52,7 @@ public class tab3 extends Fragment {
     //履修状況表示
     void SetTextView() {
         textviewReset();
-        //1Qの履修科目情報をtに保存しておく
+        //3Qの履修科目情報をtに保存しておく
         Today t = CoursePage.course;
         //科目の曜日判定と表示
         while (t.scode != null) {

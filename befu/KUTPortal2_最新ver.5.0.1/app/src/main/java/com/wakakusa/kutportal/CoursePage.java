@@ -18,8 +18,9 @@ public class CoursePage extends BasePage
 
 
     /*
- * CouserPage(履修確認クラス)
- */
+     * CoursePage(時間割画面クラス)
+     * 各履修内容を表示しているtabクラスの元となるクラス
+     */
 
 
     //detabase呼び出し変数
@@ -35,10 +36,8 @@ public class CoursePage extends BasePage
 
         // TabHostの初期化および設定処理
         initTabs();
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -53,7 +52,6 @@ public class CoursePage extends BasePage
         course_db_R = new DatabaseReader(this,"course");
         score_db_R = new DatabaseReader(this, "score");
 
-
         Calendar c = Calendar.getInstance();
         //年度表示
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
@@ -61,14 +59,13 @@ public class CoursePage extends BasePage
         thisYear = sdf.format(c.getTime());
         String thisMonth = sdf2.format(c.getTime());
 
-        //もし１月２月３月なら
+        //１月~３月の場合の年度処理
         if(thisMonth.equals("01") || thisMonth.equals("02")||thisMonth.equals("03"))
             thisYear = String.valueOf(Integer.parseInt(thisYear)-1);
         TextView year = (TextView) findViewById(R.id.course_year);
         year.setText(thisYear);
 
         couse_appearance("1Q");
-
     }
 
     protected void initTabs() {
@@ -78,8 +75,7 @@ public class CoursePage extends BasePage
         tabLayout.setTabMode(TabLayout.MODE_FIXED);
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-
-        //読み込まれる際に、隣も読み込んでいるのかも(スワイプするため）
+        //スワイプ動作
         FragmentPagerAdapter adapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
@@ -97,7 +93,6 @@ public class CoursePage extends BasePage
 
             @Override
             public CharSequence getPageTitle(int position) {
-
                 if (position + 1 < 5) {
                     return (position + 1) + "Q";
                 }
@@ -115,7 +110,6 @@ public class CoursePage extends BasePage
 
         //オートマチック方式: これだけで両方syncする
         tabLayout.setupWithViewPager(viewPager);
-
 
     }
 
@@ -139,15 +133,12 @@ public class CoursePage extends BasePage
         String[] str1 = {"scode"};
         //属性名３が値３の属性１と属性２のデータを取ってくる。
         String scode = score_db_R.readDB2(str1, "year=?", new String[]{thisYear});
-
-
         String[] str2 = {"scode", "subject", "room", "daytime","teacher","sj","sjclass"};
         //属性名３が値３の属性１と属性２のデータを取ってくる。
         String inputdata = course_db_R.readDB2(str2, "period =?", new String[]{Q});
 
         //今年の今クオータの中身をクラス分け
         course = new Today(inputdata.split("\n", 0), scode.split("\n", 0));
-
 
     }
 

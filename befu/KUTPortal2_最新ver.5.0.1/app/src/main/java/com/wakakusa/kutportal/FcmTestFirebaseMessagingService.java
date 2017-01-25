@@ -12,12 +12,12 @@ import com.google.firebase.messaging.RemoteMessage;
 
 import java.util.Map;
 
-/**
- * プッシュ通知を受け取るサービスです。
- * <p/>
- * Created by Shirai on 2016/08/05.
- */
 public class FcmTestFirebaseMessagingService extends FirebaseMessagingService {
+
+    /**
+     * push通知クラス
+     * 通知を受け取るクラス
+     */
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
@@ -28,7 +28,6 @@ public class FcmTestFirebaseMessagingService extends FirebaseMessagingService {
         String title = data.get("title");
         String body = data.get("body");
 
-
         DatabaseReader dbReader = new DatabaseReader(this, "loginData");
         String[] str4 = {"response"};
         String res = dbReader.readDB(str4, 0);
@@ -36,23 +35,22 @@ public class FcmTestFirebaseMessagingService extends FirebaseMessagingService {
                 || (res.substring(1, 2).equals("1") && body.equals("事務連絡"))
                 || (res.substring(2, 3).equals("1") && body.equals("イベント"))
                 || (res.substring(3, 4).equals("1") && body.equals("その他"))) {
-        NotificationCompat.Builder notificationCompatBuilder = new NotificationCompat.Builder(this);
-        notificationCompatBuilder.setSmallIcon(R.mipmap.wakakusa);
-        notificationCompatBuilder.setContentTitle((title != null) ? title : "");
-        notificationCompatBuilder.setContentText((body != null) ? body : "");
-        notificationCompatBuilder.setDefaults(Notification.DEFAULT_ALL);
-        notificationCompatBuilder.setAutoCancel(true);
-        // タップ時の動作設定
-        Intent intent = new Intent(this, LoadingPage.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-        notificationCompatBuilder.setContentIntent(pendingIntent);
-        notificationCompatBuilder.setFullScreenIntent(pendingIntent, false);
-        // 通知表示
-        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(this);
-        notificationManagerCompat.notify(346, notificationCompatBuilder.build());
+            NotificationCompat.Builder notificationCompatBuilder = new NotificationCompat.Builder(this);
+            notificationCompatBuilder.setSmallIcon(R.mipmap.wakakusa);
+            notificationCompatBuilder.setContentTitle((title != null) ? title : "");
+            notificationCompatBuilder.setContentText((body != null) ? body : "");
+            notificationCompatBuilder.setDefaults(Notification.DEFAULT_ALL);
+            notificationCompatBuilder.setAutoCancel(true);
 
-    }
-
+            // タップ時の動作設定
+            Intent intent = new Intent(this, LoadingPage.class);
+            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+            notificationCompatBuilder.setContentIntent(pendingIntent);
+            notificationCompatBuilder.setFullScreenIntent(pendingIntent, false);
+            // 通知表示
+            NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(this);
+            notificationManagerCompat.notify(346, notificationCompatBuilder.build());
+        }
     }
 
 }

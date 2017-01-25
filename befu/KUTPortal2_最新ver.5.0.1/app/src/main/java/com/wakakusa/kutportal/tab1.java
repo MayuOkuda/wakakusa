@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.widget.TextView;
 
 /*
- * CouserPage(履修確認クラス)の1Qの時間割を表示するためのクラス
+ * CoursePageの1Qの時間割を表示するためのクラス
  */
 
 
@@ -31,7 +31,6 @@ public class tab1 extends Fragment {
     //コンストラクタ
     public tab1() {
     }
-
 
     public static tab1 newInstance(int page) {
         Bundle args = new Bundle();
@@ -82,7 +81,6 @@ public class tab1 extends Fragment {
                 }
             }
             t = t.next;
-
         }
         //popのための処理
         tabpop();

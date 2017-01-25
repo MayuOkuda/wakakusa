@@ -56,20 +56,20 @@ import javax.net.ssl.TrustManagerFactory;
 
 public class LoginPage extends AppCompatActivity implements LoaderManager.LoaderCallbacks<JSONObject> {
 
+    /*
+     *  ログイン画面クラス
+     *  ログイン処理を行うクラス
+     */
 
     //ユーザ名とパスワードを入力するための変数
     static EFlag actflag1;
     static EditText userName;
     static EditText password;
-
     static String name;
     static String pass;
-
-
     Intent intent = new Intent();
     private URI uri;
     private AsyncTaskLoader<JSONObject> mAsyncTask;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,8 +80,6 @@ public class LoginPage extends AppCompatActivity implements LoaderManager.Loader
         actflag1 = new EFlag();
         userName = (EditText) findViewById(R.id.userNameEdit);
         password = (EditText) findViewById(R.id.PasswordEdit);
-
-        // button = (Button)findViewById(R.id.loginButton);
 
     }
 
@@ -94,7 +92,6 @@ public class LoginPage extends AppCompatActivity implements LoaderManager.Loader
         name = userName.getText().toString();
         pass = password.getText().toString();
 
-
         if (mAsyncTask != null) mAsyncTask.cancelLoad();
         super.onPause();
     }
@@ -106,76 +103,53 @@ public class LoginPage extends AppCompatActivity implements LoaderManager.Loader
         pass = password.getText().toString();
         uri = new URI("http://wakakusa.info.kochi-tech.ac.jp");
 
-
         // 直前の非同期処理が終わってないこともあるのでキャンセルしておく
         if (mAsyncTask != null) mAsyncTask.cancelLoad();
         // UIスレッドで通信してはならないので、AsyncTaskによりワーカースレッドで通信する
         getLoaderManager().restartLoader(1, null, this);
     }
 
-    //intent.setClassName("com.wakakusa.kutportal","com.wakakusa.kutportal.LoadingPage");
-    //startActivity(intent);
     public Loader<JSONObject> onCreateLoader(int id, Bundle args) {
 
-
         try {
-
-            //String urlText = "http://animemap.net/api/table/tokyo.json";
-            //String urlText = "http://192.168.33.15:8000/posts.json";
             String urlText = "https://wakakusa.info.kochi-tech.ac.jp/test/main.php";
-            //String urlText = "http://weather.livedoor.com/forecast/webservice/json/v1?city=270000";
-            //String urlText = "http://www.ajaxtower.jp/googlemaps/gdownloadurl/data.json";
-
             com.wakakusa.kutportal.JsonLoader2 jsonLoader = new com.wakakusa.kutportal.JsonLoader2(this, urlText);
             jsonLoader.forceLoad();
             return jsonLoader;
         } catch (Exception e) {
             e.printStackTrace();
-
         }
         return null;
     }
 
-
     public void onLoadFinished(Loader<JSONObject> loader, JSONObject data) {
-
-
         final String[] tableName = {"student", "course", "score", "test", "news"};
-
         DatabaseWriter[] dbWriter = new DatabaseWriter[5];
+
         for (int i = 0; i < 5; i++) dbWriter[i] = new DatabaseWriter(this, tableName[i]);
-
-
         if (data != null) { //dataがnull？の状態
             System.out.println(data.toString());
             JSONArray[] tableData = new JSONArray[5];
 
             try {
-
                 JSONObject object = new JSONObject();
                 object.put("check", "offline");
                 JSONObject object2 = new JSONObject();
                 object2.put("check", "firstlogin");
-                System.out.println(object2.toString() + object.toString());
-                if (data.toString().equals(object.toString())) {
 
+                if (data.toString().equals(object.toString())) {
                     intent.setClassName("com.wakakusa.kutportal", "com.wakakusa.kutportal.UserPage");
                     startActivity(intent);
                     overridePendingTransition(0,0);
-                    System.out.println("usodaro");
 
                 } else if (data.toString().equals(object2.toString())) {
-                    System.out.println("onegai");
                     Toast.makeText(LoginPage.this, "ユーザ名かパスワードが違います", Toast.LENGTH_LONG).show();
-
                 } else {
-
 
                     for (int i = 0; i < 5; i++) dbWriter[i].deleteDB();
                     //tableData[0から4]でそれぞれテーブルデータをとってくる
                     for (int i = 0; i < 5; i++)
                         tableData[i] = data.getJSONArray(tableName[i]);
-
 
                     //データを格納する
                     for (int j = 0; j < 5; j++) {
@@ -186,18 +160,12 @@ public class LoginPage extends AppCompatActivity implements LoaderManager.Loader
                         }
                     }
 
-
-
                     intent.setClassName("com.wakakusa.kutportal", "com.wakakusa.kutportal.TopPage");
                     startActivity(intent);
                     overridePendingTransition(0, 0);
 
-
-                    //moveTaskToBack(true);
-
                 }
 
-                //textView.setText(dbReader[0].readDB(dbWriter[0].property,0)); //データの入力
 
             } catch (JSONException e) {
                 Log.d("onLoadFinished", "JSONのパースに失敗しました。 JSONException=" + e);
@@ -206,8 +174,6 @@ public class LoginPage extends AppCompatActivity implements LoaderManager.Loader
                 overridePendingTransition(0,0);
             }
         } else {
-            //nullが返されているから、これがログとして出力されている？
-
             Log.d("onLoadFinished", "onLoadFinished error!");
 
             intent.setClassName("com.wakakusa.kutportal", "com.wakakusa.kutportal.LoginPage");
@@ -225,17 +191,12 @@ public class LoginPage extends AppCompatActivity implements LoaderManager.Loader
     @Override
     public void onRestart(){
         super.onRestart();
-
-
         this.finish();
-
-
     }
 }
 
 class JsonLoader2 extends AsyncTaskLoader<JSONObject> {
     private String urlText;
-
     JSONObject object;
     JSONObject object2;
     private Context mContext;
@@ -257,14 +218,9 @@ class JsonLoader2 extends AsyncTaskLoader<JSONObject> {
         this.urlText = urlText;
         mContext = context;
         URL url = new URL(urlText);
-
-
         uri = new URI("http://wakakusa.info.kochi-tech.ac.jp");
-
         cookiestore =new MyCookieStore(mContext);
-
         manager = new CookieManager();
-//以下をコメントにするとセッションは働きません
         buildCookieManager();
 
         CookieSyncManager.createInstance(mContext);
@@ -274,33 +230,19 @@ class JsonLoader2 extends AsyncTaskLoader<JSONObject> {
         manager = new CookieManager();
         CookieHandler.setDefault(manager);
 
-
     }
+
     public void showCookie() {
-
         store = manager.getCookieStore();
-
-
         List<HttpCookie> cookies = store.getCookies();
-
-
         List<URI> cookieuri = store.getURIs();
-
-
         cookie = cookies.get(0);
-
         uri = cookieuri.get(0);
-        System.out.println(cookieuri.get(0));
-
         cookietime = cookie.getMaxAge();
-
         store.add(uri, cookie);
         store.get(uri);
 
-        System.out.println(cookie);
         Log.i("lightbox", "Cookies[" + 0 + "]: " + cookie + "/" + cookietime);
-
-
     }
 
     @Override
@@ -309,23 +251,16 @@ class JsonLoader2 extends AsyncTaskLoader<JSONObject> {
         TrustManagerFactory trustManager;
         BufferedInputStream inputStream = null;
         response =null;
-
         byte[] buffer = new byte[1024];
         int length;
         int checkpoint = 0;
         map.put("display", "環境");
         try {
             URL url = new URL(urlText);
-
-
-
-
             object = new JSONObject();
             object.put("check", "offline");
             object2 =new JSONObject();
             object2.put("check", "firstlogin");
-
-
 
             String USERNAME;
             String PASSWORD;
@@ -338,30 +273,15 @@ class JsonLoader2 extends AsyncTaskLoader<JSONObject> {
             SimpleDateFormat sdf1 = new SimpleDateFormat("yyyyMMddHHmmss");
             Date date = new Date();
 
-            //long in = Long.parseLong(t);
-
-            //dbWriter.deleteDB();
             String[] str1 = {"limittime"};
             String[] str2 = {"realtime"};
             String[] str3 = {"ara"};
             String[] str4 = {"tokenID"};
             limit = dbReader.readDB(str1, 0);
             String real = dbReader.readDB(str2, 0);
-
             String ara = dbReader.readDB(str3, 0);
             String sessionID = dbReader.readDB(str4,0);
 
-            System.out.println("Check ara:" + ara);
-            System.out.println("Check real:" + real);
-            System.out.println("Check limit:" + limit);
-            System.out.println(ara.length());
-
-
-            limit = dbReader.readDB(str1, 0);
-            real = dbReader.readDB(str2, 0);
-            ara = dbReader.readDB(str3, 0);
-            System.out.println(ara.length());
-            System.out.println(limit + ":" + real + ":" + ara);
             KeyStore ks = KeyStoreUtil.getEmptyKeyStore();
             KeyStoreUtil.loadX509Certificate(ks,
                     mContext.getResources().getAssets().open("server.crt"));
@@ -375,20 +295,16 @@ class JsonLoader2 extends AsyncTaskLoader<JSONObject> {
                 }
             });
 
-            // ★ポイント2★ URIはhttps://で始める
-            // ★ポイント3★ 送信データにセンシティブな情報を含めてよい
             trustManager = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
             trustManager.init(ks);
             SSLContext sslCon = SSLContext.getInstance("TLS");
             sslCon.init(null, trustManager.getTrustManagers(), new SecureRandom());
-
 
             //↓Basic認証
             response = (HttpsURLConnection)url.openConnection();
             response.setConnectTimeout(30000);
             response.setReadTimeout(30000);
             response.setChunkedStreamingMode(0);
-
             response.setDefaultSSLSocketFactory(sslCon.getSocketFactory());
             response.setSSLSocketFactory(sslCon.getSocketFactory());
 
@@ -401,22 +317,15 @@ class JsonLoader2 extends AsyncTaskLoader<JSONObject> {
             response.setRequestProperty("Accept-Language", "jp");
             //response.setRequestProperty("Connection", "Keep-Alive");
 
-
-            //System.setProperty("http.keepAlive", "false");
-
             Log.i("OSA030", "setConnection -> close");
             response.setRequestProperty("Connection", "close");
             response.setDoInput(true);
             response.setDoOutput(true);
-
-
-
             response.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
             OutputStreamWriter osw = new OutputStreamWriter(response.getOutputStream());
             BufferedWriter bw = new BufferedWriter(osw);
 
             Iterator<Object> it = map.keySet().iterator();
-
 
             String key = null;
             Object value = null;
@@ -436,38 +345,16 @@ class JsonLoader2 extends AsyncTaskLoader<JSONObject> {
 
             Log.i("lightbox", "送信内容 : " + data);
 
-
-
             //時間の保存
             String str = "&tokenID=" + URLEncoder.encode(sessionID, "utf-8");
-            System.out.println(sessionID);
-
-
-
-
-
-            //ara = dbReader.readDB(str3,0);
-            /*
-
-            System.out.println(ara);
-            System.out.println(ara.substring(0,4));
-            System.out.println(checkpoint);
-            */
             String[] ara2= ara.split("\n",0);
 
             if (ara2[0].equals("option")) {
                 System.out.println("c");
                 dbWriter.update("ara", "ara", ara.substring(0, 6), "true");
-
                 ara = dbReader.readDB(str3, 0);
                 ara2= ara.split("\n",0);
-
-
             }
-
-            System.out.println(ara);
-
-
 
             USERNAME = LoginPage.name;
             PASSWORD = LoginPage.pass;
@@ -479,95 +366,49 @@ class JsonLoader2 extends AsyncTaskLoader<JSONObject> {
             bw.write(sendData + data+str);
             bw.close();
             osw.close();
-            System.out.println(sendData + data);
-            System.out.println("normal Login");
-
             checkpoint = 3;
-
             bw.close();
-
             osw.close();
-
-
 
             checkResponse(response);    //エラーをキャッチする
 
             inputStream = new BufferedInputStream(response.getInputStream());
             outputStream = new ByteArrayOutputStream();
-            //byte[] buffer = new byte[1024];
 
-
-            //int length;
             while ((length = inputStream.read(buffer)) != -1) {
                 if (length > 0) {
-
                     outputStream.write(buffer, 0, length);
                     outputStream.close();
-
-
-
-
                 }
             }
 
-
-
-
-
-
-
-            System.out.println(checkpoint);
             if (checkpoint == 3) {
-
                 showCookie();
-
-
-                System.out.println("get cookie");
-
-                System.out.println("umakuitte");
             } else {
-                System.out.println("Don't get cookie");
-
-
                 return object2;
             }
 
-            System.out.println("date:" + sdf1.format(date));
-            //cal.set(Time[0], Time[1], Time[2], Time[3], Time[4], Time[5]);
             cal.add(Calendar.SECOND, (int) cookietime);
-            //System.out.println(sdf1.format(cal.getTime()));
-            System.out.println("cal2:" + sdf1.format(cal.getTime()));
+
             //データベース書き込み
-
-
             dbWriter.update("realtime", "realtime", real.substring(0, 14), sdf1.format(date));
             dbWriter.update("limittime", "limittime", limit.substring(0, 14), sdf1.format(cal.getTime()));
             limit = dbReader.readDB(str1, 0);
             real = dbReader.readDB(str2, 0);
-            System.out.println(limit + ":" + real);
             cookiestore.add(uri, cookie);
-            System.out.println(cookiestore.get(uri));
-            //ここら辺で止まってる？
-            System.out.println(new String(outputStream.toByteArray()));
             String j =new String(outputStream.toByteArray());
             json = new JSONObject(j);
-
-            System.out.println(json.toString());
             outputStream.close();
             inputStream.close();
             response.disconnect();
-            System.out.println("login 完了");
-
             return json;
 
         } catch (SecurityException e) {
             System.out.println("1check Exception");
-
             e.printStackTrace();
         } catch (MalformedURLException exception) {
             // 処理なし
             System.out.println("2check Exception");
-
         } catch (IOException exception) {
             System.out.println("3check Exception");
             if(limit.substring(0, 14).equals("00000000000001")){
@@ -576,17 +417,10 @@ class JsonLoader2 extends AsyncTaskLoader<JSONObject> {
 
             return object;
 
-            // 処理なし
-
         } catch (JSONException e) {
             if(checkpoint==3){
-
-
-
             }
             e.printStackTrace();
-
-
         }
         catch (IndexOutOfBoundsException exception) {
             return object2;
@@ -597,12 +431,12 @@ class JsonLoader2 extends AsyncTaskLoader<JSONObject> {
         return null;
 
     }
+
     private void checkResponse(HttpURLConnection response) throws IOException {
         int statusCode = response.getResponseCode();
         if (HttpURLConnection.HTTP_OK != statusCode) {
             throw new IOException("HttpStatus: " + statusCode);
         }
-
     }
 
 

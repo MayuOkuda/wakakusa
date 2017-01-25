@@ -20,7 +20,7 @@ import java.util.Map;
 public class TopPage extends BasePage {
 
     /*
-     * トップページの処理
+     * トップページ（ホーム画面）の処理を行うクラス
      * 時間割の表示
      * 各ボタン設定
      * push通知の処理
@@ -97,7 +97,6 @@ public class TopPage extends BasePage {
         textview4 = (TextView) findViewById(R.id.fourthclass);
         textview5 = (TextView) findViewById(R.id.fifthclass);
 
-
         //教室表示の処理
         roomtext = (TextView) findViewById(R.id.roomtext);
         roomtext2 = (TextView) findViewById(R.id.roomtext2);
@@ -109,8 +108,6 @@ public class TopPage extends BasePage {
         course_db_R = new DatabaseReader(this,"course");
         score_db_R = new DatabaseReader(this, "score");
         user_db_R = new DatabaseReader(this, "student");
-
-
 
         //今日の時間割
         threedays("center");
@@ -491,7 +488,7 @@ public class TopPage extends BasePage {
 
 
 /*
- *科目情報を連結リストで保存しておくための変数
+ * 科目情報を連結リストで保存しておくための変数
  */
 
 class Today {

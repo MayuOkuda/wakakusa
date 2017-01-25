@@ -13,9 +13,9 @@ import java.util.Calendar;
 
 public class TestCount extends BasePage {
 
-/*
- *テストカウントダウンの表示のためのクラス
- */
+    /*
+     * テストカウントダウンの表示のためのクラス
+     */
 
     //表示場所ID
     int dayID[] = {R.id.tc_m1,R.id.tc_m2,R.id.tc_m3,R.id.tc_m4,R.id.tc_m5,R.id.tc_m6,R.id.tc_m7};
@@ -77,9 +77,9 @@ public class TestCount extends BasePage {
 }
 
 
-/*
- *テスト情報を保存しておくクラス
- */
+    /*
+     * テスト情報を保存しておくクラス
+     */
 
 class Test{
     String day;
@@ -139,8 +139,6 @@ class Test{
 
         }
         TopPage.testclass2 = testclass;
-
-
     }
 
 }

@@ -11,8 +11,8 @@ import android.widget.TextView;
 public class UserPage extends BasePage {
 
     /*
-     *UserPage(ユーザ情報クラス)
-     *ユーザ情報を表示する
+     * UserPage(ユーザ情報クラス)
+     * ユーザ情報を表示する
      */
 
     final String[] student_property = {"id","name", "birth","adm","ug","dpm","mjr","sub1","sub2","teacher","address","mailaddress"};

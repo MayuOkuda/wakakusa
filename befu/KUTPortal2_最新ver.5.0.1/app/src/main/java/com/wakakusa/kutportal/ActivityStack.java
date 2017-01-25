@@ -5,7 +5,6 @@ package com.wakakusa.kutportal;
  */
 
 import android.app.Activity;
-
 import java.util.ArrayList;
 
 public class ActivityStack {
@@ -22,7 +21,6 @@ public class ActivityStack {
             stack.moveTaskToBack(true);
             System.out.println("a"+stack);
         }
-        //stackList = new ArrayList<Activity>();
     }
 
     public static void stackHistory(Activity stack) {

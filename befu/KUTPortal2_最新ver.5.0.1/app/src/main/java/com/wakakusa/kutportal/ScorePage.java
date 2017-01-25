@@ -21,7 +21,7 @@ import java.util.HashMap;
 public class ScorePage extends BasePage {
 
     /*
-     * 成績表示クラス
+     * 成績画面クラス
      */
 
     static int total; //科目区分別修得状況の総計
@@ -29,9 +29,7 @@ public class ScorePage extends BasePage {
     static double total2; //通算GPA計算用の被除数
     static double sum; //通算GPA計算用の除数
     static String item; //指定された年度(スピナー)
-
     static int flg;
-
     private View.OnClickListener[] onClick_textview = new View.OnClickListener[9];
     int ID[] = {R.id.csv, R.id.csv2, R.id.csv3, R.id.csv4, R.id.csv5, R.id.csv6, R.id.csv7, R.id.csv8,R.id.csvtotal};
 
@@ -41,7 +39,6 @@ public class ScorePage extends BasePage {
         setContentView(R.layout.score_page);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -50,9 +47,8 @@ public class ScorePage extends BasePage {
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-
         flg = 0;
+
         //ポップアップ処理
         pop();
 
@@ -115,7 +111,6 @@ public class ScorePage extends BasePage {
         String[] cs6 = dbReader.readDB3(strcs, sjcl_sub, new String[]{"専門発展科目", "F", ""}, "course, score").split("\n");
         String[] cs7 = dbReader.readDB3(strcs, sjcl_sub, new String[]{"専攻領域科目", "F", ""}, "course, score").split("\n");
         String[] cs8 = dbReader.readDB3(strcs, sjcl_sub, new String[]{"他学群・他学部専門科目", "F", ""}, "course,score").split("\n");
-
 
         int csvjc = countsjc(cs);
         int csvjc2 = countsjc(cs2);
@@ -205,6 +200,7 @@ public class ScorePage extends BasePage {
         String[] sc11 = dbReader.readDB2(str, "year=? AND period=?", new String[]{ymd, "1Q"}).split("\n");
         String[] s11 = dbReader.readDB3(str0, "score.scode = course.scode AND score.year=? AND course.period=? AND score.score!=? AND score.score!=?", new String[]{ymd, "1Q", "F", ""}, "score, course").split("\n");
         int f11 = 0;
+
         if (sc11 != null) f11 = fcheck(sc11);
         if (s11 != null) ft = fcheck2(s11);
         totalcu += f11;
@@ -212,9 +208,11 @@ public class ScorePage extends BasePage {
         totalu += ft;
         total += ft;
         ft = 0;
+
         String[] sc12 = dbReader.readDB2(str, "year=? AND (period=? OR period=?)", new String[]{ymd, "2Q", "1学期"}).split("\n");
         String[] s12 = dbReader.readDB3(str0, "score.scode = course.scode AND score.year=? AND (course.period=? OR course.period=?) AND score.score!=? AND score.score!=?", new String[]{ymd, "2Q", "1学期", "F", ""}, "score, course").split("\n");
         int f12 = 0;
+
         if (sc12 != null) f12 = fcheck(sc12);
         if (s12 != null) ft = fcheck2(s12);
         totalcu += f12;
@@ -222,9 +220,11 @@ public class ScorePage extends BasePage {
         totalu += ft;
         total += ft;
         ft = 0;
+
         String[] sc13 = dbReader.readDB2(str, "year=? AND period=?", new String[]{ymd, "3Q"}).split("\n");
         String[] s13 = dbReader.readDB3(str0, "score.scode = course.scode AND score.year=? AND course.period=? AND score.score!=? AND score.score!=?", new String[]{ymd, "3Q", "F", ""}, "score, course").split("\n");
         int f13 = 0;
+
         if (sc13 != null) f13 = fcheck(sc13);
         if (s13 != null) ft = fcheck2(s13);
         totalcd += f13;
@@ -232,9 +232,11 @@ public class ScorePage extends BasePage {
         totald += ft;
         total += ft;
         ft = 0;
+
         String[] sc14 = dbReader.readDB2(str, "year=? AND (period=? OR period=?) ", new String[]{ymd, "4Q", "2学期"}).split("\n");
         String[] s14 = dbReader.readDB3(str0, "score.scode = course.scode AND score.year=? AND (course.period=? OR course.period=?) AND score.score!=? AND score.score!=?", new String[]{ymd, "4Q", "2学期", "F", ""}, "score, course").split("\n");
         int f14 = 0;
+
         if (sc14 != null) f14 = fcheck(sc14);
         if (s14 != null) ft = fcheck2(s14);
         totalcd += f14;
@@ -257,6 +259,7 @@ public class ScorePage extends BasePage {
         String[] sc21 = dbReader.readDB2(str2, "year=? AND period=?", new String[]{ymd2, "1Q"}).split("\n");
         String[] s21 = dbReader.readDB3(str0, "score.scode = course.scode AND score.year=? AND course.period=? AND score.score!=? AND score.score!=?", new String[]{ymd2, "1Q", "F", ""}, "score, course").split("\n");
         int f21 = 0;
+
         if (sc21 != null) f21 = fcheck(sc21);
         if (s21 != null) ft = fcheck2(s21);
         totalcu += f21;
@@ -264,6 +267,7 @@ public class ScorePage extends BasePage {
         totalu += ft;
         total += ft;
         ft = 0;
+
         String[] sc22 = dbReader.readDB2(str2, "year=? AND period=? ", new String[]{ymd2, "2Q"}).split("\n");
         String[] s22 = dbReader.readDB3(str0, "score.scode = course.scode AND score.year=? AND (course.period=? OR course.period=?) AND score.score!=? AND score.score!=?", new String[]{ymd2, "2Q", "1学期", "F", ""}, "score, course").split("\n");
         int f22 = 0;
@@ -274,6 +278,7 @@ public class ScorePage extends BasePage {
         totalu += ft;
         total += ft;
         ft = 0;
+
         String[] sc23 = dbReader.readDB2(str2, "year=? AND period=?", new String[]{ymd2, "3Q"}).split("\n");
         String[] s23 = dbReader.readDB3(str0, "score.scode = course.scode AND score.year=? AND course.period=? AND score.score!=? AND score.score!=?", new String[]{ymd2, "3Q", "F", ""}, "score, course").split("\n");
         int f23 = 0;
@@ -284,6 +289,7 @@ public class ScorePage extends BasePage {
         totald += ft;
         total += ft;
         ft = 0;
+
         String[] sc24 = dbReader.readDB2(str2, "year=? AND period=? ", new String[]{ymd2, "4Q"}).split("\n");
         String[] s24 = dbReader.readDB3(str0, "score.scode = course.scode AND score.year=? AND (course.period=? OR course.period=?) AND score.score!=? AND score.score!=?", new String[]{ymd2, "4Q", "2学期", "F", ""}, "score, course").split("\n");
         int f24 = 0;
@@ -313,10 +319,12 @@ public class ScorePage extends BasePage {
         totalcd = 0;
         totalu = 0;
         totald = 0;
+
         String[] str3 = {"score"};
         String[] sc31 = dbReader.readDB2(str3, "year=? AND period=?", new String[]{ymd3, "1Q"}).split("\n");
         String[] s31 = dbReader.readDB3(str0, "score.scode = course.scode AND score.year=? AND course.period=? AND score.score!=? AND score.score!=?", new String[]{ymd3, "1Q", "F", ""}, "score, course").split("\n");
         int f31 = 0;
+
         if (sc31 != null) f31 = fcheck(sc31);
         if (s31 != null) ft = fcheck2(s31);
         totalcu += f31;
@@ -324,9 +332,11 @@ public class ScorePage extends BasePage {
         totalu += ft;
         total += ft;
         ft = 0;
+
         String[] sc32 = dbReader.readDB2(str3, "year=? AND period=? ", new String[]{ymd3, "2Q"}).split("\n");
         String[] s32 = dbReader.readDB3(str0, "score.scode = course.scode AND score.year=? AND (course.period=? OR course.period=?) AND score.score!=? AND score.score!=?", new String[]{ymd3, "2Q", "1学期", "F", ""}, "score, course").split("\n");
         int f32 = 0;
+
         if (sc32 != null) f32 = fcheck(sc32);
         if (s32 != null) ft = fcheck2(s32);
         totalcu += f32;
@@ -334,9 +344,11 @@ public class ScorePage extends BasePage {
         totalu += ft;
         total += ft;
         ft = 0;
+
         String[] sc33 = dbReader.readDB2(str3, "year=? AND period=?", new String[]{ymd3, "3Q"}).split("\n");
         String[] s33 = dbReader.readDB3(str0, "score.scode = course.scode AND score.year=? AND course.period=? AND score.score!=? AND score.score!=?", new String[]{ymd3, "3Q", "F", ""}, "score, course").split("\n");
         int f33 = 0;
+
         if (sc33 != null) f33 = fcheck(sc33);
         if (s33 != null) ft = fcheck2(s33);
         totalcd += f33;
@@ -344,9 +356,11 @@ public class ScorePage extends BasePage {
         totald += ft;
         total += ft;
         ft = 0;
+
         String[] sc34 = dbReader.readDB2(str3, "year=? AND period=? ", new String[]{ymd3, "4Q"}).split("\n");
         String[] s34 = dbReader.readDB3(str0, "score.scode = course.scode AND score.year=? AND (course.period=? OR course.period=?) AND score.score!=? AND score.score!=?", new String[]{ymd3, "4Q", "2学期", "F", ""}, "score, course").split("\n");
         int f34 = 0;
+
         if (sc34 != null) f34 = fcheck(sc34);
         if (s34 != null) ft = fcheck2(s34);
         totalcd += f34;
@@ -369,6 +383,7 @@ public class ScorePage extends BasePage {
         }
         if (totalc != 0) scv.setText(String.valueOf(totalc));
         if (total != 0) scv4.setText(String.valueOf(total));
+
     }
 
     //GPA

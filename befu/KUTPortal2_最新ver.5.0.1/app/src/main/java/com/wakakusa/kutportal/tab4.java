@@ -11,10 +11,8 @@ import android.widget.TextView;
 public class tab4 extends Fragment {
 
     /*
- * CouserPage(履修確認クラス)の4Qの時間割を表示するためのクラス
- */
-
-
+    * CoursePageの4Qの時間割を表示するためのクラス
+    */
 
     View rootView;
 

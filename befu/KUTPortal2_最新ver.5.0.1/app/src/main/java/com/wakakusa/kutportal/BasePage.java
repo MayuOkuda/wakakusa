@@ -28,6 +28,7 @@ public class BasePage extends AppCompatActivity
 
 
     /*
+     * メニュー一覧画面クラス
      * 各画面構成クラスの元となるクラス
      */
 
@@ -52,7 +53,7 @@ public class BasePage extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+        // メニューボタン押下時にメニューを表示する
         getMenuInflater().inflate(R.menu.main, menu);
         MenuItem item =menu.getItem(0);
         item.setEnabled(LoadingPage.b);
@@ -61,14 +62,10 @@ public class BasePage extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
+        //更新ボタン処理
         if (id == R.id.renew) {
-
             LoadingPage.actFlag2.setFlagState(true);
             Intent intent = new Intent(this, LoadingPage.class);
             intent.setClassName("com.wakakusa.kutportal", "com.wakakusa.kutportal.LoadingPage");
@@ -79,20 +76,19 @@ public class BasePage extends AppCompatActivity
             overridePendingTransition(0, 0);
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
+        // メニュー内ボタン押下後の処理
         int id = item.getItemId();
         Intent intent = new Intent();
         Uri lms = Uri.parse("https://lms.kochi-tech.ac.jp/"); //KUTLMSアドレス指定
         Uri mail = Uri.parse("https://webmail.kochi-tech.ac.jp/rc/");//WebMailアドレス指定
         Uri sirabasu = Uri.parse("http://portal.kochi-tech.ac.jp/Portal/Public/Syllabus/SearchMain.aspx");//シラバスアドレス指定
-        System.out.println("id============================"+id);
+
         if (id == R.id.home) {
             intent.setClassName("com.wakakusa.kutportal", "com.wakakusa.kutportal.TopPage");
             startActivity(intent);
@@ -133,6 +129,7 @@ public class BasePage extends AppCompatActivity
     }
 
     public void gazou() {
+        // ヘルプボタン押下時の処理
         final int[] counter;
         counter = new int[2];
         counter[0] = 0;
@@ -144,10 +141,11 @@ public class BasePage extends AppCompatActivity
         final ImageView imageView2 = (ImageView) layout.findViewById(R.id.helpphoto);
         dialog.setView(layout);
 
-
+        //次へボタン
         ImageButton button_next = (ImageButton) layout.findViewById(R.id.help_next);
         button_next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
                 if (counter[0] == 0) {
                     layout.findViewById(R.id.help_previous).setVisibility(View.VISIBLE);
                     imageView2.setImageResource(R.drawable.help2);
@@ -183,14 +181,13 @@ public class BasePage extends AppCompatActivity
                     layout.findViewById(R.id.help_next).setVisibility(View.INVISIBLE);
                     imageView2.setImageResource(R.drawable.help12);
                     counter[0] = 11;
-
                 }
-
             }
 
 
         });
 
+        //前へボタン
         ImageButton button_pre = (ImageButton) layout.findViewById(R.id.help_previous);
         layout.findViewById(R.id.help_previous).setVisibility(View.INVISIBLE);
         button_pre.setOnClickListener(new View.OnClickListener() {
@@ -247,33 +244,32 @@ public class BasePage extends AppCompatActivity
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
+
             this.finish();
             overridePendingTransition(0,0);
             ActivityStack.stackHistory(this);
-
-
-
             return true;
 
         }
+
         return false;
+
     }
     @Override
     public void onRestart(){
+
         super.onRestart();
         if(this.actFlag.getFlagState() == true){
             this.finish();
-
             overridePendingTransition(0, 0);
-            //this.moveTaskToBack(true);
         }
+
     }
 
 
     @Override
     protected void onResume() {
         super.onResume();
-
         // Google Play Servicesのインストールチェック
         // GCMの場合、GoogleApiClientで妥当なチェックできないため非推奨メソッドを利用
         int gpsResult = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
@@ -288,8 +284,8 @@ public class BasePage extends AppCompatActivity
                 Toast.makeText(this, "Google Play Services が利用不可です", Toast.LENGTH_LONG).show();
             }
         }
-    }
 
+    }
 
 
 }

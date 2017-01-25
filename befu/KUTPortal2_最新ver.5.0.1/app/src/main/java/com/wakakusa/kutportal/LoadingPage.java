@@ -66,6 +66,12 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.TrustManagerFactory;
 
+/*
+ *  起動画面クラス
+ *  自動ログインか手動ログインの判定を行い、データを取得するクラス
+ *  自動ログイン処理
+ */
+
 
 public class LoadingPage extends AppCompatActivity implements LoaderManager.LoaderCallbacks<JSONObject> {
     Intent intent = new Intent();
@@ -91,13 +97,8 @@ public class LoadingPage extends AppCompatActivity implements LoaderManager.Load
     @Override
     public Loader<JSONObject> onCreateLoader(int id, Bundle args) {
         try {
-            //String urlText = "http://animemap.net/api/table/tokyo.json";
-            //String urlText = "http://192.168.33.15:8000/posts.json";
             intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TOP);
             String urlText = "https://wakakusa.info.kochi-tech.ac.jp/test/main.php";
-            //String urlText = "http://weather.livedoor.com/forecast/webservice/json/v1?city=270000";
-            //String urlText = "http://www.ajaxtower.jp/googlemaps/gdownloadurl/data.json";
-
             JsonLoader jsonLoader = new JsonLoader(this, urlText);
             jsonLoader.forceLoad();
             return jsonLoader;
@@ -109,44 +110,34 @@ public class LoadingPage extends AppCompatActivity implements LoaderManager.Load
     @Override
     public void onLoadFinished(Loader<JSONObject> loader, JSONObject data) {
         final String[] tableName = {"student", "course", "score", "test", "news"};
-        //intent.setClassName("com.wakakusa.kutportal", "com.wakakusa.kutportal.LoadingPage");
-        //intent.putExtra("name","no");
-
         DatabaseWriter[] dbWriter = new DatabaseWriter[5];
+
         for (int i = 0; i < 5; i++) dbWriter[i] = new DatabaseWriter(this, tableName[i]);
         //データベースの削除
-        if (data != null) { //dataがnull？の状態
+        if (data != null) {
             JSONArray[] tableData = new JSONArray[5];
             try {
 
                 JSONObject object = new JSONObject();
                 object.put("check", "offline");
                 if (data.toString().equals(object.toString())) {
-                    System.out.println("offline");
                     b=false;
                     Intent intent2 = new Intent();
                     intent2.setClassName("com.wakakusa.kutportal", "com.wakakusa.kutportal.TopPage");
-                    //intent2.putExtra("name","offline");
                     startActivity(intent2);
                     overridePendingTransition(0, 0);
                     ActivityStack.stackHistory(this);
-                    System.out.println("usodaro");
                 }
                 for (int i = 0; i < 5; i++)
                     tableData[i] = data.getJSONArray(tableName[i]);
 
-
                 if (!tableData[0].toString().equals("[]") || !tableData[2].toString().equals("[]") || !tableData[3].toString().equals("[]") && !tableData[4].toString().equals("[]")) {
 
-                    System.out.println(tableData[0].get(0).toString());
-                    //dbWriter[0].deleteDB();
                     //tableData[0から4]でそれぞれテーブルデータをとってくる
-
                     for (int j = 1; j < 5; j++) {
                         for (int i = 1; i < tableData[j].length(); i++) {
                             //空の時入れない
                            if (!tableData[i].toString().equals("[]")) {
-
                             JSONObject jsonObject = tableData[j].getJSONObject(i);
                             dbWriter[j].writeDB(jsonObject);
                             }
@@ -157,10 +148,8 @@ public class LoadingPage extends AppCompatActivity implements LoaderManager.Load
                     startActivity(intent);
                     overridePendingTransition(0, 0);
                     ActivityStack.stackHistory(this);
-                    //moveTaskToBack(true);
-                } else {
-                    System.out.println("uwaaaaaa");
 
+                } else {
 
                     for (int j = 0; j < 5; j++) {
                         for (int i = 0; i < tableData[j].length(); i++) {
@@ -190,7 +179,7 @@ public class LoadingPage extends AppCompatActivity implements LoaderManager.Load
                         ActivityStack.stackHistory(this);
                     }
                 }
-                //textView.setText(dbReader[0].readDB(dbWriter[0].property,0)); //データの入力
+
             } catch (JSONException e) {
                 Log.d("onLoadFinished", "JSONのパースに失敗しました。 JSONException=" + e);
                 intent.setClassName("com.wakakusa.kutportal", "com.wakakusa.kutportal.TopPage");
@@ -250,9 +239,7 @@ public class LoadingPage extends AppCompatActivity implements LoaderManager.Load
         super.onRestart();
         if(this.actFlag.getFlagState() == true){
             this.finish();
-
             overridePendingTransition(0, 0);
-            //this.moveTaskToBack(true);
         }
     }
     @Override
@@ -276,7 +263,6 @@ class JsonLoader extends AsyncTaskLoader<JSONObject> {
     private static CookieManager manager;
     private Map map = new HashMap();
     private HttpCookie cookie;
-    //private CookieManager cookieManager =CookieManager.getInstance();
     public MyCookieStore cookiestore;
     private ByteArrayOutputStream outputStream=null;
     private long cookietime;
@@ -285,54 +271,39 @@ class JsonLoader extends AsyncTaskLoader<JSONObject> {
     private HttpsURLConnection response;
     private String limit;
     public static int help;
+
     public JsonLoader(Context context, String urlText)throws Exception {
         super(context);
         this.urlText = urlText;
         mContext = context;
         URL url = new URL(urlText);
-
-
         uri = new URI("http://wakakusa.info.kochi-tech.ac.jp");
 
         cookiestore =new MyCookieStore(mContext);
 
         manager = new CookieManager();
-//以下をコメントにするとセッションは働きません
+       //以下をコメントにするとセッションは働きません
         buildCookieManager();
-
         CookieSyncManager.createInstance(mContext);
     }
     private void buildCookieManager() {
-
         manager = new CookieManager();
         CookieHandler.setDefault(manager);
-
-
     }
     public void showCookie() {
 
         store = manager.getCookieStore();
-
-
         List<HttpCookie> cookies = store.getCookies();
-
-
         List<URI> cookieuri = store.getURIs();
 
-
         cookie = cookies.get(0);
-
         uri = cookieuri.get(0);
         System.out.println(cookieuri.get(0));
-
         cookietime = cookie.getMaxAge();
-
         store.add(uri, cookie);
         store.get(uri);
 
-        System.out.println(cookie);
         Log.i("lightbox", "Cookies[" + 0 + "]: " + cookie + "/" + cookietime);
-
 
     }
 
@@ -349,15 +320,8 @@ class JsonLoader extends AsyncTaskLoader<JSONObject> {
         map.put("display", "環境");
         try {
             URL url = new URL(urlText);
-
-
-
-
             object = new JSONObject();
             object.put("check", "offline");
-
-            String USERNAME;
-            String PASSWORD;
 
             String Cookiedata = null;
             DatabaseWriter dbWriter = new DatabaseWriter(mContext, "loginData");
@@ -367,44 +331,26 @@ class JsonLoader extends AsyncTaskLoader<JSONObject> {
             SimpleDateFormat sdf1 = new SimpleDateFormat("yyyyMMddHHmmss");
             Date date = new Date();
 
-            //long in = Long.parseLong(t);
-
-
-
-            //dbWriter.deleteDB();
             String[] str1 = {"limittime"};
             String[] str2 = {"realtime"};
             String[] str3 = {"ara"};
             String[] str4 = {"tokenID"};
-
-
-            limit = dbReader.readDB(str1, 0);
-            String real = dbReader.readDB(str2, 0);
-
             String ara = dbReader.readDB(str3, 0);
-            String sessionID = dbReader.readDB(str4,0);
-            System.out.println("Check ara:" + ara);
-            System.out.println("Check real:" + real);
-            System.out.println("Check limit:" + limit);
-            System.out.println(ara.length());
-
+            String sessionID = dbReader.readDB(str4, 0);
             ContentValues cvalue = new ContentValues();
+
             if(ara.length()==0){
                 cvalue.put("ara", "option");
                 cvalue.put("limittime", "00000000000001");
                 cvalue.put("realtime", "00000000000000");
                 cvalue.put("response","1111");
                 dbWriter.write.insert(dbWriter.Table_name, null, cvalue);
-
             }
 
-
-
-            limit = dbReader.readDB(str1, 0);
-            real = dbReader.readDB(str2, 0);
+            String limit = dbReader.readDB(str1, 0);
+            String real = dbReader.readDB(str2, 0);
             ara = dbReader.readDB(str3, 0);
-            System.out.println(ara.length());
-            System.out.println(limit + ":" + real + ":" + ara);
+
             KeyStore ks = KeyStoreUtil.getEmptyKeyStore();
             KeyStoreUtil.loadX509Certificate(ks,
                     mContext.getResources().getAssets().open("server.crt"));
@@ -418,20 +364,16 @@ class JsonLoader extends AsyncTaskLoader<JSONObject> {
                 }
             });
 
-            // ★ポイント2★ URIはhttps://で始める
-            // ★ポイント3★ 送信データにセンシティブな情報を含めてよい
             trustManager = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
             trustManager.init(ks);
             SSLContext sslCon = SSLContext.getInstance("TLS");
             sslCon.init(null, trustManager.getTrustManagers(), new SecureRandom());
-
 
             //↓Basic認証
             response = (HttpsURLConnection)url.openConnection();
             response.setConnectTimeout(30000);
             response.setReadTimeout(30000);
             response.setChunkedStreamingMode(0);
-
             response.setDefaultSSLSocketFactory(sslCon.getSocketFactory());
             response.setSSLSocketFactory(sslCon.getSocketFactory());
 
@@ -442,7 +384,7 @@ class JsonLoader extends AsyncTaskLoader<JSONObject> {
             response.setRequestMethod("POST");
             response.setInstanceFollowRedirects(true);
             response.setRequestProperty("Accept-Language", "jp");
-            //response.setRequestProperty("Connection", "Keep-Alive");
+
             String[] limit2 =limit.split("\n",0);
             String[] ara2= ara.split("\n",0);
             help=0;
@@ -452,13 +394,8 @@ class JsonLoader extends AsyncTaskLoader<JSONObject> {
                 help=1;
                 ara = dbReader.readDB(str3, 0);
                 ara2= ara.split("\n",0);
-                System.out.println(ara);
-                System.out.println(limit2[0]);
-                System.out.println(ara2[0]);
-
             }
 
-            //System.setProperty("http.keepAlive", "false");
             if (!limit2[0].equals("00000000000001") && ara2[0].equals("true")) {
                 System.out.println("setCookie"+cookiestore.get(uri).get(0).toString());
                 response.setRequestProperty("Cookie", cookiestore.get(uri).get(0).toString());
@@ -467,15 +404,11 @@ class JsonLoader extends AsyncTaskLoader<JSONObject> {
             response.setRequestProperty("Connection", "close");
             response.setDoInput(true);
             response.setDoOutput(true);
-
-
-
             response.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
             OutputStreamWriter osw = new OutputStreamWriter(response.getOutputStream());
             BufferedWriter bw = new BufferedWriter(osw);
 
             Iterator<Object> it = map.keySet().iterator();
-
 
             String key = null;
             Object value = null;
@@ -492,10 +425,7 @@ class JsonLoader extends AsyncTaskLoader<JSONObject> {
 
                 data += key + "=" + URLEncoder.encode(valueS, "utf-8");
             }
-
             Log.i("lightbox", "送信内容 : " + data);
-
-
 
             //時間の保存
             String[] token=sessionID.split("\n",0);
@@ -519,10 +449,6 @@ class JsonLoader extends AsyncTaskLoader<JSONObject> {
                 cookie_v = cookiestore.get(uri).get(0).toString().split("=", 3);
                 System.out.println(cookiestore.get(uri).get(0));
                 String reday = "&reday=" + URLEncoder.encode(real.substring(0, 14), "utf-8");
-                //Cookiedata = "reday=" + URLEncoder.encode("20170116180000", "utf-8");
-                //Cookiedata = "a=1&"+cookiestore.get(uri).get(0);
-
-
                 response.connect();
 
                 bw.write(data+reday+str);
@@ -534,92 +460,45 @@ class JsonLoader extends AsyncTaskLoader<JSONObject> {
 
 
             }
-            //ara = dbReader.readDB(str3,0);
-            /*
-
-            System.out.println(ara);
-            System.out.println(ara.substring(0,4));
-            System.out.println(checkpoint);
-            */
-
-            System.out.println(ara);
-
-
 
             bw.close();
-
             osw.close();
-
-
 
             checkResponse(response);    //エラーをキャッチする
 
             inputStream = new BufferedInputStream(response.getInputStream());
             outputStream = new ByteArrayOutputStream();
-            //byte[] buffer = new byte[1024];
 
-
-            //int length;
             while ((length = inputStream.read(buffer)) != -1) {
                 if (length > 0) {
-
                     outputStream.write(buffer, 0, length);
                     outputStream.close();
-
-
-
-
                 }
             }
 
-
-
-
-
-
-
-            System.out.println(checkpoint);
             if (checkpoint == 2) {
-
                 showCookie();
-
-
-                System.out.println("get cookie");
-
-                System.out.println("umakuitte");
             } else {
-                System.out.println("Don't get cookie");
                 return null;
             }
 
-            System.out.println("date:" + sdf1.format(date));
-            //cal.set(Time[0], Time[1], Time[2], Time[3], Time[4], Time[5]);
             cal.add(Calendar.SECOND, (int) cookietime);
-            //System.out.println(sdf1.format(cal.getTime()));
-            System.out.println("cal2:" + sdf1.format(cal.getTime()));
+
             //データベース書き込み
-
-
             dbWriter.update("realtime", "realtime", real.substring(0, 14), sdf1.format(date));
             dbWriter.update("limittime", "limittime", limit.substring(0, 14), sdf1.format(cal.getTime()));
             limit = dbReader.readDB(str1, 0);
             real = dbReader.readDB(str2, 0);
-            System.out.println(limit + ":" + real);
             cookiestore.add(uri, cookie);
-            System.out.println(cookiestore.get(uri));
-            //ここら辺で止まってる？
-            System.out.println(new String(outputStream.toByteArray()));
             json = new JSONObject(new String(outputStream.toByteArray()));
             outputStream.close();
             inputStream.close();
             response.disconnect();
-            System.out.println("login 完了");
 
             return json;
 
         } catch (SecurityException e) {
             System.out.println("1check Exception");
-
             e.printStackTrace();
         } catch (MalformedURLException exception) {
             // 処理なし
