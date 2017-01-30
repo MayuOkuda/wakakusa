@@ -3,7 +3,9 @@ package com.wakakusa.kutportal;
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.support.v4.app.NotificationManagerCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.NotificationCompat;
 import android.util.Log;
 
@@ -14,7 +16,7 @@ import java.util.Map;
 
 public class FcmTestFirebaseMessagingService extends FirebaseMessagingService {
 
-    /**
+    /*
      * push通知クラス
      * 通知を受け取るクラス
      */
@@ -37,6 +39,8 @@ public class FcmTestFirebaseMessagingService extends FirebaseMessagingService {
                 || (res.substring(3, 4).equals("1") && body.equals("その他"))) {
             NotificationCompat.Builder notificationCompatBuilder = new NotificationCompat.Builder(this);
             notificationCompatBuilder.setSmallIcon(R.mipmap.wakakusa);
+            notificationCompatBuilder.setLargeIcon(BitmapFactory.decodeResource(getApplicationContext().getResources(), R.mipmap.wakakusa));
+            notificationCompatBuilder.setColor(ContextCompat.getColor(this, R.color.colorPrimary));
             notificationCompatBuilder.setContentTitle((title != null) ? title : "");
             notificationCompatBuilder.setContentText((body != null) ? body : "");
             notificationCompatBuilder.setDefaults(Notification.DEFAULT_ALL);
