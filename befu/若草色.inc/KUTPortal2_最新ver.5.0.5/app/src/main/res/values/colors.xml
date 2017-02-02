@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#bbd347</color> <!--若草色-->
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="backcolor">#FFFFFF</color><!--表の背景色-->
+    <color name="head">#7FA87F</color><!--表のヘッダーの色-->
+    <color name="Black">#000000</color><!--黒色-->
+    <color name="Orange">#FEF9E0</color><!--暖色-->
+    <color name="Blue">#C0E3FE</color><!--青色-->
+    <color name="LightGreen">#E0F4D6</color><!--薄緑色-->
+    <color name="Tabletop">#cedbad</color>
+    <color name="Tableline">#9cba5f</color>
+    <color name="Table1">#e1e9cd</color>
+    <color name="Table2">#eff3e5</color>
+    <color name="ButtonLine">#617338</color>
+    <color name="Help_bd">#c5e7cd</color>
+    <!--<color name="Help_bd">#cfedd6</color>-->
+
+</resources>
